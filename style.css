@@ -1,0 +1,136 @@
+
+
+@font-face {
+    font-family: 'font';
+    src: url('font.ttf') format('truetype');
+}
+body{
+    background-color: red;
+}
+
+#button1{
+    font-size: xx-large;
+    cursor: pointer;
+    padding-left: 35%;
+    color: red;
+}
+
+#title{
+  
+  font-size: 5rem;
+  margin-bottom: 1rem;
+  position:absolute;
+justify-content: center;
+align-items: center;
+margin-top : -40%;
+  font-family: font;
+  
+}
+#buttonbelow{
+    font-size: 40px;
+}
+#pietrucha{
+    padding-left: 45%;
+}
+
+#last-update{
+  font-size: larger;
+  position:absolute;
+  color: yellow;
+  top: 10%;
+  left: 43%;
+}
+
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        .btn-group {
+          margin-top: -30%; /* Adjust the margin as needed */
+      }
+
+      #TButton{
+        margin-top: 10%;
+      }
+
+        #content-container {
+            display: flex;
+            position: absolute;
+            top: 20%;
+        }
+
+
+        label {
+            display: inline-block;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #ddd;
+            cursor: pointer;
+        }
+
+        #content {
+            flex-grow: 1;
+            padding: 20px;
+        }
+
+        /* Style for radio buttons */
+        input[type="radio"] {
+            display: none;
+        }
+
+        input[type="radio"]:checked + label {
+            background-color: #aaa;
+            color: #fff;
+        }
+
+        #welcome-content{
+            font-size: 750%;
+            margin-top: 5%;
+        }
+        /* Content for each radio button */
+        #welcome-content,
+        #gallery-content,
+        #forza-content,
+        #tomb-raider-content,
+        #scp-mod-content,
+        #old-site-content,
+        #terminal-content{
+            display: none;
+        }
+
+        #martlet {
+            position: absolute;
+            top: 98vh;  /* 98% of the viewport height */
+            left: 85vw; /* 85% of the viewport width */
+            cursor: pointer;
+        }
+        
+        #TRLEImages{
+            position: absolute;
+            top: 90%;
+            left: 10%;
+        }
+
+        #trleDownload{
+            font-size: xx-large; 
+            position: absolute;
+            top: 55%;
+            left: 50%
+            ;
+        }
+
+        input#welcome:checked ~ #welcome-content,
+        input#gallery:checked ~ #gallery-content,
+        input#forza:checked ~ #forza-content,
+        input#tomb-raider:checked ~ #tomb-raider-content,
+        input#scp-mod:checked ~ #scp-mod-content,
+        input#old-site:checked ~ #old-site-content,
+        input#terminal:checked ~ #terminal-content {
+            display: block;
+        }
