@@ -103,13 +103,14 @@ margin-top : -40%;
         #terminal-content{
             display: none;
         }
-
         #martlet {
             position: absolute;
-            top: 98vh;  /* 98% of the viewport height */
-            left: 85vw; /* 85% of the viewport width */
+            top: 115%;
+            left: 90%;
+            transform: translate(-100%, -50%);
             cursor: pointer;
         }
+        
         
         #TRLEImages{
             position: absolute;
