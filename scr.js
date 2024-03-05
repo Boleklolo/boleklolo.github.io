@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const img = document.getElementById('martletImg');
             img.src = getRandomImage();
     
-            const targetTop = originalTop - 0.28 * window.innerHeight;
+            const targetTop = originalTop - 190; // Adjust this value as needed
             const appearingDuration = 250; // 0.5 seconds for appearing
             const fallingDuration = 1000; // 1 second for falling back down
             const stopDuration = 1500; // 1 second stop mid-animation
@@ -119,7 +119,6 @@ document.addEventListener('DOMContentLoaded', function () {
             }, appearingDuration + stopDuration);
         }
     });
-    
     
 });
 
