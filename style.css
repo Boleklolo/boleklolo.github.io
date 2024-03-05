@@ -105,10 +105,14 @@ margin-top : -40%;
         }
         #martlet {
             position: absolute;
-            top: 115%;
-            left: 90%;
-            transform: translate(-100%, -50%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             cursor: pointer;
+        }
+        
+        #martletImg {
+            width: 100%; /* Scale the image to 100% of its container width */
         }
         
         
