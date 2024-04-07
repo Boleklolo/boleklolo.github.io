@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="script.js"></script>
+    <title>Boleklolo.lol</title>
+
+    
+</head>
+<body>
+
+      <div class="container">
+        <div class="item">
+            <img src="/Images/martletHouse.png" id="ImageHouse">
+        </div>
+        <div class="item">>
+            <div id="SectionTest">
+                <div class="dice-container">
+                    <div class="dice-button" id='WelcomeTab'><img src='Images/TWelcome.png' width="270%" height="270%"></div>
+                    <div class="dice-button" id='VideoTab' ><img src='Images/TVideo.png' width="270%" height="270%" id="TImage"></div>
+                    <div class="dice-button" id='RaiderTab' ><img src='Images/TRaider.png'width="270%" height="270%"></div>
+                    <div class="dice-button" id='TerminalTab' ><img src='Images/TTerminal.png' width="270%" height="270%"></div>
+                    <div class="dice-button" id='VotingTab'>Voting</div>
+                </div>
+
+      
+
+                <div id="Background" class="hidden">
+                    <img src="Images/XCross.png" alt="Image" id="cornerImage">
+                    
+                    <div id="BoxContainer">
+                       <div id="WelcomeContent">
+                        <div id="WelcomeText"><h1>Welcome!</h1></div>
+                        This is my small website being made for fun (I did not have fun, I want a refund)
+                        Credits are available in the terminal using the 'credits' command. Changelogs might appear here.
+                        <div id="sexgif"><img src="Images/SEX.gif" width="50%" height="50%"></div>
+                       </div>
+                        <div id="VotingContent">
+                            <div id="VoteButton">Click Here To Open Voting Form</div>
+                            <img id="FormImage" src="https://www.gstatic.com/images/branding/product/1x/forms_512dp.png">
+                        </div>
+                        <div id="VideoContent">
+                            <iframe id="videoFrame" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+                        </div>
+                        <div id="RaiderContent" style="display: flex; flex-wrap: wrap; ">
+                            <h2 style="margin: 0;">Tomb Raider: The Search for The Skidoo</h2>
+                            <p style="margin: 0;">Lara's short journey to the ice cave system which for some reason is inhabited by Chinese cultured garudas who guard the legendary Skidoo. This is a very short TRLE made by me in 2021.</p>
+                            <img class='TRImg' src="Images/SkidooScreen1.jpg" style="flex: 0 0 32%; max-width: 32%;" alt="Image 1">
+                            <img class='TRImg' src="Images/SkidooScreen2.jpg" style="flex: 0 0 32%; max-width: 32%;" alt="Image 2">
+                            <img class='TRImg' src="Images/SkidooScreen3.jpg" style="flex: 0 0 32%; max-width: 32%;" alt="Image 3">
+                            <div id="DownloadText"><div id="button1" onclick="openSite()">Download</div></div>
+                        </div>
+                        
+                        
+                        <div id="TerminalContent">
+                            <img src="Images/Terminal.png" style="width: 40%; height: 40%; margin-left: 30%" alt="Terminal">
+                            <div id="DownloadText"><div id="button2" onclick="openTerminal()">Open The Terminal</div></div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+            </div>
+            <div id="hideTip">
+                Hide/Unhide the signs by pressing h, then go fullscreen using f11 to get a nice idle background :)
+                
+            </div>
+    
+        </div>
+        <div id="overlay">
+            
+        </div>
+        <div id="snowfall"></div>
+      </div>
+
+      <div id="fireplace">
+    </div>
+   
+    <div class="unsupported-message">
+        <h1>Mobile not supported yet</h1>
+    </div>
+
+
+    <script>
+    // Function to check if cursor is coarse
+    function isCursorCoarse() {
+        return window.matchMedia("(pointer: coarse)").matches;
+    }
+
+    // Function to handle setting display property
+    function handleUnsupportedMessage() {
+        var unsupportedMessage = document.querySelector('.unsupported-message');
+        if (isCursorCoarse()) {
+            unsupportedMessage.style.display = 'block'; // Set display to block
+        } else {
+            unsupportedMessage.style.display = 'none'; // Set display to none
+        }
+    }
+
+    // Initial check
+    handleUnsupportedMessage();
+
+    // Check again when window resizes
+    window.addEventListener('resize', handleUnsupportedMessage);
+
+
+
+
+
+    </script>
+</body>
+</html>
