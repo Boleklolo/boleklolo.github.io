@@ -243,7 +243,7 @@ font-family: DeterminationMono, sans-serif;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 1); 
-  z-index: 50000; /* ensure it's above other content */
+  z-index: 50000; /* ensure it's above other cntent */
 }
 
 #preloadButton{
