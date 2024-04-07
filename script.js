@@ -261,7 +261,6 @@ document.addEventListener("DOMContentLoaded", function(event) {
 document.addEventListener("DOMContentLoaded", function(){
     resumeMusic();
     var time = new Date().getHours();
-    time=23;
     const overlay = document.getElementById("overlay");
     if (time==22 || time==23 || time==0 || time==1 || time==2 || time==3 || time==4 || time==5 || time==6) {
         overlay.style.display = "block";
