@@ -236,6 +236,40 @@ font-family: DeterminationMono, sans-serif;
   pointer-events: none;
 }
 
+#preloadoverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 1); 
+  z-index: 50000; /* ensure it's above other content */
+}
+
+#preloadButton{
+  position: relative;
+  font-family: DeterminationMono, sans-serif;
+  left: 22.5vw;
+  margin-top: 5vh;
+  background-color: #4b12a8;
+  border: none;
+  color: white;
+  padding: 3vh 4vw;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  margin: 4px 2px;
+  cursor: pointer;
+  position: relative;
+  top: 30vh;
+  width: 50%;
+  height: 50%;
+  max-width: 50%;
+  max-height: 50%;
+
+}
+
 .snowflake {
   position: absolute;
   background: url('Images/Snowflake.png') no-repeat;

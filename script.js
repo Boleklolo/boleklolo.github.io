@@ -257,6 +257,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       snowfallContainer.appendChild(snowflake);
     }
   });
+
 document.addEventListener("DOMContentLoaded", function(){
     var time = new Date().getHours();
     const overlay = document.getElementById("overlay");
@@ -277,6 +278,21 @@ document.addEventListener("DOMContentLoaded", function(){
         snowstormAudio.play();
     }
 });
+
+//onclick
+document.addEventListener("DOMContentLoaded", function(){
+    document.getElementById("preloadButton").addEventListener("click", function(){
+        var preloadB = document.getElementById("preloadButton");
+        var preloadS = document.getElementById("preloadoverlay");
+        preloadB.style.display = "none";
+        preloadS.style.display = "none";
+        setInterval(function() {
+            var tip = document.getElementById("hideTip");
+            tip.style.display = "none";
+        }, 3000);
+    });
+});
+
 
 function setNight(){
     var time = new Date().getHours();
@@ -335,10 +351,7 @@ document.addEventListener("keydown", function(event) {
     }
 });
 
-setInterval(function() {
-    var tip = document.getElementById("hideTip");
-    tip.style.display = "none";
-}, 3000);
+
 
 document.addEventListener("DOMContentLoaded", function(){
     document.getElementById("VoteButton").addEventListener("click", function(){
