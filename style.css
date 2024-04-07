@@ -1,344 +1,310 @@
 body{
-    overflow: hidden;
-    background-image: url('Images/trees.png');
-    background-size: contain;
-    
-    width: fit-content;
-    height: fit-content;
-    margin: 3%;
-    
-  }
-
-
-
-
+  overflow: hidden;
+  background-image: url('Images/trees.png');
+  background-size: contain;
+  
+  width: fit-content;
+  height: fit-content;
+  margin: 3%;
+  
+}
 
 #MainBox{
 
 }
 
 #fireplace {
-    
+  
 }
 
 
 #ImageHouse{
-        max-width: 100%;
-        max-height: 120vh; 
-        width: auto;
-        height: auto;
-        -moz-user-select: none;
+      max-width: 100%;
+      max-height: 120vh; 
+      width: auto;
+      height: auto;
+      -moz-user-select: none;
 }
 .unsupported-message {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-  background-color: black;
-  display: none;
-  z-index: 4;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+color: white;
+background-color: black;
+display: none;
+z-index: 4;
 }
 
 .dice-container {
-  height: 100%; /* Adjusted to 100% */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  -moz-user-select: none;
+height: 100%; /* Adjusted to 100% */
+display: flex;
+flex-wrap: wrap;
+justify-content: space-between;
+align-items: center;
+-moz-user-select: none;
 
 
 }
 
 .dice-button {
-  width: auto; /* Adjusted to fit 3 buttons in a row */
-  height: 6%; /* Adjusted to fit 2 rows of buttons */
-  display: flex;
-  size: 100px;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  -moz-user-select: none;
-  margin: 30px;
+width: auto; /* Adjusted to fit 3 buttons in a row */
+height: 6%; /* Adjusted to fit 2 rows of buttons */
+display: flex;
+size: 100px;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+-moz-user-select: none;
+margin: 30px;
 }
 
 #Background{
-  display: none;
-    position: absolute;
-    top: -5vh;
-    right: -40%;
-    width: 55vw;
-    height: 90vh;
-    border-radius: 20px;
-    z-index: 100000;
-    background-color: antiquewhite;
+display: none;
+  position: absolute;
+  top: -5vh;
+  right: -40%;
+  width: 55vw;
+  height: 90vh;
+  border-radius: 20px;
+  z-index: 100000;
+  background-color: antiquewhite;
 }
 
 
 .hidden {
-  opacity: 0;
+opacity: 0;
 }
 
 @keyframes enlarge {
-  0% {
-      transform: scale(0);
-      opacity: 0;
-  }
-  100% {
-      transform: scale(1);
-      opacity: 1;
-  }
+0% {
+    transform: scale(0);
+    opacity: 0;
+}
+100% {
+    transform: scale(1);
+    opacity: 1;
+}
 }
 
 #hideTip{
-  color: yellow;
-  font-family: DeterminationMono, sans-serif;
-  border: none;
-  font-size: 25px;
-  top: 5%;
-  text-shadow: black 3px 3px; 
-  left: 108%;
-  width: 200%;
-  transform: translate(-50%, -50%);
-  position: absolute;
+color: yellow;
+font-family: DeterminationMono, sans-serif;
+border: none;
+font-size: 25px;
+top: 5%;
+text-shadow: black 3px 3px; 
+left: 108%;
+width: 200%;
+transform: translate(-50%, -50%);
+position: absolute;
 }
 
 
 .enlarge-animation {
-  animation: enlarge 0.5s ease forwards;
+animation: enlarge 0.5s ease forwards;
 }
 
 @keyframes shrink {
-  0% {
-      transform: scale(1);
-      opacity: 1;
-  }
-  100% {
-      transform: scale(0);
-      opacity: 0;
-  }
+0% {
+    transform: scale(1);
+    opacity: 1;
+}
+100% {
+    transform: scale(0);
+    opacity: 0;
+}
 }
 
 .shrink-animation {
-  animation: shrink 0.5s ease forwards;
+animation: shrink 0.5s ease forwards;
 }
 
 #cornerImage {
-  /* Position the image */
-  position: absolute;
-  top: 10px; 
-  right: 10px; 
-  width: 50px; 
-  height: auto; 
-  -moz-user-select: none;
-  cursor: pointer;
+/* Position the image */
+position: absolute;
+top: 10px; 
+right: 10px; 
+width: 50px; 
+height: auto; 
+-moz-user-select: none;
+cursor: pointer;
 }
 @font-face {
-  font-family: 'DeterminationMono';
-  src: url(Fonts/DeterminationMono.ttf) format('truetype');
+font-family: 'DeterminationMono';
+src: url(Fonts/DeterminationMono.ttf) format('truetype');
 }
 
 #BoxContainer{
+margin-top: 5vh;
+margin-bottom: 3vh;
+margin-left: 3vw;
+margin-right: 4vw;
+font-size: 1.5em;
+font-family: DeterminationMono, sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 4vw;
+}
+
+.item {
+  flex: 0 0 50%;
+}
+
+
+
+#SectionTest{
+  z-index: 1;
+  position: relative;
+  width: 50vw;
+  height: 90%;
+  max-width: 60%;
+  max-height: 90vh;
+}
+#VoteButton{
+  position: relative;
+  left: 12.5%;
   margin-top: 5vh;
-  margin-bottom: 3vh;
-  margin-left: 3vw;
-  margin-right: 4vw;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  margin: 4px 2px;
+  cursor: pointer;
+  position: relative;
+  top: -4vh;
+}
+#VotingTab{
+  position: relative;
+  left: 12.5%;
+  margin-top: 5vh;
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 40px;
+  margin: 4px 2px;
+  cursor: pointer;
+  position: relative;
+  top: -2.5vh;
+  font-family: DeterminationMono, sans-serif;
+  width: 17.5vw;
+}
+
+#FormImage{
+  position: relative;
+  width: 50%;
+  height: auto;
+  margin-top: 2vh;
+  max-width: 100%;
+  max-height: 100%;
+  left: 25%;
+}
+
+#WelcomeContent,#VideoContent,#RaiderContent,#TerminalContent, #VotingContent{
+  display: none;
+} 
+#RaiderContent{
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+}
+.info-box {
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75); /* 50% opacity black */
+  z-index: 9999; /* ensure it's above other content */
+  pointer-events: none;
+}
+
+.snowflake {
+  position: absolute;
+  background: url('Images/Snowflake.png') no-repeat;
+  background-size: contain;
+  top: -30px;
+  right: -30px;
+  width: 20px;
+  z-index: 9998;
+  height: 30px;
+  animation: snowfall linear infinite;
+}
+@keyframes snowfall {
+  0% {
+    transform: translateY(-10%) translateX(-10vw);
+  }
+  50% {
+    transform: translateY(100vh) translateX(40vw); /* Adjust the horizontal movement here */
+  }
+  100% {
+    transform: translateY(calc(100vh + 500px)) translateX(140vw); /* Adjusted to go beyond the screen */
+  }
+}
+  
+#WelcomeContent{
+  margin-left:0%;
+}
+#sexgif{
+  text-align: center;
+  width: 100%;
+  height: auto;
+  margin-top: 2vh;
+  max-width: 100%;
+  max-height: 100%;
+
+}
+#button2{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  margin: 4px 2px;
+  cursor: pointer;
+  position: relative;
+  top: -4vh;
+}
+#WelcomeText{
+color:dodgerblue;
+text-align: center;
+}
+
+
+.TRImg{
+  white-space: nowrap;
+}
+
+#DownloadText{
   font-size: 1.5em;
   font-family: DeterminationMono, sans-serif;
-}
-
-  .container {
-    display: flex;
-    flex-flow: row nowrap;
-    gap: 4vw;
-  }
-  
-  .item {
-    flex: 0 0 50%;
-  }
-
-
-
-  #SectionTest{
-    z-index: 1;
-    position: relative;
-    width: 50vw;
-    height: 90%;
-    max-width: 60%;
-    max-height: 90vh;
-  }
-  #VoteButton{
-    position: relative;
-    left: 12.5%;
-    margin-top: 5vh;
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 30px;
-    margin: 4px 2px;
-    cursor: pointer;
-    position: relative;
-    top: -4vh;
-  }
-  #VotingTab{
-    position: relative;
-    left: 12.5%;
-    margin-top: 5vh;
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 40px;
-    margin: 4px 2px;
-    cursor: pointer;
-    position: relative;
-    top: -2.5vh;
-    font-family: DeterminationMono, sans-serif;
-    width: 17.5vw;
-  }
-
-  #FormImage{
-    position: relative;
-    width: 50%;
-    height: auto;
-    margin-top: 2vh;
-    max-width: 100%;
-    max-height: 100%;
-    left: 25%;
-  }
-
-  #WelcomeContent,#VideoContent,#RaiderContent,#TerminalContent, #VotingContent{
-    display: none;
-  } 
-  #RaiderContent{
-    display: block;
-    text-decoration: none;
-    cursor: pointer;
-  }
-  .info-box {
-    margin-top: 20px;
-    border: 1px solid #ccc;
-    padding: 10px;
-}
-
-  #overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.75); /* 50% opacity black */
-    z-index: 9999; /* ensure it's above other content */
-    pointer-events: none;
-  }
-  
-  .snowflake {
-    position: absolute;
-    background: url('Images/snowflake.png') no-repeat;
-    background-size: contain;
-    top: -30px;
-    right: -30px;
-    width: 20px;
-    z-index: 9998;
-    height: 30px;
-    animation: snowfall linear infinite;
-  }
-  @keyframes snowfall {
-    0% {
-      transform: translateY(-10%) translateX(-10vw);
-    }
-    50% {
-      transform: translateY(100vh) translateX(40vw); /* Adjust the horizontal movement here */
-    }
-    100% {
-      transform: translateY(calc(100vh + 500px)) translateX(140vw); /* Adjusted to go beyond the screen */
-    }
-  }
-    
-  #WelcomeContent{
-    margin-left:0%;
-  }
-  #sexgif{
-    text-align: center;
-    width: 100%;
-    height: auto;
-    margin-top: 2vh;
-    max-width: 100%;
-    max-height: 100%;
-
-  }
-  #button2{
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 30px;
-    margin: 4px 2px;
-    cursor: pointer;
-    position: relative;
-    top: -4vh;
-  }
-#WelcomeText{
-  color:dodgerblue;
+  margin: 5vh;
+  color: red;
   text-align: center;
 }
+#videoFrame{
+  border-radius: 20px;
+  width: 100%;
+  height: 80vh;
+}
 
-
-  .TRImg{
-    white-space: nowrap;
-  }
-
-  #DownloadText{
-    font-size: 1.5em;
-    font-family: DeterminationMono, sans-serif;
-    margin: 5vh;
-    color: red;
-    text-align: center;
-  }
-  #videoFrame{
-    border-radius: 20px;
-    width: 100%;
-    height: 80vh;
-  }
-
-/*
-.container {
-    display: flex;
-    flex-direction: row;
-  }
-  
-  .section1,
-  .section2 {
-    flex-grow: 1;
-    flex-basis: 50%;
-  }
-  
-
-  .section1 {
-
-  }
-  
-  .section2 {
-    background-color:blanchedalmond;
-    z-index: 1;
-    position: relative;
-    margin-top: 3%;
-    margin-bottom: 3%;
-    margin-right: 3%;
-    width: 50vw;
-    height: 90vh;
-    max-width: 100%;
-    max-height: 90vh;
-  }
-  */
