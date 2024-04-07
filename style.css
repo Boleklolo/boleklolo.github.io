@@ -236,7 +236,7 @@ font-family: DeterminationMono, sans-serif;
   pointer-events: none;
 }
 
-#preloadoverlay {
+#preloadoverlay{
   position: fixed;
   top: 0;
   left: 0;
