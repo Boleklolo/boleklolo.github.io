@@ -357,8 +357,7 @@ document.addEventListener("keydown", function(event) {
 document.addEventListener("DOMContentLoaded", function(){
     setInterval(function() {
         resumeMusic();
-    
-    }, 2000);
+    }, 20);
     document.getElementById("VoteButton").addEventListener("click", function(){
         var tip = document.getElementById("VoteButton");
         window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLScPAAhIn7dEnVJh4zQNi_wvZIcjgu4meP3yQmP8RLSbSN0y9g/viewform?usp=sf_link";
