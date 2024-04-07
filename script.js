@@ -287,7 +287,6 @@ document.addEventListener("DOMContentLoaded", function(){
         var preloadS = document.getElementById("preloadoverlay");
         preloadB.style.display = "none";
         preloadS.style.display = "none";
-        setNight()
         setInterval(function() {
             var tip = document.getElementById("hideTip");
             tip.style.display = "none";
