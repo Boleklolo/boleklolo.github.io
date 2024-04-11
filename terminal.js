@@ -340,7 +340,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         'hack': {
             execute: () => {
-                window.location.href = 'atlastoby/Website.html'; 
+                window.location.href = 'atlastoby/website.html'; 
             },
             hidden: false
 
