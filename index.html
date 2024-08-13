@@ -7,11 +7,6 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="style.css" />
     <script src="script.js"></script>
-    <link rel="preload" href="Images/Snowflake.png" as="image">
-    <link rel="preload" href="Music/night.mp3" as="audio">
-    <link rel="preload" href="Music/snowfall.ogg" as="audio">
-    <link rel="preload" href="Music/snowstorm.mp3" as="audio">
-    
     <title>Boleklolo.lol</title>
 
     
@@ -80,12 +75,6 @@
         <div id="overlay">
             
         </div>
-
-        <div id="preloadoverlay">
-            <div id="preloadtext">L
-                <div id="preloadButton">Click Here To Enter Martlet's Premises</div>
-            </div>
-        </div>
         <div id="snowfall"></div>
       </div>
 
@@ -98,18 +87,18 @@
 
 
     <script>
-    // Function to check if cursor is coarse
+
     function isCursorCoarse() {
         return window.matchMedia("(pointer: coarse)").matches;
     }
 
-    // Function to handle setting display property
+
     function handleUnsupportedMessage() {
         var unsupportedMessage = document.querySelector('.unsupported-message');
         if (isCursorCoarse()) {
-            unsupportedMessage.style.display = 'block'; // Set display to block
+            unsupportedMessage.style.display = 'block'; 
         } else {
-            unsupportedMessage.style.display = 'none'; // Set display to none
+            unsupportedMessage.style.display = 'none'; 
         }
     }
 

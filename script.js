@@ -93,56 +93,44 @@ function setContent(tabId) {
 
 function animationStuff(){ 
        
-    // Get the WelcomeTab div element
     var welcomeTab = document.getElementById("WelcomeTab");
 
-    // Get the dice-container element
     var diceContainer = document.querySelector(".dice-container");
 
-    // Get the Background element
     var background = document.getElementById("Background");
 
-    // Get the cornerImage element
     var cornerImage = document.getElementById("cornerImage");
 
-    // Add click event listener to WelcomeTab
     diceContainer.addEventListener("click", function() {
         disableMouseClicks(800);
            
-        // Set display property of dice-container to none
-        // Set display property of Background to block
         background.style.display = "block";
 
-        // Animate the display property of Background
         setTimeout(function() {
             background.classList.add("enlarge-animation");
 
-            // Hide diceContainer after animation ends
+    
             setTimeout(function() {
                 diceContainer.style.display = "none";
-            }, 500); // Assuming the animation duration is 0.5 seconds (500 milliseconds)
+            }, 500); 
         }, 10);
     });
 
-    // Add click event listener to cornerImage
     cornerImage.addEventListener("click", function() {
         disableMouseClicks(800);
         resumeMusic();
 
-        // Remove the original animation class
         background.classList.remove("enlarge-animation");
         
-        // Add the reverse animation class
         background.classList.add("shrink-animation");
 
-        // Hide Background after animation ends
         setTimeout(function() {
             background.style.display = "none";
             background.classList.remove("shrink-animation");
             background.classList.add("enlarge-animation");
-        }, 500); // Assuming the animation duration is 0.5 seconds (500 milliseconds)
+        }, 500); 
 
-        // Set display of dice-container to block
+
         diceContainer.style.display = "flex";
     });
 }
@@ -154,14 +142,13 @@ function disableMouseClicks(duration) {
     document.addEventListener("mousedown", blockClicks, true);
     document.addEventListener("mouseup", blockClicks, true);
 
-    // Restore mouse clicks after the specified duration
+
     setTimeout(function() {
         document.removeEventListener("click", blockClicks, true);
         document.removeEventListener("mousedown", blockClicks, true);
         document.removeEventListener("mouseup", blockClicks, true);
     }, duration);
 
-    // Function to prevent default action of mouse events
     function blockClicks(event) {
         event.stopPropagation();
         event.preventDefault();
@@ -257,9 +244,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
       snowfallContainer.appendChild(snowflake);
     }
   });
-
 document.addEventListener("DOMContentLoaded", function(){
-    resumeMusic();
     var time = new Date().getHours();
     const overlay = document.getElementById("overlay");
     if (time==22 || time==23 || time==0 || time==1 || time==2 || time==3 || time==4 || time==5 || time==6) {
@@ -279,21 +264,6 @@ document.addEventListener("DOMContentLoaded", function(){
         snowstormAudio.play();
     }
 });
-
-//onclick
-document.addEventListener("DOMContentLoaded", function(){
-    document.getElementById("preloadButton").addEventListener("click", function(){
-        var preloadB = document.getElementById("preloadButton");
-        var preloadS = document.getElementById("preloadoverlay");
-        preloadB.style.display = "none";
-        preloadS.style.display = "none";
-        setInterval(function() {
-            var tip = document.getElementById("hideTip");
-            tip.style.display = "none";
-        }, 3000);
-    });
-});
-
 
 function setNight(){
     var time = new Date().getHours();
@@ -352,15 +322,14 @@ document.addEventListener("keydown", function(event) {
     }
 });
 
-
+setInterval(function() {
+    var tip = document.getElementById("hideTip");
+    tip.style.display = "none";
+}, 3000);
 
 document.addEventListener("DOMContentLoaded", function(){
-    setInterval(function() {
-        resumeMusic();
-    }, 20);
     document.getElementById("VoteButton").addEventListener("click", function(){
         var tip = document.getElementById("VoteButton");
         window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLScPAAhIn7dEnVJh4zQNi_wvZIcjgu4meP3yQmP8RLSbSN0y9g/viewform?usp=sf_link";
     });
 });
-
