@@ -1,0 +1,265 @@
+:root {
+    --bgcolor: #1d1d1d;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+    body {
+        background-color: #181818;
+    }
+  
+  .page-header {
+    background-color: var(--bgcolor);
+    padding: 1.3rem;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Inter'
+  }
+  .logo {
+    color: white;
+    align-self: center;
+    margin-left: 1.2rem;
+    font-size: 2.5rem;
+  }
+  
+  .nav-bar {
+    margin: auto;
+  }
+  
+  .nav-bar a {
+    color: white;
+    padding: 1.5rem;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+  
+  .menu-icon {
+    color: white;
+    cursor: pointer;
+    display: none;
+  }
+
+  .inter {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+  .poppins-medium {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  #content {
+    height: 100vh;
+    width: 100%;
+    font-family: 'Poppins';
+
+    z-index: 1;
+    position: relative;
+  }
+
+#centerText{
+    text-align: center;
+    font-size: 5rem;
+    color: white;
+}
+
+
+  #background {
+    
+    display: block;
+    position:relative;
+    z-index: 1; /* Keep this behind the rollable background */
+    height: 100vh;
+    width: 100%;
+  }
+
+  .left{
+    width: 50%;
+    height: 50vh;
+    float:left; 
+    font-size: 2rem;
+  }
+  .right{
+    width: 50%;
+    height: 50vh;
+    float: right;
+    font-size: 2rem;
+  }
+  #img1{
+    background-image: url(/Images/PreviewTerminal.png);
+    background-size: cover;
+    color:white;
+    text-shadow: 2px 2px 4px black;
+  }
+  #img2{
+    background-image: url(/Images/PreviewPlush.png);
+    background-size: cover;
+    color:white;
+    text-shadow: 2px 2px 4px black;
+  }
+  #img3{
+    background-image: url(/Images/PreviewMartSite.png);
+    background-size: cover;
+    text-shadow: 2px 2px 4px black;
+    color: white;
+  }
+  #img4{
+    background-image: url(/Images/PreviewHack.png);
+    background-size: cover;
+    color:white;
+    text-shadow: 2px 2px 4px black;
+  }
+  #img5{
+    background-image: url(/Images/PreviewSpineOptic.png);
+    background-size: cover;
+    color:white;
+    text-shadow: 2px 2px 4px black;
+  }
+  #img6{
+    background-image: url(/Images/PreviewSites.png);
+    background-size: cover;
+    color:white;
+    text-shadow: 2px 2px 4px black;
+  }
+  #img7{
+    background-image: url(/Images/PreviewTRLE.jpg);
+    background-size: cover;
+    color:white;
+    text-shadow: 2px 2px 4px black;
+  }
+  #img8{
+    background-image: url(/Images/PreviewSCP.png);
+    background-size: cover;
+    color:white;
+    text-shadow: 2px 2px 4px black;
+  }
+  #img9{
+    background-image: url(/Images/PreviewFS11.png);
+    background-size: cover;
+    color:white;
+    text-shadow: 2px 2px 4px black;
+  }
+  #img10{
+    background-image: url(/Images/PreviewSoon.png);
+    background-size: cover;
+    color:white;
+    text-shadow: 2px 2px 4px black;
+  }
+  .left, .right {
+    width: 50%;
+    height: 50vh;
+    float: left; /* Adjust if needed for your layout */
+    font-size: 2rem;
+    position: relative; /* For positioning the overlay */
+    overflow: hidden; /* Ensure overlay doesn't exceed boundaries */
+    color: white;
+    text-shadow: 2px 2px 4px black;
+    transition: background-color 0.5s ease; /* For fade effect */
+}
+
+.left:nth-child(even), .right:nth-child(even) {
+    float: right; /* Adjust if needed for your layout */
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    text-align: center;
+    
+}
+
+
+.left:hover .overlay, .right:hover .overlay {
+    opacity: 1;
+}
+
+.overlay p {
+    margin: 10px;
+}
+
+.overlay button {
+    margin: 5px;
+    padding: 10px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.overlay button:hover {
+    background-color: #0056b3;
+}
+
+
+
+  #rollable-background {
+    background-image: url('BackgroundCar.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: inherit;
+    z-index: -1;
+    opacity: 0; /* Start hidden */
+    animation: reveal 2s ease-in-out forwards; /* Image reveal animation */
+  }
+  
+  #rollable-background::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0) 0%,     /* Transparent at the top of the gradient */
+      rgba(24, 24, 24, 1) 100%  /* Fully opaque at the bottom */
+    );
+    z-index: 1; /* Keep gradient above the image */
+  }
+
+  #Boleklogo{
+    background-color: #0056b3;
+    text-align: center;
+    font-size: 5rem;
+    color: white;
+  }
+  
+  @keyframes reveal {
+    0% {
+      opacity: 0;  /* Image hidden */
+    }
+    100% {
+      opacity: 1;  /* Image fully visible */
+    }
+  }
+  
+
+  
+
+  
+
+
+  
+  

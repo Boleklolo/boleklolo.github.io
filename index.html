@@ -1,117 +1,361 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <script src="script.js"></script>
-    <title>Boleklolo.lol</title>
+    <!--
+Wyd Here
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣤⣤⣤⣀⣀
+⠀⠀⠀⠀⠀⠀⣠⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣄
+⠀⠀⠀⠀⠔⠋⣉⣉⣉⣛⣻⣿⣿⣿⣿⣿⣿⣟⣛⣉⣉⣉⠙⠢
+⠀⠀⣠⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⡀
+⠀⣰⣿⣿⣿⡿⠿⠛⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠛⠿⣿⣿⣿⣿⣆
+⢠⣿⣿⣿⡟⢠⣶⡄⠀⠀⠹⣿⣿⣿⣿⣿⣿⠏⣶⣶⠀⠀⠈⢻⣿⣿⣿⡄
+⣼⣿⣿⣿⡇⠈⠉⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⡀⠈⠁⠀⠀⠀⢸⣿⣿⣿⣷
+⣿⣿⣿⣿⣷⣤⣀⠀⣀⣠⣾⣿⣿⣿⣿⣿⣿⣷⣄⣀⠀⣀⣴⣿⣿⣿⣿⣿
+⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟
+⠘⣿⣿⣿⣮⣙⠛⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠛⣩⣾⣿⣿⣿⠃
+⠀⠘⢿⣿⣿⣿⣿⣶⣤⣤⣀⣉⣉⣉⣉⣉⣉⣀⣤⣤⣶⣿⣿⣿⣿⣿⠏
+⠀⠀⠈⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠋
+⠀⠀⠀⠀⠈⠛⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠋
+⠀⠀⠀⠀⠀⠀⠀⠈⠙⠛⠻⠿⢿⣿⣿⣿⡿⠿⠟⠛⠋⠁
 
-    
+⠀⠀⠀⠀⢀⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣄⠀⠀⠀⠀⢹⡛⠉⠛⠓⠲⢤⣄⡀⠀⠀⠀⠀⠀⢀⡴⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣏
+⠀⠀⠀⣸⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣧⡀⠀⠀⠘⣧⠀⠀⠀⠀⠀⠈⠛⢦⣀⠀⠀⢀⣾⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡏
+⠀⠀⠀⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣆⡀⠀⠸⣆⠀⠀⠀⠀⠀⠀⠀⠙⠳⣤⣾⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⡇
+⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢈⣿⠶⠚⠛⠏⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⡇
+⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠶⢯⣭⣤⣤⡤⠤⠤⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢈⡇
+⠀⠀⠀⡧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡗
+⠀⠀⠀⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇
+⠀⠀⠀⢻⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡟⠀
+⠀⠀⠀⠘⣧⠀⠀⠀⠀⢀⣀⣀⣀⣀⣀⣀⣀⣀⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⣤⣤⣴⣶⠶⠶⠲⣶⠶⠶⠀⠀⠀⠀⠀⠀⣼⠃⠀
+⠀⠀⠀⠀⠹⡄⠀⠀⠀⠈⠉⡟⠉⠁⠀⢸⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⡀⠀⠀⠹⡧⠀⠀⠀⠀⢀⣠⠾⠉⠀⠀
+⢀⣀⣀⠀⠀⠻⣦⠀⠀⠀⢸⠃⠀⠀⠀⢸⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⠄⠀⠀⠀⢹⠀⠀⠠⡦⠿⠟⠲⠶⢶⡄
+⠀⢻⡍⠛⠙⠛⠛⠻⠀⠀⣾⠁⠀⠀⠀⢸⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⣰⠞⠁
+⠀⠀⠹⢦⡄⠀⠀⠀⠀⠀⣻⡄⠀⠀⠀⠈⠻⣿⣿⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠛⠟⠛⠁⠀⠀⠀⠀⠼⠀⠀⠀⠀⠀⣠⡞⠉⠀⠀
+⠀⠀⠀⠀⠙⣷⠄⠀⣠⣤⡈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠛⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⡆⢀⡤⠀⠀⠀⢺⣇⠀⠀⠀⠀
+⠀⠀⠀⠀⣰⠇⠀⠘⠃⢸⡧⠶⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⣤⠀⠀⠀⠀⠀⠛⠹⠷⠋⠀⠀⠀⠀⠀⠙⣦⠀⠀⠀
+⠀⠀⠀⢠⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠦⣄⡤⠾⠋⠙⠛⠓⠲⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠉⣿⠀⠀
+⠀⠀⠀⠸⠷⠤⠤⠴⠶⠾⢦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⠞⠃⠶⠶⠶⠞⠛⠛⠉⠁⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⢻⣶⣶⣴⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠶⠗⠛⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢷⡄⠈⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢷⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣁⣤⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⠟⢻⡀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣳⠖⠳⣄⡀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⡤⠒⠀⠂⡾⠉⠀⠀⠀⠀⠉⢳⡄⣄⡀⠀⠀
+⠀⠀⠀⢸⡥⠀⣀⡼⢁⠀⢰⡄⠀⡄⠀⠀⣧⠀⠙⡆⠀
+⠀⢀⣠⠼⠗⠚⠉⠠⠋⠀⠀⢷⣠⣧⠀⠀⠈⠳⢤⣇⠀
+⠀⣾⣟⠒⠦⣄⠀⠀⠀⣠⡴⠋⠁⢈⠛⢦⣄⣠⣴⣾⣷
+⢀⡟⠙⢶⣤⠬⠷⣼⡏⠉⠉⢩⡍⠹⠦⢤⣿⣤⣨⣿⠈
+⡾⣡⠆⠁⠀⠀⠀⢠⡀⠀⠀⠀⢱⡀⠀⠂⠙⠎⠻⡅⠀
+⢿⠁⠒⣤⠤⣤⣀⠀⢧⠀⠀⠀⣸⠃⠀⠀⠀⡶⣤⣽⠀
+⠈⠳⣴⡇⠀⠀⠈⠛⢦⣄⣠⠾⢿⣄⣀⣠⠾⣡⠞⠁⠀
+⠀⠀⠈⠉⠉⠉⠁⢧⢠⠟⣽⠀⢿⠀⢧⢰⡈⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠐⢫⠏⢸⠁⠀⠈⢳⠘⢧⣙⢦⠀⠀⠀
+
+
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣶⣶⣶⣶⣶⣶⣶⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣻⣽⣿⣽⣟⣯⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠿⣷⣿⣻⠿⢿⣻⣿⣽⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣰⣿⣿⣿⣀⣿⣿⣿⣿⣾⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠿⠿⠿⠿⠿⠿⠿⠿⢷⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⠀⠀⠀⠀⠀⠀⠀⢸⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢹⣀⣀⡀⣀⣀⣀⣨⣿⣿⡿⣶⣶⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠉⠉⠁⢁⣿⣿⣿⣀⣀⡀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣷⣿⣻⣿⢿⣿⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡏⠉⠈⠉⢹⣿⣻⣿⡇
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⣸⣿⠀⠀⢸⣿⣟⣿⣽⡇
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢾⣿⡿⣿⣿⣤⣤⣼⣯⣿⣯⣿⠇
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣄⣄⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣯⣿⢿⣾⢿⡿⣟⣯⣷⣿⣻⡇
+⠀⠀⠀⠀⠀⠀⠀⠀⣀⣘⣿⣿⣿⠀⠀⠀⠀⢀⣶⣶⣾⣿⣿⣿⢿⣻⣿⢯⣿⡿⣿⣻⣽⣟⣿⡇
+⢰⣶⣶⣖⣀⣰⣶⣶⣿⣿⡿⣷⣶⣶⣶⣶⣶⣾⡿⣯⣿⢷⣿⣻⡏⢹⣿⣿⡿⣽⣿⣟⣯⣿
+⠸⠿⠿⣿⣿⣿⡏⠿⠿⠀⣿⣿⣷⣿⣏⣿⣹⣾⣿⣿⣹⣿⠉⠉⠁⢸⣿⣿⣿⡿⣷⣿⡿⣷
+⠀⠀⠀⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣾⢿⣟⣷⣿⣿⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠿⣯⣿⣟⣯⣷⣿⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣯⣿⣟⣿⣿⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣳⣿⣟⣿⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣻⣷⣿⣿⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣽⣷⡿⣿⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣽⣾⣿⣿⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣯⣷⣿⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣿⣿⣯⣿⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣷⡿⣿⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⣿⣿⣾⣿⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣿⣟⣷⣿⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣶⣶⣶⣶⣶⣿⣿⣻⣿⡆⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠿⠿⠻⠯⠿⠟⠾⠿⠽⠇⠀⠀
+-->
+    <head>
+        <title>Boleklolo's Webiste</title>
+        <link rel="stylesheet" type="text/css" href="sheet.css">
+        <link rel="icon" href="images/boleklolo.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Boleklolo's Website">
+        <meta name="keywords" content="Boleklolo, Boleklolo's Website, Boleklolo's Blog, Boleklolo lol, Martlet Website, boleklolo github io">
+        <meta name="author" content="Boleklolo">
+        <meta charset="UTF-8">
+        <!-- Ignore this meta -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="robots" content="index, follow">
+        <meta name="revisit-after" content="7 days">
+        <meta name="language" content="English">
+        <meta name="generator" content="Boleklolo">
+        <meta name="distribution" content="global">
+        <meta name="rating" content="general">
+        <meta name="googlebot" content="index, follow">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">    
 </head>
-<body>
-
-      <div class="container">
-        <div class="item">
-            <img src="/Images/martletHouse.png" id="ImageHouse">
-        </div>
-        <div class="item">>
-            <div id="SectionTest">
-                <div class="dice-container">
-                    <div class="dice-button" id='WelcomeTab'><img src='Images/TWelcome.png' width="270%" height="270%"></div>
-                    <div class="dice-button" id='VideoTab' ><img src='Images/TVideo.png' width="270%" height="270%" id="TImage"></div>
-                    <div class="dice-button" id='RaiderTab' ><img src='Images/TRaider.png'width="270%" height="270%"></div>
-                    <div class="dice-button" id='TerminalTab' ><img src='Images/TTerminal.png' width="270%" height="270%"></div>
-                    <div class="dice-button" id='VotingTab'>Voting</div>
-                </div>
-
-      
-
-                <div id="Background" class="hidden">
-                    <img src="Images/XCross.png" alt="Image" id="cornerImage">
-                    
-                    <div id="BoxContainer">
-                       <div id="WelcomeContent">
-                        <div id="WelcomeText"><h1>Welcome!</h1></div>
-                        This is my small website being made for fun (I did not have fun, I want a refund)
-                        Credits are available in the terminal using the 'credits' command. Changelogs might appear here.
-                        <div id="sexgif"><img src="Images/SEX.gif" width="50%" height="50%"></div>
-                       </div>
-                        <div id="VotingContent">
-                            <div id="VoteButton">Click Here To Open Voting Form</div>
-                            <img id="FormImage" src="https://www.gstatic.com/images/branding/product/1x/forms_512dp.png">
-                        </div>
-                        <div id="VideoContent">
-                            <iframe id="videoFrame" width="560" height="315" frameborder="0" allowfullscreen></iframe>
-                        </div>
-                        <div id="RaiderContent" style="display: flex; flex-wrap: wrap; ">
-                            <h2 style="margin: 0;">Tomb Raider: The Search for The Skidoo</h2>
-                            <p style="margin: 0;">Lara's short journey to the ice cave system which for some reason is inhabited by Chinese cultured garudas who guard the legendary Skidoo. This is a very short TRLE made by me in 2021.</p>
-                            <img class='TRImg' src="Images/SkidooScreen1.jpg" style="flex: 0 0 32%; max-width: 32%;" alt="Image 1">
-                            <img class='TRImg' src="Images/SkidooScreen2.jpg" style="flex: 0 0 32%; max-width: 32%;" alt="Image 2">
-                            <img class='TRImg' src="Images/SkidooScreen3.jpg" style="flex: 0 0 32%; max-width: 32%;" alt="Image 3">
-                            <div id="DownloadText"><div id="button1" onclick="openSite()">Download</div></div>
-                        </div>
-                        
-                        
-                        <div id="TerminalContent">
-                            <img src="Images/Terminal.png" style="width: 40%; height: 40%; margin-left: 30%" alt="Terminal">
-                            <div id="DownloadText"><div id="button2" onclick="openTerminal()">Open The Terminal</div></div>
-                        </div>
-
-
-                    </div>
-
-                </div>
-            </div>
-            <div id="hideTip">
-                Hide/Unhide the signs by pressing h, then go fullscreen using f11 to get a nice idle background :)
-                
+    <!-- Sig Spear 6.8x51 (Separator) -->
+    <body>
+         <!-- <div class="page-header">
+            <div class="logo">
+              <p>Boleklolo</p>
             </div>
     
+            <div id="navigation-bar" class="nav-bar">
+              <a href="#" class="active">Home</a>
+            </div>
+        </div>-->
+        <!-- Header ^ -->
+        <div id="background">
+          <div id="Boleklogo">
+            Boleklolo
         </div>
-        <div id="overlay">
+                <div id="content">
+                  <div id="centerText">
+                    My work
+                </div>
+                    <div class="left" id="img1">
+                        Interactive Terminal
+                        <div class="overlay">
+                            <p>Interactive terminal in your browser! Lethal Company inspired. Rework planned.</p>
+                            <button onclick="window.location.href='/Portfolio/Terminal/terminal.html';">Launch Terminal</button>
+                        </div>
+                    </div>
+                    <div class="right" id="img2">
+                        Blender Plushie
+                        <div class="overlay">
+                            <p>Blender plush based off Martlet. Made for the sake of learning hair particles. Wallpaper resolution.</p>
+                            <button onclick="window.location.href='https://github.com/Boleklolo/BlenderPlush/blob/main/MartletPlushieWallpaperFinalRender.png';">Full Resolution Image</button>
+                            <button onclick="window.location.href='https://github.com/Boleklolo/BlenderPlush/tree/main';">Download the Project</button>
+                        </div>
+                    </div>
+                    <div class="left" id="img3">
+                        Martlet's Cottage Website
+                        <div class="overlay">
+                            <p>Old version of the site containing a cottage in UT styling.</p>
+                            <button onclick="window.location.href='/OlderSites/2024/v2/index.html';">Visit</button>
+                        </div>  
+                    </div>
+                   <div class="right" id="img4">                        
+                        WTTG2 Hack Screen
+                        <div class="overlay">
+                            <p>Crappy hack screen from Welcome to the Game in your beloved browser!</p>
+                            <button onclick="window.location.href='/Portfolio/TerminalJumpscare/website.html';">Open</button>
+                        </div>
+                 </div>
+                 <div class="left" id="img5">                        
+                    SpineOptic
+                    <div class="overlay">
+                        <p>Poorly made software using .NET and WinForms. Does posture and 20/20/20 rule notifications. Broken but works?</p>
+                        <button onclick="window.location.href='https://github.com/Boleklolo/SpineOptic/releases/tag/main-1.01';">View Source</button>
+                    </div>
+             </div>
+             <div class="right" id="img6">                        
+                Old Websites
+                <div class="overlay">
+                    <p>Older versions of the website. Might have errors and broken links.</p>
+                    <button onclick="window.location.href='/OlderSites/2024/v1/index.html';">First 2024 Website</button>
+                    <button onclick="window.location.href='/OlderSites/2023/makison.html';">Makison</button>
+                    <button onclick="window.location.href='/OlderSites/2023/en.html';">2023 Main Site</button>
+                </div>
+         </div>
+         <div class="left" id="img7">                        
+            Search for the Skidoo
+            <div class="overlay">
+                <p>Tomb Raider Level Editor project made in 2021. Very low quality.</p>
+                <button onclick="window.location.href='https://trcustoms.org/levels/3336';">View on TRCustoms</button>
+            </div>
+     </div>
+     <div class="right" id="img8">                        
+        SCP: Containment Breach Mod
+        <div class="overlay">
+            <p>Low quality shitpost.</p>
+            <button onclick="window.location.href='https://www.moddb.com/mods/scp-smoke-weed-everyday-cursed-mod/downloads/scp-swe-10';">View on ModDB</button>
+        </div>
+ </div>
+ <div class="right" id="img10">                        
+    More stuff coming soon...
+<div class="overlay">
+    <img src="/Images/MustangSecret.png" width="100%">
+</div>
+</div>
+ <div class="left" id="img9">                        
+    Farming Simulator 2011 Multiplayer Crack
+    <div class="overlay">
+        <p>Multiplayer crack for FS2011. Made by modifying source code and reassembling the game's exe.</p>
+        <button onclick="window.location.href='https://gofile.io/d/kAFFF6';">Download</button>
+    </div>
+</div>
+
+
+<div id="centerText">
+  <div style="width: 80%; float:left; font-size:2.3rem">
+      They make it look so easy, connecting with another human being. It's like no one ever told them it's the hardest thing in the world.
+  </div>
+  <div style="width: 20%; float:right; position: relative; background-image: url('/Images/ChillGuyWhoDGAF.jpg'); background-size: cover;">
+  <img src="">
+  </div>
+</div>
+
+              <!-- 
+            7.62x51mm NATO
+
+            BCP FMJ
+            Ultra Nosler
+            M80
+            M61
+            M62
+            M993
+
+            5.45x39
+            T
+            BP
+            BS
+            PP
+            PS
+            PRS
+            SP
+            HP
+            FMJ
+            US
+            BT
+            7N39
+            PPBS gs
+
+            5.56x45mm NATO
+            M193
+            M855
+            M856
+            M995
+            M856A1
+            M855A1
+            Mk 318 Mod 0
+            Mk 262 Mod 1
             
-        </div>
-        <div id="snowfall"></div>
-      </div>
+            9x39
+            SP-5
+            SP-6
+            BP
+            PAB-9
+            PSV
+            SPP
+            -->
 
-      <div id="fireplace">
-    </div>
-   
-    <div class="unsupported-message">
-        <h1>Mobile not supported yet</h1>
-    </div>
-
-
-    <script>
-
-    function isCursorCoarse() {
-        return window.matchMedia("(pointer: coarse)").matches;
-    }
-
-
-    function handleUnsupportedMessage() {
-        var unsupportedMessage = document.querySelector('.unsupported-message');
-        if (isCursorCoarse()) {
-            unsupportedMessage.style.display = 'block'; 
-        } else {
-            unsupportedMessage.style.display = 'none'; 
-        }
-    }
-
-    // Initial check
-    handleUnsupportedMessage();
-
-    // Check again when window resizes
-    window.addEventListener('resize', handleUnsupportedMessage);
-
-
-
-
-
-    </script>
-</body>
+    </body>
 </html>
+
+<!--  
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                                                                                    
+                                          .'.'.........'.                                           
+                   .'.               ',,,:ONNNNNNNNNNNNN0c,,,'.                                     
+                 .;kX;           .:;oXMWMMMMMMMMMMMMMMMMMMMMMNd;:.                                  
+                 ;XMX;         .c0MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM0l.         .:'                    
+                 .;OWOc.     .c0WMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM0dd:.  ,ddkNo                    
+                   .:OO'   .c0NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNOxkKMMWWo                    
+                     .;l:.c0NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWXk;.                    
+                     .'.c0NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMXOOko:,''.                  
+                   .:OO.:NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMOc:l0NN0d'                  
+                 .;OMMXoxWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMXx,                    
+                 ;XMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMOcl;                      
+               .c0WMMMMMMMMMMKlxWMMMMMMMMMMMMMMMXo;;:kWMMMMMMMMMMMMMMMMMMWc                         
+               .OMMMMMWNWMMMMNOockNNNMMMMMMMMMMMN0kkko::o0NNWMMMMMMMNdoKWWc                         
+               .OMMMWXkokWMMMMMKdlccoOKKNMMMMMMMMMMMMX0Oko;'lKNMMMMMWKd;dWd.                        
+               .OMMMNc,kNWMMMNOocxXXOlccdkk0WMMMMMMMMMMMWXx;..l0NMMMMMO.cWNO'                       
+               .OMMMN:'0MMMW0d:dNMMMWWWNx;;cdxxxONMMMMMMMMWWx,..l0WMW0d:xWMK,                       
+               .:OWMWxcoOW0l.'0MMMNkooodKMMKlccccoddooooooooool,..l0X;,0MMMK,                       
+                 ;XMMMO':Nl ;kXMWkco:   'oKMMMMMNko;    .:; 'dKXx, lX;,KMMMK,                       
+                 ;XMMMNOo:..xWWO:lkXk.   .kMMMMMMMMx.   .OXxl:OWWd .:oONMMMK,                       
+                 .'xMMMMXk,.xKo. oMMk.  ;ONMMMMMMMMNO;  .OMWl 'dXd ,OXMMMWx'                        
+                   ;0NMMMMl.xNKo'l0Nk.  oMMMMMMMMMMMMl  .ON0l'dKNd lMMMMN0;                         
+                    .kMMMMx;o0NWXxlK0:,;kMMNOkkkkkk0Wk,,cK0cxXWNOo;xMMMMx.                          
+                     :ONMMMX;,KMMMWMMWKxKNOo:;:::;;cd0WWWMMWMMM0':NMMMXk;                           
+                      '0MMMX;,KMMMMMMMo 'olxNMMMMMMKoldKMMMMMMMO.:NMMMO.                            
+                 .loodocxWMNOockWMMMMMKo' ,::kWMMMMMMl dMMMMMNxcoOWMNxcododl.                       
+                 .,xWWNO0WMMMO.:NWMMMMMWc.cxdl:OWWMMMl dMMMMWX;'0MMMW0ONWNx'.                       
+                   .,xXKNMMMMN0dckXXNWMWKxo:,:o::OXXXc dWXXXxcd0NMMMWNKXx,.                         
+                     ...:kO0NMMNKxccokO0XWXx;,:,,:ccc;,okoccxKNMMN0Ok;...                           
+                           .ckkkkxddc,..:xkxddddddddddo;;dddxxkkkc.                                 
+                                  .:;xkc::,     ''.   .cc,,:::,.                                    
+                         .lllllllo0XxkWMMMXdllllllllll0NxllOWMNx,      'kl...            .,c:.      
+                       .l0WMMMMMMWxco0WMMMMMMMMWOOKNMMMMMXklcOWWk.     ;XNXXOc,,.        ;lcxK:     
+                     .c0NMMWWMMMWX:'0MMMMMMMMMkcOWWWMMMMMMMd..cOx.     ;XMMMMWWWk;;' .,. .lXKx'     
+                      ;ooooldXNKo,o0NMMMMMMMMMXkclkXMMMMMMMXO, .cx;   ,xNMMMMMMMMWO:..l'.xWWd       
+                      :doooc:xo.  dMMMMMMMMMMMMX;.cdKWMMMMMMWc .cx;  .OMMMMMMMMMMX;  .l'.xKo'       
+                  ,xxkXMMMN: ,'   dMMMMMMMMMMMKdc'..cWMMMMMMWc.xx.   .OMMMMMMMMMMX;.oKWl .'         
+                .dKWMMMMMMMKxo:;:cokNMM0xKMMMMl.xO:.cNMMMXx0Wc.dkc.  ,0MMMMMMMWXxcd0NMWl  .         
+               .lXMMMMMMMMMMWXd,dWOllllloldXMMl.xO:.:NMNxlooc. .cXl cKWMMMMMMMk'lKNMMMWl ld.        
+              .dNWMMMMMMMMMMMM0:lkXNOxxKN:'0O:lkXX0kl:kK;,KKxxo.;Kl oMMMMKkXNOo;kMMMMMMl.xk.        
+             .l0MMMMMMMMMMMMMMMMl dMMMMMW0dl'.oMMMMMx.'cd0NMMMK,;Xl ;kXXxl:ol.:NMMMMMMMl.xk.        
+             oMMMMMMMMMMMMMMMMMMOllxXMMMMMNK00NMMMMMN000NMMMWXk:lXl 'llllON:  ;XMMMMMMMOoKk.        
+             oMMMMMMMMMMMMMMMM0lkN:'OMMMMMMMMMMMMMMMMMMMMMMMWl'xNWl o0';XMW0c.:XMMMMMMMMNd,         
+           'xKMMMMMMMMMMMMMMMMXOl,. 'dNMMMMMMMMMMMMMMMMMMMMMWc.kMMKxc:d0WMMM0,:NMMMMMMMMX;          
+          .oWMMMMMMMMMMMMMMMMMMMl    :XMMMMMMMMMMMMMMMMMMMMMWc.kMMMNc.OMMMMMW0KWMMMMMMMNO'          
+        .ckNMMMMN0OOOOOOOXMMMMMMl   .oNMMMMMMMMMMMMMMMMMMMMMWd;d0WMWd;dKWMMMMMMMMMMMMMMd.           
+      .:OWWMMMMMKl:::::::lxkONXk;  .kWMMMMMMMMMMMMMMMMMMMMMMMW0,;XMWW0,:XMMMMMMMMMMMMMWl            
+    .;OWOkNMMMMMMMMMMMMMMOc:co:   .oXMMMMMMMMMMMMMMMMMMMMMMMMMK,;XMMMXodNMMMMMMMMMMMMKd'            
+    .clc.'0MMMMMMMMMMMMMMMMMNx;   ,dXMMMMMMMMMMMMMMMMMMMMMMMMMK,.:OWMMMMMMMMMMMMMMMMMd              
+         '0MMMMMMMMMMMMMMMMMMMXk, :dc;:kWMMMMMMMMMMMMMMMMMMMWx,.  cWMMM0ckWMMMMMMMMKl.              
+         'OWWMMMMMMMMMMMMMMMMMMMKxc:dkko::oKNNNNNNNNkc:::::;,.    .;xNN0xc,,c0NXNKo.                
+          .l0NMMWKXMMMMMMMMMMMMMMN:'OMMXOOklccccccccdO00000l.       .'....   .'.'.                  
+            .xMMO,lWMMMMMMMMMMMMMN:.OMMMMMWXXXXXXXXXNMMMMMMWK;                                      
+             ;kX0ccxKMMMMMMMMMMMMN:.OMMMMMMMMMMMMMMMMMMMMMMMWc                                      
+               ;kNo oMMMMMMMMMMMMN:'OMMMMMMMMMMMMMMMMMMMMMMMWc                                      
+                .;. 'oKMMMMMMMMMOclxXMMMMMMMMMMMMMMM0lcoKMMMWc                                      
+                     .kMWMMMMMMWl.dMMMMMMMMMMWk;;;;;. ;kXMMMW0l.                                    
+                      ,xNMMMMMO:lOXMMMMMMMMM0lod.   'kXMMMMMMMK,                                    
+                     .;kNMMMWKo,dMMMMMMMMMMMN0XX; ..oNMMMMMMMMK,                                    
+                       ,dkkkxldKWMMMMMMMMMMMMWKd''oONMMMMMMMMMK,                                    
+                            .OMWMMMMMMMMMMMMMWl  'd0MMMMMMMMMMXo.                                   
+                            .OMMMMMMMMMMMMMMMMl .:xKMMMMMMMMMMMMk.                                  
+                           .c0MMMMMMMMMMMMMMMMl.oXNWMMMMMMMMMMMMk.                                  
+                           oWWMMMMMMMMMMMMMMMMl.xMWMMMMMMMMMMMMMk.                                  
+                           dMMMMMMMMMMMMMMMMKd'.xMWMMMMMMMMMMMMMKl.                                 
+                           dMMMMMMMMMMMMMMMMd  .xMWMMMMMMMMMMMMMMMo                                 
+                           dMMMMMMMMMMMMMMWWd  .xMWMMMMMMMMMMMMMMMo                                 
+                     ..  ,kXMMMMMMMMMMMMMMKl.  .xMWMMMMMMMMMMMMMWNl                                 
+                    cOd; ;0NMMMMMMMMMMMMWXd.   .lKNWMMMMMMMMMMWXd,..                                
+                    oXd;,..cONMMMMMNOkkkx,.'. .,.'cokkXMMMMXkkxl:,dK;                               
+                    ;kXWWk;..lxxxxxd:;:::;lKd lNd;::. ;xxxxo:;cKWWKd'                               
+                      ;kNMWkcccccccdXMMMWOoo, 'dKMWM0lccccckWMMMMMo                                 
+                       .;kWMMMMMMMMMMMMMWOc..l' 'd0XMMMMMMMMMMMMKo.                                 
+                     .cxx0MMMMMMMMMMMMMWWWO..,lxxdl:;:OMMMMMMMXo'                                   
+                      .;:xKXXXNWMMMWXXXxcc;   .;k0kdod0MMMMMMMNkoo,                                 
+                       .clccccoOOOOkoccx0Kd.  .':cccccd00O00OOko;.                                  
+                         cXNNNOl:::o0NNWMMO.  cNNNNNNNx:::::::co:                                   
+                         cWMMMMMMMMMMMMMMMO.  oMMMMMMMMMMMMMMMK,                                    
+                    .....:xxkNMMMMMMMMMMMMO..c0MMMMMMMMMMMMMW0o;...                                 
+                 ',,xXXXXXKKXWMMMMMMMMMMMMO.:NMMMMMMMMMMMMMMMNKXXXd,'',.                            
+               .oXWWWMMMMMMMMMMMMMMMMMMMMMO.:NMMMMMMMMMMMMMMMMMMMMWWWWW0c.                          
+             .oKMMMMMMMMMMMMMMMMMMMMMMMMWO:.:NMMMMMMMMMMMMMMMMMMMMMMMMMMMO:.                        
+             oMMMMMMMMMMMMMMMMMMMMMMMMMMX;  :NMMMMMMMMMMMMMMMMMMMMMMMMMMMMN:                        
+             oMMMMMMMMMMMMMMMMMMMMMXodNMX;  :NMMMWWWOckMMMMMMMMMMMMMMMMMMMN:                        
+             cXWMMMMMMMMMMMMMMMMMMM0':NW0,  ;0XXXOo:ckXMMMMMMMMMMMMMMMMMMMN:                        
+              ,dKWMMMMMMMMMMMMMMX00d.,kx:.  .:ccc;. ,O000KWMMMMMMMMMMMMMMNk,                        
+               'ldkkkkkkkkkkkkkkocc:;;:ll.  .odddlc:;:cc:lxkkkkkkkkkkkkkk:                          
+               :o:;;;;;;;;;;;;;;ldxxxxx,         .;lxdddxo:;;;;;;;;;;;;'                            
+                .:llllllllllllll'                        .:llllllllllll,
+-->

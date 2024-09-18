@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+  
+    body {
+      overflow: hidden; 
+      background-image: url(123.jpg);
+      background-size: cover;
+      margin: 0;
+    }
+
+    #bolek {
+      position: fixed;
+      display: none;
+      width: 100px;
+      height: 100px;
+    }
+    #barcode {
+      position: fixed;
+      display: none;
+      width: 100px;
+      height: 200px;
+    }
+    #cloud {
+      position: fixed;
+      display: none;
+      width: 100px;
+      height: 180px;
+    }
+    #Dragon {
+      position: fixed;
+      display: none;
+      width: 100px;
+      height: 200px;
+    }
+
+    #sometext{
+      position: fixed;
+      display: block;
+      left: 0px;
+      bottom: 0px;
+      color: white;
+    }
+    #ball{
+      position: fixed;
+      display: block;
+      left: 400px;
+      top: 0px;
+    }
+
+
+  </style>
+</head>
+<body>
+
+  <div id="ball">
+    <img src="https://sunrisevt.com/wp-content/uploads/2017/12/animated-disco-ball-5-2.gif"height="175" width="150">
+  </div>
+
+
+<div id="mplayer">
+  <embed height="1" width="1" src="1.mp3">
+    <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993" integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA==" data-cf-beacon='{"rayId":"781ab7157ea3c008","version":"2022.11.3","r":1,"token":"9f768cf167bf463986f236219a98b368","si":100}' crossorigin="anonymous"></script>
+</div>
+
+<div id="bolek">
+    <!-- Add the correct image source -->
+    <img src="1.jpg">
+</div>
+<div id="barcode">
+  <img src="2.jpg">
+</div>
+<div id="cloud"> 
+  <img src="3.jpg">  
+  </div>
+  <div id="Dragon"> 
+    <img src="4.jpg"> 
+    </div>
+
+     
+              <div id="sometext"><h4>pozdrawiam makisona i pupke za uzyczenie ich zdjec (nie zapytalem) (jestem zemsta) (kliknij mnie)</h4></div>
+<script>
+  int = 0;
+  function musicChange() {
+
+      if (int == 0) {
+        int++;
+        document.getElementById("mplayer").innerHTML = '<embed height="1" width="1" src="3.mp3">';
+      document.body.style.backgroundImage = "url(ddh.png)";
+      document.getElementById("sometext").innerHTML = '<h4>lubudu</h4>';
+
+      } else if (int == 1) {
+        int++;
+
+        int = 0;
+        document.getElementById("mplayer").innerHTML = '<embed height="1" width="1" src="2.mp3">';
+        document.body.style.backgroundImage = "url(123.jpg)";
+        document.getElementById("sometext").innerHTML = '<h4>kocham fortnite</h4>';
+      } 
+      
+
+  }
+  document.getElementById("sometext").addEventListener("click", musicChange);
+
+   setTimeout(function() {
+    document.getElementById('bolek').style.display = 'block';
+    moveElement('bolek');
+  }, 2000);   
+   setTimeout(function() {
+    document.getElementById('barcode').style.display = 'block';
+    moveElement('barcode');
+  }, 4000);   
+   setTimeout(function() {
+    document.getElementById('cloud').style.display = 'block';
+    moveElement('cloud');
+  }, 6000);   
+   setTimeout(function() {
+    document.getElementById('Dragon').style.display = 'block';
+    moveElement('Dragon');
+  }, 8000);   
+  
+
+  function moveElement(movedElementId) {
+    var element = document.getElementById(movedElementId);
+    var screenWidth = window.innerWidth;
+    var screenHeight = window.innerHeight;
+
+
+    var posX = Math.random() * (screenWidth - element.clientWidth);
+    var posY = Math.random() * (screenHeight - element.clientHeight);
+    element.style.left = posX + 'px';
+    element.style.top = posY + 'px';
+
+
+    var deltaX = 2 * (Math.random() > 0.5 ? 1 : -1);
+    var deltaY = 2 * (Math.random() > 0.5 ? 1 : -1);
+    deltaX /= 2;
+    deltaY /= 2;
+    function animate() {
+      posX += deltaX;
+      posY += deltaY;
+      element.style.left = posX + 'px';
+      element.style.top = posY + 'px';
+
+      if (posX < 0 || posX + element.clientWidth > screenWidth) {
+        deltaX *= -1;
+      }
+
+      if (posY < 0 || posY + element.clientHeight > screenHeight) {
+        deltaY *= -1; 
+      }
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  }
+  
+
+  
+</script>
+
+</body>
+</html>
