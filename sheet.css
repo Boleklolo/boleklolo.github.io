@@ -152,6 +152,13 @@
     color:white;
     text-shadow: 2px 2px 4px black;
   }
+
+  #img11{
+    background-image: url(/Images/PreviewSimon.png);
+    background-size: cover;
+    color:white;
+    text-shadow: 2px 2px 4px black;
+  }
   .left, .right {
     width: 50%;
     height: 50vh;
