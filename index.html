@@ -1,367 +1,181 @@
 <!DOCTYPE html>
-<html>
-    <!--
-Wyd Here
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣤⣤⣤⣤⣀⣀
-⠀⠀⠀⠀⠀⠀⣠⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣄
-⠀⠀⠀⠀⠔⠋⣉⣉⣉⣛⣻⣿⣿⣿⣿⣿⣿⣟⣛⣉⣉⣉⠙⠢
-⠀⠀⣠⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⡀
-⠀⣰⣿⣿⣿⡿⠿⠛⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠛⠿⣿⣿⣿⣿⣆
-⢠⣿⣿⣿⡟⢠⣶⡄⠀⠀⠹⣿⣿⣿⣿⣿⣿⠏⣶⣶⠀⠀⠈⢻⣿⣿⣿⡄
-⣼⣿⣿⣿⡇⠈⠉⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⡀⠈⠁⠀⠀⠀⢸⣿⣿⣿⣷
-⣿⣿⣿⣿⣷⣤⣀⠀⣀⣠⣾⣿⣿⣿⣿⣿⣿⣷⣄⣀⠀⣀⣴⣿⣿⣿⣿⣿
-⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟
-⠘⣿⣿⣿⣮⣙⠛⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠛⣩⣾⣿⣿⣿⠃
-⠀⠘⢿⣿⣿⣿⣿⣶⣤⣤⣀⣉⣉⣉⣉⣉⣉⣀⣤⣤⣶⣿⣿⣿⣿⣿⠏
-⠀⠀⠈⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠋
-⠀⠀⠀⠀⠈⠛⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠋
-⠀⠀⠀⠀⠀⠀⠀⠈⠙⠛⠻⠿⢿⣿⣿⣿⡿⠿⠟⠛⠋⠁
-
-⠀⠀⠀⠀⢀⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣄⠀⠀⠀⠀⢹⡛⠉⠛⠓⠲⢤⣄⡀⠀⠀⠀⠀⠀⢀⡴⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣏
-⠀⠀⠀⣸⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣧⡀⠀⠀⠘⣧⠀⠀⠀⠀⠀⠈⠛⢦⣀⠀⠀⢀⣾⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡏
-⠀⠀⠀⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣆⡀⠀⠸⣆⠀⠀⠀⠀⠀⠀⠀⠙⠳⣤⣾⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⡇
-⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢈⣿⠶⠚⠛⠏⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⡇
-⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠶⢯⣭⣤⣤⡤⠤⠤⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢈⡇
-⠀⠀⠀⡧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡗
-⠀⠀⠀⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇
-⠀⠀⠀⢻⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡟⠀
-⠀⠀⠀⠘⣧⠀⠀⠀⠀⢀⣀⣀⣀⣀⣀⣀⣀⣀⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⣤⣤⣴⣶⠶⠶⠲⣶⠶⠶⠀⠀⠀⠀⠀⠀⣼⠃⠀
-⠀⠀⠀⠀⠹⡄⠀⠀⠀⠈⠉⡟⠉⠁⠀⢸⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⡀⠀⠀⠹⡧⠀⠀⠀⠀⢀⣠⠾⠉⠀⠀
-⢀⣀⣀⠀⠀⠻⣦⠀⠀⠀⢸⠃⠀⠀⠀⢸⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⠄⠀⠀⠀⢹⠀⠀⠠⡦⠿⠟⠲⠶⢶⡄
-⠀⢻⡍⠛⠙⠛⠛⠻⠀⠀⣾⠁⠀⠀⠀⢸⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⠀⠀⠀⠀⢸⠀⠀⠀⠀⠀⠀⠀⣰⠞⠁
-⠀⠀⠹⢦⡄⠀⠀⠀⠀⠀⣻⡄⠀⠀⠀⠈⠻⣿⣿⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠛⠟⠛⠁⠀⠀⠀⠀⠼⠀⠀⠀⠀⠀⣠⡞⠉⠀⠀
-⠀⠀⠀⠀⠙⣷⠄⠀⣠⣤⡈⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠛⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⡆⢀⡤⠀⠀⠀⢺⣇⠀⠀⠀⠀
-⠀⠀⠀⠀⣰⠇⠀⠘⠃⢸⡧⠶⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⣤⠀⠀⠀⠀⠀⠛⠹⠷⠋⠀⠀⠀⠀⠀⠙⣦⠀⠀⠀
-⠀⠀⠀⢠⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠦⣄⡤⠾⠋⠙⠛⠓⠲⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⠀⠉⣿⠀⠀
-⠀⠀⠀⠸⠷⠤⠤⠴⠶⠾⢦⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⠞⠃⠶⠶⠶⠞⠛⠛⠉⠁⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⢻⣶⣶⣴⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠶⠗⠛⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢷⡄⠈⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢷⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⠟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣁⣤⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀
-
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⠟⢻⡀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣳⠖⠳⣄⡀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⡤⠒⠀⠂⡾⠉⠀⠀⠀⠀⠉⢳⡄⣄⡀⠀⠀
-⠀⠀⠀⢸⡥⠀⣀⡼⢁⠀⢰⡄⠀⡄⠀⠀⣧⠀⠙⡆⠀
-⠀⢀⣠⠼⠗⠚⠉⠠⠋⠀⠀⢷⣠⣧⠀⠀⠈⠳⢤⣇⠀
-⠀⣾⣟⠒⠦⣄⠀⠀⠀⣠⡴⠋⠁⢈⠛⢦⣄⣠⣴⣾⣷
-⢀⡟⠙⢶⣤⠬⠷⣼⡏⠉⠉⢩⡍⠹⠦⢤⣿⣤⣨⣿⠈
-⡾⣡⠆⠁⠀⠀⠀⢠⡀⠀⠀⠀⢱⡀⠀⠂⠙⠎⠻⡅⠀
-⢿⠁⠒⣤⠤⣤⣀⠀⢧⠀⠀⠀⣸⠃⠀⠀⠀⡶⣤⣽⠀
-⠈⠳⣴⡇⠀⠀⠈⠛⢦⣄⣠⠾⢿⣄⣀⣠⠾⣡⠞⠁⠀
-⠀⠀⠈⠉⠉⠉⠁⢧⢠⠟⣽⠀⢿⠀⢧⢰⡈⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠐⢫⠏⢸⠁⠀⠈⢳⠘⢧⣙⢦⠀⠀⠀
-
-
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣶⣶⣶⣶⣶⣶⣶⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣻⣽⣿⣽⣟⣯⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠿⣷⣿⣻⠿⢿⣻⣿⣽⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣰⣿⣿⣿⣀⣿⣿⣿⣿⣾⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠿⠿⠿⠿⠿⠿⠿⠿⢷⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⠀⠀⠀⠀⠀⠀⠀⢸⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢹⣀⣀⡀⣀⣀⣀⣨⣿⣿⡿⣶⣶⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠉⠉⠉⠉⠉⠁⢁⣿⣿⣿⣀⣀⡀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣷⣿⣻⣿⢿⣿⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡏⠉⠈⠉⢹⣿⣻⣿⡇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⣸⣿⠀⠀⢸⣿⣟⣿⣽⡇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢾⣿⡿⣿⣿⣤⣤⣼⣯⣿⣯⣿⠇
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣄⣄⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣯⣿⢿⣾⢿⡿⣟⣯⣷⣿⣻⡇
-⠀⠀⠀⠀⠀⠀⠀⠀⣀⣘⣿⣿⣿⠀⠀⠀⠀⢀⣶⣶⣾⣿⣿⣿⢿⣻⣿⢯⣿⡿⣿⣻⣽⣟⣿⡇
-⢰⣶⣶⣖⣀⣰⣶⣶⣿⣿⡿⣷⣶⣶⣶⣶⣶⣾⡿⣯⣿⢷⣿⣻⡏⢹⣿⣿⡿⣽⣿⣟⣯⣿
-⠸⠿⠿⣿⣿⣿⡏⠿⠿⠀⣿⣿⣷⣿⣏⣿⣹⣾⣿⣿⣹⣿⠉⠉⠁⢸⣿⣿⣿⡿⣷⣿⡿⣷
-⠀⠀⠀⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣾⢿⣟⣷⣿⣿⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⠿⣯⣿⣟⣯⣷⣿⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣯⣿⣟⣿⣿⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣳⣿⣟⣿⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣻⣷⣿⣿⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣽⣷⡿⣿⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣽⣾⣿⣿⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣯⣷⣿⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣿⣿⣯⣿⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⣷⡿⣿⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⣿⣿⣾⣿⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣿⣟⣷⣿⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣶⣶⣶⣶⣶⣿⣿⣻⣿⡆⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠿⠿⠻⠯⠿⠟⠾⠿⠽⠇⠀⠀
--->
-    <head>
-        <title>Boleklolo's Webiste</title>
-        <link rel="stylesheet" type="text/css" href="sheet.css">
-        <link rel="icon" href="images/boleklolo.png">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Boleklolo's Website">
-        <meta name="keywords" content="Boleklolo, Boleklolo's Website, Boleklolo's Blog, Boleklolo lol, Martlet Website, boleklolo github io">
-        <meta name="author" content="Boleklolo">
-        <meta charset="UTF-8">
-        <!-- Ignore this meta -->
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="robots" content="index, follow">
-        <meta name="revisit-after" content="7 days">
-        <meta name="language" content="English">
-        <meta name="generator" content="Boleklolo">
-        <meta name="distribution" content="global">
-        <meta name="rating" content="general">
-        <meta name="googlebot" content="index, follow">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">    
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boleklolo - Portfolio & Projects</title>
+    <meta name="description" content="Portfolio of Boleklolo - Interactive projects, 3D art, and web development experiments">
+    <meta name="keywords" content="Web Development, 3D Modeling, Game Mods, Creative Coding">
+    <meta name="author" content="Boleklolo">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@100..900&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="sheet.css">
+    <link rel="icon" href="images/boleklolo.png">
 </head>
-    <!-- Sig Spear 6.8x51 (Separator) -->
-    <body>
-         <!-- <div class="page-header">
-            <div class="logo">
-              <p>Boleklolo</p>
-            </div>
+
+<body>
+    <div class="loader"></div>
+    <header id="header">
+        <h1 id="Boleklogo">Boleklolo</h1>
+    </header>
     
-            <div id="navigation-bar" class="nav-bar">
-              <a href="#" class="active">Home</a>
-            </div>
-        </div>-->
-        <!-- Header ^ -->
-        <div id="background">
-          <div id="Boleklogo">
-            Boleklolo
-        </div>
-                <div id="content">
-                  <div id="centerText">
-                    My stuff
-                </div>
-                    <div class="left" id="img1">
-                        Interactive Terminal
-                        <div class="overlay">
-                            <p>Interactive terminal in your browser! Lethal Company inspired. Rework planned.</p>
-                            <button onclick="window.location.href='/Portfolio/Terminal/terminal.html';">Launch Terminal</button>
-                        </div>
-                    </div>
-                    <div class="right" id="img2">
-                        Blender Plushie
-                        <div class="overlay">
-                            <p>Blender plush based off Martlet. Made for the sake of learning hair particles. Wallpaper resolution.</p>
-                            <button onclick="window.location.href='https://github.com/Boleklolo/BlenderPlush/blob/main/MartletPlushieWallpaperFinalRender.png';">Full Resolution Image</button>
-                            <button onclick="window.location.href='https://github.com/Boleklolo/BlenderPlush/tree/main';">Download the Project</button>
-                        </div>
-                    </div>
-                    <div class="left" id="img3">
-                        Martlet's Cottage Website
-                        <div class="overlay">
-                            <p>Old version of the site containing a cottage in UT styling.</p>
-                            <button onclick="window.location.href='/OlderSites/2024/v2/index.html';">Visit</button>
-                        </div>  
-                    </div>
-                   <div class="right" id="img4">                        
-                        WTTG2 Hack Screen
-                        <div class="overlay">
-                            <p>Crappy hack screen from Welcome to the Game in your beloved browser!</p>
-                            <button onclick="window.location.href='/Portfolio/TerminalJumpscare/website.html';">Open</button>
-                        </div>
-                 </div>
-                 <div class="left" id="img5">                        
-                    SpineOptic
-                    <div class="overlay">
-                        <p>Poorly made software using .NET and WinForms. Does posture and 20/20/20 rule notifications. Broken but works?</p>
-                        <button onclick="window.location.href='https://github.com/Boleklolo/SpineOptic/releases/tag/main-1.01';">View Source</button>
-                    </div>
-             </div>
-             <div class="right" id="img6">                        
-                Old Websites
+    <main id="content">
+        <h2 class="section-heading">My Projects</h2>
+        
+        <section class="projects-grid">
+            <!-- Interactive Terminal -->
+            <article class="project-item" id="img1">
+                <h3>Interactive Terminal</h3>
                 <div class="overlay">
-                    <p>Older versions of the website. Might have errors and broken links.</p>
-                    <button onclick="window.location.href='/OlderSites/2024/v1/index.html';">First 2024 Website</button>
-                    <button onclick="window.location.href='/OlderSites/2023/en.html';">2023 Main Site</button>
+                    <p>Interactive terminal in your browser! Lethal Company inspired. Rework planned.</p>
+                    <a href="/Portfolio/Terminal/terminal.html" class="btn" target="_blank" rel="noopener">Launch Terminal</a>
                 </div>
-         </div>
-         <div class="left" id="img7">                        
-            Search for the Skidoo
-            <div class="overlay">
-                <p>Tomb Raider Level Editor project made in 2021. Very low quality.</p>
-                <button onclick="window.location.href='https://trcustoms.org/levels/3336';">View on TRCustoms</button>
-            </div>
-     </div>
-     <div class="right" id="img8">                        
-        SCP: Containment Breach Mod
-        <div class="overlay">
-            <p>Low quality shitpost.</p>
-            <button onclick="window.location.href='https://www.moddb.com/mods/scp-smoke-weed-everyday-cursed-mod/downloads/scp-swe-10';">View on ModDB</button>
-        </div>
- </div>
- <div class="left" id="img11">                        
-  Assault Simon
-  <div class="overlay">
-      <p>Another low quality shitpost</p>
-      <button onclick="window.location.href='https://github.com/Boleklolo/AssaultSimon';">View on GitHub</button>
-  </div>
-</div>
- <div class="right" id="img10">                        
-    More stuff coming soon...
-<div class="overlay">
-    <img src="/Images/MustangSecret.png" width="100%">
-</div>
-</div>
- <div class="left" id="img9">                        
-    Farming Simulator 2011 Multiplayer Crack
-    <div class="overlay">
-        <p>Multiplayer crack for FS2011. Made by modifying source code and reassembling the game's exe.</p>
-        <button onclick="window.location.href='https://gofile.io/d/kAFFF6';">Download</button>
-    </div>
-</div>
+            </article>
 
+            <!-- Blender Plushie -->
+            <article class="project-item" id="img2">
+                <h3>Blender Plushie</h3>
+                <div class="overlay">
+                    <p>Blender plush based off Martlet. Made for learning hair particles. Wallpaper resolution.</p>
+                    <a href="https://github.com/Boleklolo/BlenderPlush/blob/main/MartletPlushieWallpaperFinalRender.png" class="btn" target="_blank" rel="noopener">Full Resolution</a>
+                    <a href="https://github.com/Boleklolo/BlenderPlush/tree/main" class="btn" target="_blank" rel="noopener">Download Project</a>
+                </div>
+            </article>
 
-<div id="centerText">
-  <div style="width: 80%; float:left; font-size:2.3rem">
-      They make it look so easy, connecting with another human being. It's like no one ever told them it's the hardest thing in the world.
-  </div>
-  <div style="width: 20%; float:right; position: relative; background-image: url('/Images/ChillGuyWhoDGAF.jpg'); background-size: cover;">
-  <img src="">
-  </div>
-</div>
+            <!-- Martlet's Cottage Website -->
+            <article class="project-item" id="img3">
+                <h3>Martlet's Cottage Website</h3>
+                <div class="overlay">
+                    <p>Old version of the site containing a cottage in UT styling.</p>
+                    <a href="/OlderSites/2024/v2/index.html" class="btn" target="_blank" rel="noopener">Visit</a>
+                </div>
+            </article>
 
-              <!-- 
-            7.62x51mm NATO
+            <!-- WTTG2 Hack Screen -->
+            <article class="project-item" id="img4">
+                <h3>WTTG2 Hack Screen</h3>
+                <div class="overlay">
+                    <p>Crappy hack screen from Welcome to the Game in your browser!</p>
+                    <a href="/Portfolio/TerminalJumpscare/website.html" class="btn" target="_blank" rel="noopener">Open</a>
+                </div>
+            </article>
 
-            BCP FMJ
-            Ultra Nosler
-            M80
-            M61
-            M62
-            M993
+            <!-- SpineOptic -->
+            <article class="project-item" id="img5">
+                <h3>SpineOptic</h3>
+                <div class="overlay">
+                    <p>Posture and eye care notifications software using .NET and WinForms.</p>
+                    <a href="https://github.com/Boleklolo/SpineOptic/releases/tag/main-1.01" class="btn" target="_blank" rel="noopener">View Source</a>
+                </div>
+            </article>
 
-            5.45x39
-            T
-            BP
-            BS
-            PP
-            PS
-            PRS
-            SP
-            HP
-            FMJ
-            US
-            BT
-            7N39
-            PPBS gs
+            <!-- Old Websites -->
+            <article class="project-item" id="img6">
+                <h3>Old Websites</h3>
+                <div class="overlay">
+                    <p>Older versions of the website with potential errors.</p>
+                    <a href="/OlderSites/2024/v1/index.html" class="btn" target="_blank" rel="noopener">2024 v1</a>
+                    <a href="/OlderSites/2023/en.html" class="btn" target="_blank" rel="noopener">2023 Site</a>
+                </div>
+            </article>
 
-            5.56x45mm NATO
-            M193
-            M855
-            M856
-            M995
-            M856A1
-            M855A1
-            Mk 318 Mod 0
-            Mk 262 Mod 1
-            
-            9x39
-            SP-5
-            SP-6
-            BP
-            PAB-9
-            PSV
-            SPP
-            -->
+            <!-- Search for the Skidoo -->
+            <article class="project-item" id="img7">
+                <h3>Search for the Skidoo</h3>
+                <div class="overlay">
+                    <p>Tomb Raider Level Editor project made in 2021.</p>
+                    <a href="https://trcustoms.org/levels/3336" class="btn" target="_blank" rel="noopener">View on TRCustoms</a>
+                </div>
+            </article>
 
-    </body>
+            <!-- SCP Mod -->
+            <article class="project-item" id="img8">
+                <h3>SCP: Containment Breach Mod</h3>
+                <div class="overlay">
+                    <p>Low quality shitpost mod.</p>
+                    <a href="https://www.moddb.com/mods/scp-smoke-weed-everyday-cursed-mod/downloads/scp-swe-10" class="btn" target="_blank" rel="noopener">View on ModDB</a>
+                </div>
+            </article>
+
+            <!-- Assault Simon -->
+            <article class="project-item" id="img11">
+                <h3>Assault Simon</h3>
+                <div class="overlay">
+                    <p>Another low quality shitpost project.</p>
+                    <a href="https://github.com/Boleklolo/AssaultSimon" class="btn" target="_blank" rel="noopener">View on GitHub</a>
+                </div>
+            </article>
+
+            <!-- Farming Simulator Crack -->
+            <article class="project-item" id="img9">
+                <h3>FS2011 Multiplayer Crack</h3>
+                <div class="overlay">
+                    <p>Multiplayer crack for Farming Simulator 2011.</p>
+                    <a href="https://gofile.io/d/kAFFF6" class="btn" target="_blank" rel="noopener">Download</a>
+                </div>
+            </article>
+
+            <!-- Coming Soon -->
+            <article class="project-item" id="img10">
+                <h3>More Coming Soon...</h3>
+                <div class="overlay">
+                    <img src="/Images/MustangSecret.png" alt="Secret preview" loading="lazy">
+                </div>
+            </article>
+        </section>
+        <canvas id="fractal"></canvas>
+        <!-- Quote Section -->
+        <section class="quote-section">
+            <blockquote>
+                <p>They make it look so easy, connecting with another human being. It's like no one ever told them it's the hardest thing in the world.</p>
+            </blockquote>
+            <figure>
+                <img src="/Images/ChillGuyWhoDGAF.jpg" alt="Relaxed character illustration" loading="lazy">
+            </figure>
+        </section>
+    </main>
+    <script>
+        window.addEventListener('load', () => {
+            document.querySelector('.loader').style.display = 'none';
+        });
+
+        const projects = document.querySelectorAll('.project-item');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('in-view');
+                }
+            });
+        }, { threshold: 0.1 });
+        projects.forEach(project => observer.observe(project));
+
+        const canvas = document.getElementById('fractal');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        let time = 0;
+        function drawFractal() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = '#1d1d1d';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = 0; i < 100; i++) {
+                const x = Math.sin(i + time) * 200 + canvas.width / 2;
+                const y = Math.cos(i * 0.5 + time) * 200 + canvas.height / 2;
+                ctx.beginPath();
+                ctx.arc(x, y, 2, 0, Math.PI * 2);
+                ctx.fillStyle = `hsl(${i * 3.6}, 100%, 50%)`;
+                ctx.fill();
+            }
+
+            time += 0.01;
+            requestAnimationFrame(drawFractal);
+        }
+        drawFractal();
+    </script>
+    <footer>
+        <p>Made with ❤️ by Boleklolo</p>
+        <p>© 2025 All rights reserved</p>
+    </footer>
+</body>
 </html>
-
-<!--  
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                                                                                    
-                                          .'.'.........'.                                           
-                   .'.               ',,,:ONNNNNNNNNNNNN0c,,,'.                                     
-                 .;kX;           .:;oXMWMMMMMMMMMMMMMMMMMMMMMNd;:.                                  
-                 ;XMX;         .c0MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM0l.         .:'                    
-                 .;OWOc.     .c0WMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM0dd:.  ,ddkNo                    
-                   .:OO'   .c0NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMNOxkKMMWWo                    
-                     .;l:.c0NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMWXk;.                    
-                     .'.c0NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMXOOko:,''.                  
-                   .:OO.:NMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMOc:l0NN0d'                  
-                 .;OMMXoxWMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMXx,                    
-                 ;XMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMOcl;                      
-               .c0WMMMMMMMMMMKlxWMMMMMMMMMMMMMMMXo;;:kWMMMMMMMMMMMMMMMMMMWc                         
-               .OMMMMMWNWMMMMNOockNNNMMMMMMMMMMMN0kkko::o0NNWMMMMMMMNdoKWWc                         
-               .OMMMWXkokWMMMMMKdlccoOKKNMMMMMMMMMMMMX0Oko;'lKNMMMMMWKd;dWd.                        
-               .OMMMNc,kNWMMMNOocxXXOlccdkk0WMMMMMMMMMMMWXx;..l0NMMMMMO.cWNO'                       
-               .OMMMN:'0MMMW0d:dNMMMWWWNx;;cdxxxONMMMMMMMMWWx,..l0WMW0d:xWMK,                       
-               .:OWMWxcoOW0l.'0MMMNkooodKMMKlccccoddooooooooool,..l0X;,0MMMK,                       
-                 ;XMMMO':Nl ;kXMWkco:   'oKMMMMMNko;    .:; 'dKXx, lX;,KMMMK,                       
-                 ;XMMMNOo:..xWWO:lkXk.   .kMMMMMMMMx.   .OXxl:OWWd .:oONMMMK,                       
-                 .'xMMMMXk,.xKo. oMMk.  ;ONMMMMMMMMNO;  .OMWl 'dXd ,OXMMMWx'                        
-                   ;0NMMMMl.xNKo'l0Nk.  oMMMMMMMMMMMMl  .ON0l'dKNd lMMMMN0;                         
-                    .kMMMMx;o0NWXxlK0:,;kMMNOkkkkkk0Wk,,cK0cxXWNOo;xMMMMx.                          
-                     :ONMMMX;,KMMMWMMWKxKNOo:;:::;;cd0WWWMMWMMM0':NMMMXk;                           
-                      '0MMMX;,KMMMMMMMo 'olxNMMMMMMKoldKMMMMMMMO.:NMMMO.                            
-                 .loodocxWMNOockWMMMMMKo' ,::kWMMMMMMl dMMMMMNxcoOWMNxcododl.                       
-                 .,xWWNO0WMMMO.:NWMMMMMWc.cxdl:OWWMMMl dMMMMWX;'0MMMW0ONWNx'.                       
-                   .,xXKNMMMMN0dckXXNWMWKxo:,:o::OXXXc dWXXXxcd0NMMMWNKXx,.                         
-                     ...:kO0NMMNKxccokO0XWXx;,:,,:ccc;,okoccxKNMMN0Ok;...                           
-                           .ckkkkxddc,..:xkxddddddddddo;;dddxxkkkc.                                 
-                                  .:;xkc::,     ''.   .cc,,:::,.                                    
-                         .lllllllo0XxkWMMMXdllllllllll0NxllOWMNx,      'kl...            .,c:.      
-                       .l0WMMMMMMWxco0WMMMMMMMMWOOKNMMMMMXklcOWWk.     ;XNXXOc,,.        ;lcxK:     
-                     .c0NMMWWMMMWX:'0MMMMMMMMMkcOWWWMMMMMMMd..cOx.     ;XMMMMWWWk;;' .,. .lXKx'     
-                      ;ooooldXNKo,o0NMMMMMMMMMXkclkXMMMMMMMXO, .cx;   ,xNMMMMMMMMWO:..l'.xWWd       
-                      :doooc:xo.  dMMMMMMMMMMMMX;.cdKWMMMMMMWc .cx;  .OMMMMMMMMMMX;  .l'.xKo'       
-                  ,xxkXMMMN: ,'   dMMMMMMMMMMMKdc'..cWMMMMMMWc.xx.   .OMMMMMMMMMMX;.oKWl .'         
-                .dKWMMMMMMMKxo:;:cokNMM0xKMMMMl.xO:.cNMMMXx0Wc.dkc.  ,0MMMMMMMWXxcd0NMWl  .         
-               .lXMMMMMMMMMMWXd,dWOllllloldXMMl.xO:.:NMNxlooc. .cXl cKWMMMMMMMk'lKNMMMWl ld.        
-              .dNWMMMMMMMMMMMM0:lkXNOxxKN:'0O:lkXX0kl:kK;,KKxxo.;Kl oMMMMKkXNOo;kMMMMMMl.xk.        
-             .l0MMMMMMMMMMMMMMMMl dMMMMMW0dl'.oMMMMMx.'cd0NMMMK,;Xl ;kXXxl:ol.:NMMMMMMMl.xk.        
-             oMMMMMMMMMMMMMMMMMMOllxXMMMMMNK00NMMMMMN000NMMMWXk:lXl 'llllON:  ;XMMMMMMMOoKk.        
-             oMMMMMMMMMMMMMMMM0lkN:'OMMMMMMMMMMMMMMMMMMMMMMMWl'xNWl o0';XMW0c.:XMMMMMMMMNd,         
-           'xKMMMMMMMMMMMMMMMMXOl,. 'dNMMMMMMMMMMMMMMMMMMMMMWc.kMMKxc:d0WMMM0,:NMMMMMMMMX;          
-          .oWMMMMMMMMMMMMMMMMMMMl    :XMMMMMMMMMMMMMMMMMMMMMWc.kMMMNc.OMMMMMW0KWMMMMMMMNO'          
-        .ckNMMMMN0OOOOOOOXMMMMMMl   .oNMMMMMMMMMMMMMMMMMMMMMWd;d0WMWd;dKWMMMMMMMMMMMMMMd.           
-      .:OWWMMMMMKl:::::::lxkONXk;  .kWMMMMMMMMMMMMMMMMMMMMMMMW0,;XMWW0,:XMMMMMMMMMMMMMWl            
-    .;OWOkNMMMMMMMMMMMMMMOc:co:   .oXMMMMMMMMMMMMMMMMMMMMMMMMMK,;XMMMXodNMMMMMMMMMMMMKd'            
-    .clc.'0MMMMMMMMMMMMMMMMMNx;   ,dXMMMMMMMMMMMMMMMMMMMMMMMMMK,.:OWMMMMMMMMMMMMMMMMMd              
-         '0MMMMMMMMMMMMMMMMMMMXk, :dc;:kWMMMMMMMMMMMMMMMMMMMWx,.  cWMMM0ckWMMMMMMMMKl.              
-         'OWWMMMMMMMMMMMMMMMMMMMKxc:dkko::oKNNNNNNNNkc:::::;,.    .;xNN0xc,,c0NXNKo.                
-          .l0NMMWKXMMMMMMMMMMMMMMN:'OMMXOOklccccccccdO00000l.       .'....   .'.'.                  
-            .xMMO,lWMMMMMMMMMMMMMN:.OMMMMMWXXXXXXXXXNMMMMMMWK;                                      
-             ;kX0ccxKMMMMMMMMMMMMN:.OMMMMMMMMMMMMMMMMMMMMMMMWc                                      
-               ;kNo oMMMMMMMMMMMMN:'OMMMMMMMMMMMMMMMMMMMMMMMWc                                      
-                .;. 'oKMMMMMMMMMOclxXMMMMMMMMMMMMMMM0lcoKMMMWc                                      
-                     .kMWMMMMMMWl.dMMMMMMMMMMWk;;;;;. ;kXMMMW0l.                                    
-                      ,xNMMMMMO:lOXMMMMMMMMM0lod.   'kXMMMMMMMK,                                    
-                     .;kNMMMWKo,dMMMMMMMMMMMN0XX; ..oNMMMMMMMMK,                                    
-                       ,dkkkxldKWMMMMMMMMMMMMWKd''oONMMMMMMMMMK,                                    
-                            .OMWMMMMMMMMMMMMMWl  'd0MMMMMMMMMMXo.                                   
-                            .OMMMMMMMMMMMMMMMMl .:xKMMMMMMMMMMMMk.                                  
-                           .c0MMMMMMMMMMMMMMMMl.oXNWMMMMMMMMMMMMk.                                  
-                           oWWMMMMMMMMMMMMMMMMl.xMWMMMMMMMMMMMMMk.                                  
-                           dMMMMMMMMMMMMMMMMKd'.xMWMMMMMMMMMMMMMKl.                                 
-                           dMMMMMMMMMMMMMMMMd  .xMWMMMMMMMMMMMMMMMo                                 
-                           dMMMMMMMMMMMMMMWWd  .xMWMMMMMMMMMMMMMMMo                                 
-                     ..  ,kXMMMMMMMMMMMMMMKl.  .xMWMMMMMMMMMMMMMWNl                                 
-                    cOd; ;0NMMMMMMMMMMMMWXd.   .lKNWMMMMMMMMMMWXd,..                                
-                    oXd;,..cONMMMMMNOkkkx,.'. .,.'cokkXMMMMXkkxl:,dK;                               
-                    ;kXWWk;..lxxxxxd:;:::;lKd lNd;::. ;xxxxo:;cKWWKd'                               
-                      ;kNMWkcccccccdXMMMWOoo, 'dKMWM0lccccckWMMMMMo                                 
-                       .;kWMMMMMMMMMMMMMWOc..l' 'd0XMMMMMMMMMMMMKo.                                 
-                     .cxx0MMMMMMMMMMMMMWWWO..,lxxdl:;:OMMMMMMMXo'                                   
-                      .;:xKXXXNWMMMWXXXxcc;   .;k0kdod0MMMMMMMNkoo,                                 
-                       .clccccoOOOOkoccx0Kd.  .':cccccd00O00OOko;.                                  
-                         cXNNNOl:::o0NNWMMO.  cNNNNNNNx:::::::co:                                   
-                         cWMMMMMMMMMMMMMMMO.  oMMMMMMMMMMMMMMMK,                                    
-                    .....:xxkNMMMMMMMMMMMMO..c0MMMMMMMMMMMMMW0o;...                                 
-                 ',,xXXXXXKKXWMMMMMMMMMMMMO.:NMMMMMMMMMMMMMMMNKXXXd,'',.                            
-               .oXWWWMMMMMMMMMMMMMMMMMMMMMO.:NMMMMMMMMMMMMMMMMMMMMWWWWW0c.                          
-             .oKMMMMMMMMMMMMMMMMMMMMMMMMWO:.:NMMMMMMMMMMMMMMMMMMMMMMMMMMMO:.                        
-             oMMMMMMMMMMMMMMMMMMMMMMMMMMX;  :NMMMMMMMMMMMMMMMMMMMMMMMMMMMMN:                        
-             oMMMMMMMMMMMMMMMMMMMMMXodNMX;  :NMMMWWWOckMMMMMMMMMMMMMMMMMMMN:                        
-             cXWMMMMMMMMMMMMMMMMMMM0':NW0,  ;0XXXOo:ckXMMMMMMMMMMMMMMMMMMMN:                        
-              ,dKWMMMMMMMMMMMMMMX00d.,kx:.  .:ccc;. ,O000KWMMMMMMMMMMMMMMNk,                        
-               'ldkkkkkkkkkkkkkkocc:;;:ll.  .odddlc:;:cc:lxkkkkkkkkkkkkkk:                          
-               :o:;;;;;;;;;;;;;;ldxxxxx,         .;lxdddxo:;;;;;;;;;;;;'                            
-                .:llllllllllllll'                        .:llllllllllll,
--->
