@@ -397,7 +397,7 @@ footer {
 .project-item {
   position: relative;
   overflow: hidden;
-  z-index: 1; /* Ensure the project item is above other content */
+  z-index: 1; 
 }
 
 .overlay {
@@ -416,7 +416,7 @@ footer {
   opacity: 0;
   transition: opacity var(--transition-speed) ease;
   text-align: center;
-  z-index: 2; /* Ensure the overlay is above the project item */
+  z-index: 2;
 }
 
 .project-item:hover .overlay,
@@ -437,7 +437,7 @@ footer {
   border: none;
   cursor: pointer;
   box-shadow: 0 0 8px rgba(0, 123, 255, 0);
-  z-index: 3; /* Ensure the button is above the overlay */
+  z-index: 3; 
 }
 
 .btn:hover {
