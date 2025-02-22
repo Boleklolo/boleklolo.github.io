@@ -1,0 +1,1651 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona Główna</title>
+    <style>
+
+
+        .main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .vintage-box {
+            background: rgba(0,0,0,0.7);
+            border: 3px outset #666;
+            padding: 20px;
+            margin: 20px 0;
+            box-shadow: 0 0 15px rgba(0,255,0,0.3);
+        }
+
+        .gold-button {
+            display: inline-block;
+            background: linear-gradient(to bottom, #fc0, #960);
+            color: black;
+            padding: 15px 30px;
+            margin: 10px;
+            border: 3px outset #fc0;
+            text-decoration: none;
+            font-weight: bold;
+            text-shadow: 1px 1px #ff0;
+            transition: all 0.3s;
+        }
+
+        .gold-button:hover {
+            background: linear-gradient(to bottom, #960, #fc0);
+            border-style: inset;
+            transform: translate(2px, 2px);
+        }
+
+        .mystery-list {
+            columns: 2;
+            margin: 20px 0;
+            padding: 10px;
+            border: 2px dashed #0f0;
+        }
+
+        .crazy-border {
+            border: 4px dotted #ff00ff;
+            padding: 15px;
+            margin: 15px 0;
+            animation: borderGlow 2s infinite;
+        }
+
+        @keyframes borderGlow {
+            0% { border-color: #ff00ff; }
+            50% { border-color: #00ffff; }
+            100% { border-color: #ff00ff; }
+        }
+        body {
+            background: #000 url('https://i.pinimg.com/736x/e9/a8/35/e9a835671bfe87dccf41d5e697bcf494.jpg') repeat;
+            font-family: 'Comic Sans MS', 'Arial Narrow', cursive;
+            color: #00FF00;
+            margin: 0;
+            padding-bottom: 50px;
+        }
+        .ufo-container {
+            position: fixed;
+            top: 20%;
+            animation: fly 15s linear infinite;
+            z-index: 9999;
+        }
+
+        @keyframes fly {
+            0% { right: -200px; }
+            100% { right: 100%; }
+        }
+
+
+        .retro-radio {
+            background: #333;
+            padding: 15px;
+            border: 3px groove #666;
+            margin: 20px 0;
+        }
+
+
+        .xp-button {
+            display: inline-block;
+            background: linear-gradient(to bottom, #00a8ff, #0055ff);
+            padding: 12px 25px;
+            margin: 10px;
+            border: 3px outset #00ffff;
+            color: white;
+            text-decoration: none;
+            font-family: 'Press Start 2P', cursive;
+            text-shadow: 2px 2px #000;
+            box-shadow: 3px 3px 5px rgba(0,0,0,0.5);
+        }
+
+        #licznik {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background: #000;
+            padding: 5px 10px;
+            border: 2px inset #666;
+            font-family: 'LCDMono', monospace;
+        }
+
+
+        .matrix-code {
+            background: rgba(0,50,0,0.5);
+            border: 1px solid #0f0;
+            padding: 10px;
+            font-family: monospace;
+            white-space: pre;
+            overflow: hidden;
+        }
+
+
+    @keyframes ufo-bob {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+        100% { transform: translateY(0); }
+    }
+
+
+    .popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: #0000AA;
+        color: white;
+        border: 3px outset #fff;
+        padding: 20px;
+        z-index: 99999;
+        width: 300px;
+        display: none;
+    }
+
+    .cursor-trail {
+        position: fixed;
+        pointer-events: none;
+        font-size: 20px;
+        z-index: 9999;
+    }
+
+
+        .chaos {
+        position: fixed;
+        pointer-events: none;
+        z-index: 99999;
+    }
+
+
+
+
+    .wirus {
+        position: absolute;
+        animation: wirus 5s linear infinite;
+    }
+
+    @keyframes wirus {
+        0% { transform: rotate(0deg) scale(1); }
+        50% { transform: rotate(360deg) scale(5); }
+        100% { transform: rotate(720deg) scale(1); }
+    }
+
+
+    .dyskietka {
+    transition: all 0.3s;
+    margin: 10px;
+    padding: 5px;
+    background: rgba(255,255,255,0.1);
+    border: 2px dotted #666;
+}
+
+#kielbasa {
+    background: #330000;
+    color: #FFAAAA;
+    border: 3px double #FF0000;
+    font-family: 'Comic Sans MS', cursive;
+}
+
+button[onclick*="KLIKAJ"] {
+    background: linear-gradient(45deg, #ff0000, #00ff00);
+    box-shadow: 0 0 20px rgba(255,0,255,0.5);
+    animation: danger 1s infinite;
+}
+
+@keyframes danger {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+.ascii-window {
+        position: fixed;
+        top: 50px;
+        right: 20px;
+        width: 300px;
+        height: 200px;
+        background: #000;
+        color: #0F0;
+        border: 3px inset #666;
+        padding: 10px;
+        overflow-y: auto;
+        font-family: monospace;
+        z-index: 99999;
+    }
+
+    .quiz-popup {
+        position: fixed;
+        top: 30%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: #0000AA;
+        color: yellow;
+        border: 3px outset #fff;
+        padding: 20px;
+        width: 400px;
+        z-index: 100000;
+        display: none;
+    }
+    </style>
+</head>
+<body>
+    <div class="ufo-container">
+        <img src="ufo.png" alt="UFO" width="100" style="filter: drop-shadow(0 0 10px #0ff)">
+    </div>
+
+    <div class="main-content">
+
+
+<!-- Latające emotki -->
+<div id="latajaceEmotki"></div>
+
+        <!-- Main Offer Wall Box -->
+        <div class="vintage-box" style="text-align: center">
+            <h1 style="text-shadow: 0 0 15px #0f0">🚜 TAJNE OFERTY! 🛸</h1>
+            <div class="crazy-border">
+                <marquee behavior="alternate" scrollamount="7">
+                    🚨 UWAGA! OFERTY ZNIKAJĄ PO PRZECZYTANIU! 🚨
+                </marquee>
+                <p>Dostępne tylko dla regularnych odwiedzających Choroszczy!</p>
+                <a href="gielda.html" class="gold-button">ODKRYJ SKARBY GIEŁDY</a>
+            </div>
+        </div>
+
+        <!-- What You'll Find -->
+        <div class="vintage-box">
+            <h2>CO MOŻESZ ZNALEŹĆ?</h2>
+            <div class="mystery-list">
+                <p>🔍 Rzeczy których nikt nie potrzebuje</p>
+                <p>💰 Oferty z ostatniej chwili</p>
+                <p>🤯 Przedmioty z innego wymiaru</p>
+                <p>🕰️ Antyki z przyszłości</p>
+                <p>🎵 Płyty winylowe disco polo</p>
+                <p>👽 Artefakty nie z tej Ziemi</p>
+                <p>🧦 Zużyte skarpety</p>
+                <p>📀 Oferty pracy</p>
+            </div>
+            <div class="crazy-border">
+                <marquee>⚠️ UWAGA! Niektóre oferty mogą istnieć tylko w twojej wyobraźni ⚠️</marquee>
+            </div>
+        </div>
+
+        <!-- Why Worth It -->
+        <div class="vintage-box">
+            <h2>DLACZEGO WARTO?</h2>
+            <div class="crazy-border">
+                <marquee behavior="alternate" scrollamount="5">
+                    ★★★★★ "Kupiłem tu wczoraj wejściówke do parlamentu, polecam!" - Edward Gierek
+                </marquee>
+            </div>
+            <ul>
+                <li>✅ 100% prawdziwe oferty (czasem)</li>
+                <li>⏳ Oferty znikają szybciej niż roboty z sali 206</li>
+                <li>🔒 Gwarancja tajemniczości</li>
+                <li>🎲 Każde kliknięcie to loteria</li>
+                <li>🤑 Płatności BLIK, KRYPTO oraz ŻAPPSY</li>
+                <li>👻 Możliwość spotkania ducha starego informatyka</li>
+            </ul>
+            <div style="text-align: center; margin: 20px">
+                <img src="konstrukcja.gif" alt="konstrukcja">
+            </div>
+        </div>
+        <div class="vintage-box">
+            <h2>📻 RADIO O PARANORMALIACH SPOD ŚLĄSKA 📻</h2>
+            <div class="retro-radio">
+                <marquee behavior="scroll" direction="left">🎵 Teraz gramy podcast: CEZARY BARYKA - SZKLANE DOMY NAPRAWDĘ ISTNIEJĄ 🎵</marquee>
+                <audio controls style="width: 100%">
+                    <source src="https://azuracast.paranormalium.pl/listen/radio_paranormalium/1" type="audio/mpeg">
+                    Twoja przeglądarka nie wspiera radia!
+                </audio>
+                <div style="text-align: center">
+                    <img src="holda.gif" alt="gif slask">
+                </div>
+            </div>
+        </div>
+        <div class="ascii-window">
+            <div id="ascii-display" style="white-space: pre"></div>
+            <button onclick="generateAscii()" class="xp-button" style="position: absolute; bottom: 5px; right: 5px">
+                GENERUJ
+            </button>
+        </div>
+        
+        <!-- Kura kliz -->
+        <div class="quiz-popup" id="quizPopup">
+            <h3>🐔 QUIZ O KURCZAKACH 🐔</h3>
+            <div class="crazy-border" style="margin: 10px 0">
+                <marquee scrollamount="3">Wygraj darmowego kurczaka! Kliknij TAK!</marquee>
+            </div>
+            <p>Ile jaj znosi kura miesięcznie?</p>
+            <div id="quizAds" style="background: #000; padding: 5px; margin: 10px 0">
+                <!-- Tu som reklamy -->
+            </div>
+            <button onclick="handleQuizAnswer(true)" class="gold-button">TAK (30)</button>
+            <button onclick="handleQuizAnswer(false)" class="gold-button">NIE (∞)</button>
+        </div>
+        <div class="vintage-box">
+            <h2>🎮 GRY ONLINE 🎮</h2>
+            <div class="mystery-list">
+                <img src="konstrukcja.gif">
+            </div>
+            <div class="crazy-border">
+                <marquee>🔥 NOWOŚĆ! Pytania do quizu z książki od Polskiego autorstwa Kononowicza🔥</marquee>
+            </div>
+        </div>
+
+<!-- Pogoda w Internecie -->
+<div class="vintage-box">
+    <h2>🌩️ POGODA W SIECI 🌩️</h2>
+    <div style="background: #0000FF; color: white; padding: 10px">
+        <div id="pogoda" style="font-family: monospace">
+            > Stan pogodowy: 
+            <span id="lacze"></span>
+        </div>
+        <button onclick="
+            
+            showPopup('PROGNOZA NA JUTRO: 100% szans na HIV!');
+        " class="xp-button">
+        ODŚWIEŻ
+        </button>
+    </div>
+</div>
+
+<script>
+    const stanyLacza = ["UMIARKOWANE OPADY PAJĘCZYN", "BURZA MODEMOWA", "SLONECZNY PING 56k", "OPADY MOCZU", "HALNE OPADY DESZCZU, NIE ORAĆ POLA", "ZIMA PRZYSZŁA PIZGA NIEZNOŚNIE"];
+    document.getElementById('lacze').textContent = stanyLacza[Math.floor(Math.random() * stanyLacza.length)];
+</script>
+
+
+        <!-- Zoo Dyskietek -->
+        <div class="vintage-box">
+            <h2>📼 ZOO DYSKIETEK 3.5" 📼</h2>
+            <div style="columns: 3; text-align: center">
+                <div class="dyskietka" onmouseover="this.style.transform = 'rotate(10deg)'">
+                    <img src="disc.png" width="80"><br>
+                    Dyskietka 1.44MB<br>
+                    <small>"Praca Domowa z Matematyki"</small>
+                </div>
+                <div class="dyskietka" onmouseover="this.style.transform = 'rotate(-10deg)'">
+                    <img src="disc.png" width="80"><br>
+                    Dyskietka 720kB<br>
+                    <small>"Kurs INF.02"</small>
+                </div>
+                <div class="dyskietka" onmouseover="this.style.transform = 'scale(1.2)'">
+                    <img src="disc.png" width="80"><br>
+                    Dyskietka uszkodzona<br>
+                    <small style="color: red">(Nie dotykać!)</small>
+                </div>
+                <div class="dyskietka" onmouseover="this.style.transform = 'rotate(-10deg)'">
+                    <img src="disc.png" width="80"><br>
+                    Dyskietka 92 720kB<br>
+                    <small>"Zbrodnia w Grubalach"</small>
+                </div>
+                <div class="dyskietka" onmouseover="this.style.transform = 'rotate(-10deg)'">
+                    <img src="disc.png" width="80"><br>
+                    Dyskietka 32 720kB<br>
+                    <small>"Zdjęcia Pukli"</small>
+                </div>
+                <div class="dyskietka" onmouseover="this.style.transform = 'rotate(-10deg)'">
+                    <img src="disc.png" width="80"><br>
+                    Dyskietka 123 720kB<br>
+                    <small>"Przeszłość Dariusza"</small>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Wehikuł Czasu -->
+        <div class="vintage-box">
+            <h2>🕰️ WEHIKUŁ CZASU 🕰️</h2>
+            <div style="background: #333; padding: 15px; text-align: center">
+                <input type="number" value="1999" style="width: 100px; font-size: 20px">
+                <button onclick="
+                    document.body.style.filter = 'sepia(1)';
+                    document.getElementById('licznik').innerHTML = 'ODWIEDZIN: PRZEDWczoraj';
+                    showPopup('OSTRZEŻENIE: Nie rozmawiaj z rodzicami!');
+                " class="gold-button">
+                PODRÓŻUJ
+                </button>
+                <p style="color: #999">*Działa tylko w IE 5.0+</p>
+            </div>
+        </div>
+        
+        <!-- Generator Kiełbasy -->
+        <div class="vintage-box">
+            <h2>🌭 GENERATOR KIEŁBASY 🌭</h2>
+            <div class="matrix-code" id="kielbasa">
+                [=== 0%] Naciśnij START
+            </div>
+            <button onclick="
+                let postep = 0;
+                const skladniki = ['mięso', 'czosnek', 'tajne przyprawy', 'witamina C', 'kod kreskowy', 'jad', 'imbir', 'mefedron', 'vicodin'];
+                const timer = setInterval(() => {
+                    postep += Math.random()*10;
+                    document.getElementById('kielbasa').textContent = 
+                        `[${'='.repeat(postep/10)}] ${postep.toFixed(0)}% - ${skladniki[Math.floor(Math.random()*skladniki.length)]}`;
+                    if(postep >= 100) {
+                        clearInterval(timer);
+                        document.getElementById('kielbasa').innerHTML = '&#127789; KIEŁBASA GOTOWA! <small>(ważna do wczoraj)</small>';
+                    }
+                }, 200);
+            " class="xp-button">
+            START PRODUKCJI
+            </button>
+        </div>
+        
+        <!-- Tajemniczy Przycisk -->
+        <div class="vintage-box">
+            <h2>🔘 TAJEMNICZY PRZYCISK 🔘</h2>
+            <div style="text-align: center">
+                <button onclick="
+                    this.style.background = `hsl(${Math.random()*360},100%,50%)`;
+                    this.style.transform = `rotate(${Math.random()*360}deg) scale(${Math.random()+0.5})`;
+                    document.title = ['NIE KLIKAJ WIĘCEJ','CO TY ROBISZ?!','SYSTEM ERROR','ZNALAZŁEŚ SKARB?'][Math.floor(Math.random()*4)];
+                " 
+                style="width: 100px; height: 100px; border-radius: 50%; font-size: 10px">
+                NIE<br>KLIKAJ
+                </button>
+                <p style="color: red">DZIAŁANIE NIEODWRACALNE!</p>
+            </div>
+        </div>
+        <!-- matrix -->
+        <div class="vintage-box">
+            <h2>🔞 TAJNE PLIKI 🔞</h2>
+            <div class="matrix-code" id="matrix">
+                01010011 01110000 01110010 01111010 01100101 01100100 01100001 01101101 00100000 01001111 01110000 01101100 01100001
+            </div>
+        </div>
+        
+        <!-- Sekcja Zwierzaka -->
+        <div class="vintage-box">
+            <h2>🐹 Kot 🐹</h2>
+            <div class="crazy-border">
+                <div style="text-align: center">
+                    <img src="glodny.gif" id="zwierzak" width="100">
+                    <p>Stan: <span id="stan">GŁODNY</span></p>
+                    <button onclick="document.getElementById('zwierzak').src='najedz.jpg'; document.getElementById('stan').textContent='NAJEDZONY';" 
+                            class="xp-button">NAKARM</button>
+                    <button onclick="alert('Zwierzak uciekł przez okno!'); document.getElementById('zwierzak').src='uciek.jpg'" class="xp-button">WYPUŚĆ</button>
+                </div>
+                <marquee>⚠️ UWAGA! Zwierzak może przejąć kontrolę nad myszką! ⚠️</marquee>
+            </div>
+        </div>
+        
+
+        <!-- Antywirus -->
+        <div class="vintage-box">
+            <h2>🛡️ ESET ANTYWIRUS 间谍软件 🛡️</h2>
+            <div class="retro-radio" style="background: #0000AA; color: white">
+                <div id="skan" style="height: 20px; width: 30%; background: #00FF00; transition: 1s"></div>
+                <p>Skanowanie: C:\Windows\System32\</p>
+                <button onclick="
+                    document.getElementById('skan').style.width = '100%';
+                    setTimeout(() => alert('Znaleziono wirusy: EVIL_DAREK.exe'), 2000)" 
+                    class="xp-button">
+                    SKANUJ TERAZ
+                </button>
+            </div>
+        </div>
+
+        <!-- Generator Spisków -->
+        <div class="vintage-box">
+            <h2>🕵️ GENERATOR SPISKÓW 🕵️</h2>
+            <div class="matrix-code" id="spisek">
+                Kliknij przycisk żeby poznać prawdę!
+            </div>
+            <button onclick="generujSpisek()" class="gold-button">UJAWNIJ TAJEMNICĘ</button>
+        </div>
+
+        <div class="vintage-box">
+            <h2>🎰 LOTERIA 24H 🎰</h2>
+            <div id="losowanie" style="font-size: 24px; text-align: center">7 7 7</div>
+            <button onclick="
+                let count = 0;
+                const spin = () => {
+                    document.getElementById('losowanie').textContent = 
+                        `${Math.floor(Math.random()*10)} ${Math.floor(Math.random()*10)} ${Math.floor(Math.random()*10)}`;
+                    if(count++ < 20) requestAnimationFrame(spin);
+                    else alert('Niestety, spróbuj ponownie za 5 zł!');
+                };
+                spin()" 
+                class="gold-button" style="width: 100%">
+                LOSUJ ZA DARMO
+            </button>
+        </div>  
+
+        <!-- Test Prędkości -->
+        <div class="vintage-box">
+            <h2>🚀 TEST PRĘDKOŚCI 🚀</h2>
+            <div class="crazy-border">
+                <div id="predkosc" style="font-size: 40px; text-align: center">0 KB/s</div>
+                <button onclick="
+                    let speed = 0;
+                    const interval = setInterval(() => {
+                        speed += Math.random()*100;
+                        document.getElementById('predkosc').textContent = Math.round(speed) + ' KB/s';
+                        if(speed > 9999) {
+                            clearInterval(interval);
+                            document.getElementById('predkosc').innerHTML = '∞ KB/s<br>TWÓJ MODEM JEST Z KOSMOSU!';
+                        }
+                    }, 100)" 
+                    class="xp-button">
+                    START TESTU
+                </button>
+            </div>
+        </div>
+
+
+
+
+<div class="vintage-box">
+    <h2>🚨 SYSTEM ALERT 🚨</h2>
+    <div style="background: black; padding: 15px; border: 2px inset red">
+        <p style="color: red">WYKRYTO: 127 WIRUSÓW!</p>
+        <div style="border: 1px dotted red; padding: 10px">
+            <p style="margin: 0">Usuń natychmiast:<br>trojan-darek.exe</p>
+        </div>
+        <button onclick="showPopup('PŁATNE AKTYWACJĄ SMS! Wyślij SMS o treści USUN pod 7255')" 
+                class="xp-button" style="margin-top: 10px">
+            USUŃ WIRUSY
+        </button>
+    </div>
+</div>
+<div class="vintage-box">
+    <h2>🎰 KASYNOWY AUTOMAT 🎰</h2>
+    <div style="background: #222; padding: 15px; text-align: center">
+        <div id="automat" style="font-size: 40px; letter-spacing: 10px">
+            🍒 🍋 🍊
+        </div>
+        <button onclick="
+            const owoce = ['🍒','🍋','🍊','💣','💩','💰'];
+            let wynik = [];
+            for(let i=0; i<3; i++) {
+                wynik.push(owoce[Math.floor(Math.random()*owoce.length)]);
+            }
+            document.getElementById('automat').textContent = wynik.join(' ');
+            if(wynik[0] === '💣') showPopup('PRZEGRAŁEŚ WSZYSTKO!');
+            if(wynik[0] === wynik[1] && wynik[1] === wynik[2]) {
+                document.body.style.background = 'gold';
+                alert('WYGRANA! ODBIERZ NAGRODĘ W BŻDZIUCHACH!');
+            }
+        " class="xp-button" style="width: 100%">
+        LOSUJ
+        </button>
+    </div>
+</div>
+
+<div class="vintage-box">
+    <h2>🚨 WYWOŁAJ ALARM BOMBOWY W GRĘZOWIE 🚨</h2>
+    <div style="columns: 3">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/d/d6/Gr%C4%99z%C3%B3w_gm._Kotu%C5%84.JPG" width="750" >
+        <button onclick="document.getElementById('alarm-audio').play();" class="xp-button"> WYSTRZEL RAKIETY </button>
+        <marquee behavior="alternate" scrollamount="5">
+            <blink style="color:red">TRANSMISJA NA ŻYWO Z OSP GRĘZÓW</blink>
+        </marquee>
+    
+        <audio id="alarm-audio" controls loop>
+            <source src="alarm.mp3">
+        </audio>
+    </div>
+</div>
+
+<div class="vintage-box">
+    <h2>📀 NAGRYWARKA CD 📀</h2>
+    <div style="background: #333; padding: 15px">
+        <div id="nagrywarka" style="height: 50px; background: #000; color: #0F0; padding: 10px; font-family: monospace">
+            > Gotowy do nagrywania...
+        </div>
+        <button onclick="
+            let procent = 0;
+            const rizz = setInterval(() => {
+                procent += Math.random()*3;
+                document.getElementById('nagrywarka').textContent = 
+                    `> Nagrywanie: ${Math.min(100, procent.toFixed(1))}% ` + 
+                    ['\\','|','/','-'][Math.floor(procent/10)%4];
+                if(procent >= 100) {
+                    clearInterval(rizz);
+                    showPopup('BŁĄD NAGRYWANIA: Dyskietka uszkodzona!');
+                }
+            }, 100);
+        " class="gold-button">
+        NAGRYWAJ
+        </button>
+    </div>
+</div>
+
+<div class="vintage-box">
+    <h2>🔮 WYROCZNIA INTERNETOWA 🔮</h2>
+    <div class="crazy-border">
+        <div id="wyrocznia" style="min-height: 100px; background: rgba(0,0,0,0.5)">
+            <img src="https://i.ytimg.com/vi/3SO7cq3LBGg/maxresdefault.jpg" width="720" id="kula">
+            <p>Pytanie: <input type="text" id="pytanie"></p>
+            <button onclick="losowaOdpowiedz()" class="gold-button">ZADAJ PYTANIE</button>
+        </div>
+    </div>
+</div>
+<div class="vintage-box">
+    <h2>📟 KALKULATOR WIEKU 📟</h2>
+    <div style="background: #333; padding: 15px">
+        <input type="number" placeholder="Rok urodzenia" style="width: 100px">
+        <button onclick="
+            const year = parseInt(document.querySelector('input').value);
+            const age = new Date().getFullYear() - year;
+            showPopup(`Masz ${age} lat (${age * 12} w miesiacach )`);
+            document.getElementById('star-rating').textContent = '★'.repeat(Math.floor(Math.random() * 5 + 1));
+        " class="xp-button">
+        OBLICZ
+        </button>
+        <div id="star-rating" style="margin-top: 10px; color: #0F0"></div>
+    </div>
+</div>
+
+<div class="vintage-box">
+    <h2>📡 NASŁUCH RADIOWY 📡</h2>
+    <div class="crazy-border">
+        <div id="radiofeed" style="height: 100px; overflow: hidden">
+            <marquee direction="up" scrollamount="2" style="height: 100%" id="radio-marquee">
+            </marquee>
+        </div>
+        <button onclick="
+            document.getElementById('radiofeed').style.filter = 'hue-rotate(' + Math.random() * 360 + 'deg)';
+            const messages = [
+                'Łączenie z satelitą...',
+                'Znaleziono 12 UFO!',
+                'Tajny przekaz: Jedzcie więcej pierogów!',
+                'Nadawanie sygnału SOS z Gręzowa!',
+                'Odebrano transmisję od obcych!',
+                'Sygnał zakłócony przez radio z Malucha!',
+                'Napotkano stado kosmicznych gołębi!',
+                'Przechwycono komunikat: Więcej majonezu',
+                'Alarm! Satelita namawia do tańca!',
+                'Rozpoczęto transmisję koncertu discopolo z Wenus!',
+                'Znaleziono nieznany obiekt: Wygląda jak wielki pieróg!',
+                'Uwaga! Transmisja przejęta przez chomika!',
+                'Sygnał z Marsa: Czy macie Wi-Fi?',
+                'Radiowy hałas: Brzmi jak DJ z lat 90-tych!',
+                'Zgubiono kontakt z satelitą, znaleziono kontakt z babcią!',
+                'Odebrano przepowiednię: Przyszłość pełna ogórków kiszonych'
+            ];
+            const timestamp = new Date().toLocaleTimeString();
+            const newMessage = `[${timestamp}] ${messages[Math.floor(Math.random() * messages.length)]}<br>`;
+            document.getElementById('radio-marquee').innerHTML += newMessage;
+        " class="gold-button">
+        ZMIEŃ KANAŁ
+        </button>
+    </div>
+</div>
+
+
+
+
+
+
+<!-- 1. Mystical Pierogi Fortune Teller -->
+<div class="vintage-box">
+    <h2>🥟 MAGICZNE PIEROGI WROŻBIARSTWA 🥟</h2>
+    <div style="text-align: center">
+        <img src="pierog.png" id="pierog" onclick="
+            const fortunes = [
+                'Uważaj na cebulę w nadzieniu! Może być z Biedronki.',
+                'Znajdziesz miłość przy stole wigilijnym... ale tylko jeśli przyniesiesz własne pierogi.',
+                'Twój rocznik kapusty będzie błogosławiony... ale tylko w Grubalach.',
+                'UFO ukradnie trzy pierogi i zostawi ci paragon z Żabki.',
+                'Wkrótce będziesz mistrzem w jedzeniu bigosu... ale tylko w Międzyrzecu.',
+                'Masz w sobie moc, żeby zjeść więcej niż jedną paczkę pączków... ale potem będziesz żałować.',
+                'Twój los zostanie zapieczętowany w maminej kuchni... i nigdy nie uciekniesz.',
+                'Przyjdzie czas, kiedy nie będziesz mógł odmówić żurku... nawet jeśli będzie z proszku.',
+                'Za rogiem czeka na ciebie zagadkowy kurczak z rożna... ale to tylko sąsiad z Gręzowa.',
+                'Cielemęc - tutaj każda droga prowadzi do najbliższego pola, i to jest piękne!',
+                'Cielemęc: bo nie potrzebujesz metra, by poczuć się częścią tej ziemi! Tylko traktora.',
+                'W Międzyrzecu nie ma takiej rzeczy, jak „zła pogoda”, tylko „idealna na pracy w polu”!',
+                'Miasto Grubale to najlepsze miejsce, by odpocząć od betonowego lasu! Znajdziesz tu tylko zieleń i biede!',
+                'Międzyrzec Podlaski? Tylko jeśli chcesz poczuć spokój bez miejskiego zgiełku... i internetu.',
+                'Wszystkie drogi prowadzą do Gręzowa... ale żadna stamtąd nie wraca.',
+                'Cielemęc – tu nie tylko serce bije głośniej, ale i ziemia pod stopami mówi WYPERDALAJ!',
+                'Czuryły to twój ostatni widok! Współczuję.',
+                'W Grubalach zapomnisz, co to korki, ale nauczysz się, czym jest prawdziwa męska przyjaźń... i brak kanalizacji.',
+                'Twój los jest jak pieróg: na zewnątrz miękki, w środku pełen tajemnic... i kapusty.',
+                'Uważaj! W przyszłym tygodniu spotkasz kogoś, kto powie ci, że bigos powinien być bez kapusty.',
+                'Twoje szczęście jest jak kiełbasa: im dłużej leży, tym bardziej śmierdzi.',
+                'Wkrótce odkryjesz, że najlepsze pierogi są u sąsiada... ale on ich nie podzieli.',
+                'Twoja przyszłość jest jak polska droga: pełna dziur i niespodzianek.',
+                'Wkrótce odwiedzisz Cielemęc... i już nigdy nie wrócisz.',
+                'Twój los jest jak polski internet: wolny i nieprzewidywalny.',
+                'Uważaj! W przyszłym miesiącu spotkasz kogoś, kto powie ci, że żurek powinien być bez ziemniaków.',
+                'Twoje szczęście jest jak polska pogoda: raz słońce, raz deszcz, a zawsze nie w porę.',
+                'Wkrótce odkryjesz, że najlepsze pączki są w Międzyrzecu... ale tylko w niedzielę.',
+                'Twoja przyszłość jest jak polski pociąg: spóźniony, ale zawsze dojedzie... może.',
+                'Uważaj! W przyszłym roku spotkasz kogoś, kto powie ci, że pierogi ruskie powinny być z mięsem.'
+            ];
+
+
+            this.style.transform = `rotate(${Math.random()*360}deg)`;
+            showPopup(fortunes[Math.floor(Math.random()*fortunes.length)]);
+        ">
+        <p>Kliknij pieroga by poznać przyszłość!</p>
+    </div>
+</div>
+
+<!-- 3. Polsat TV  -->
+<div class="vintage-box">
+    <h2>📺 PROGRAM TV POLSAT 1998 📺</h2>
+    <div style="columns: 2; font-family: 'Comic Sans MS', cursive;">
+        <p>
+            06:00 - Moda na Sukces: "Tadzio kupuje kredens", "Laura walczy z pralką Franią", "Ewa gotuje bigos w USA"<br>
+            10:00 - "Wojna w Międzyrzecu", "Taniec z Gwiazdami: Edycja Specjalna","Legendy Siedleckie"<br>
+            12:00 - Pogoda: "Deszcz", "Słońce", "Śnieg z deszczem i gradem" (ale i tak nie wierz)<br>
+            15:00 - Infomercial: "Zmywarka do Pierogów", "Nożyce do krojenia kiełbasy", "Maszynka do robienia klusek śląskich"<br>
+            17:00 - Teleturniej: "Familiada: Wersja z teściową", "Jaka to melodia? (Disco Polo Edition)", "Milionerzy: Pięćdziesięcionerzy"<br>
+            20:00 - Klan: "Halinka walczy z internetem", "Styrta sie pali (powtórka)", "Ewa gotuje bigos w USA (powtórka)"<br>
+            22:00 - "Piraci z Karaibów: Wersja VHS z lektorem","Tajemnice Biedronki: Gdzie są promocje?","Gdzie pieniądze są za las: Dokument"<br>
+            00:00 - Nocny Program: "Telezakupy: Złote łańcuszki","Powtórka Mody na Sukces","Film dokumentalny: UFO w Biedronce"
+        </p>
+    </div>
+    <marquee scrollamount="5" style="color: red; font-weight: bold;">
+        ⚠️ TERAZ NA ŻYWO: 
+            "Spowiedź byłego pracownika Pewexu!",
+            "Wywiad z kotem, który mieszka w Biedronce!",
+            "Na żywo: Kto ukradł ostatnią kiełbasę?",
+            "Sensacja: UFO nad Żabką!",
+            "Ekskluzywnie: Czy Zenek Martyniuk jest z tego świata?"
+        ⚠️
+    </marquee>
+    <button onclick="
+        const channels = ['TVP1', 'TVN', 'Polsat', 'TV Trwam', 'TV Kielce'];
+        alert(`PRZEPRASZAMY. Program został przeniesiony na ${channels[Math.floor(Math.random() * channels.length)]}.`);
+    " class="gold-button" style="margin-top: 10px;">
+        ZGŁOŚ AWARIĘ SYGNAŁU
+    </button>
+</div>
+
+
+
+<!-- 5. Dial-Up  -->
+<div class="vintage-box">
+    <h2>📡 SYMULATOR MODEMU 56K 📡</h2>
+    <div style="background: #000; padding: 15px">
+        <button onclick="
+            const audio = new Audio('dialsfx.mp3');
+            audio.play();
+            this.innerHTML = 'POŁĄCZENIE... (4 zł/min)';
+            setTimeout(() => showPopup('POBRANO: 1% strony internetowej'), 5000);
+        " class="xp-button" style="width: 100%">
+        ROZŁĄCZ SIĘ ŻEBY DZWONIĆ
+        </button>
+        <div id="downloadBar" style="height: 3px; background: #0f0; width: 0; transition: 1s"></div>
+    </div>
+</div>
+
+<div class="vintage-box">
+    <h2>🏬 SKLEP KOMUNISTYCZNY 1983 🏬</h2>
+    <div id="grocery-list" style="columns: 2">
+        <!-- Zarcie tu -->
+    </div>
+    <button onclick="tryToBuy()" class="gold-button">
+        SPRÓBUJ KUPIĆ
+    </button>
+</div>
+<script>
+    const products = [
+        "Mydło",
+        "Papier Toaletowy",
+        "Kiełbasa",
+        "Ocet",
+        "Cukier (na kartki)",
+        "Kawa z żołędzi",
+        "Chleb (czarny)",
+        "Margaryna (bez smaku)",
+        "Pasta do butów (jadalna)",
+        "Herbata z liści brzozy",
+        "Mleko w proszku (z 1978)",
+        "Kartofle (z piaskiem)",
+        "Konserwy (bez etykiety)",
+        "Zapałki (mokre)",
+        "Gazeta 'Trybuna Ludu'",
+        "Butelka po mleku (pusta)",
+        "Kreda (do pisania na tablicy)",
+        "Myjka do naczyń (z drutu)",
+        "Kiełbasa sojowa (bez smaku)",
+        "Kartki na mięso (puste)"
+    ];
+    
+    function generateGroceryList() {
+        const groceryList = document.getElementById('grocery-list');
+        groceryList.innerHTML = products.map(item => 
+            `${item}: ${Math.random() > 0.2 ? "BRAK" : "DOSTĘPNE"}` 
+        ).join('<br>');
+    }
+    
+    function tryToBuy() {
+        const excuses = [
+            "PRZEPRASZAMY. Proszę przyjść jutro. (I pojutrze. I za tydzień)",
+            "BRAK TOWARU. Spróbuj w innym sklepie. (Ale tam też nie ma)",
+            "DZIŚ NIE SPRZEDAJEMY. Proszę przyjść wczoraj.",
+            "TOWAR TYLKO DLA PARTII. Proszę się rozejść.",
+            "KARTKI SIĘ SKOŃCZYŁY. Proszę przyjść za rok.",
+            "TOWAR ZAREZERWOWANY DLA PRACOWNIKÓW SKLEPU.",
+            "PRZEPRASZAMY, ALE KIEŁBASA JUŻ POSZŁA NA PREZENT DLA PREMIERA.",
+            "BRAK DOSTAW. Proszę przyjść, jak przywiozą. (Nie wiadomo kiedy)",
+            "TOWAR TYLKO DLA POSIADACZY LEGITYMACJI PZPR.",
+            "PRZEPRASZAMY, ALE MYDŁO JUŻ POSZŁO NA CZARNY RYNEK."
+        ];
+        showPopup(excuses[Math.floor(Math.random() * excuses.length)]);
+    }
+    
+    generateGroceryList();
+    </script>
+<div class="vintage-box">
+    <h2>💘 RANDKI INTERNETOWE 💘</h2>
+    <div style="background: #FF1493; padding: 10px">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnIeWR9LosQsjjtF6peHkNcsBSAihhq982rA&s" width="120" style="float:left">
+        <p><strong>Krzyś42:</strong><br>
+            Zodiak: Zupa Ogórkowa<br>
+            Hobby: Zbieranie paragonów<br>
+            Szukam: Kogoś do naprawy switcha</p>
+        <button onclick="showPopup('Krzyś42 CIEBIE LUBI! Wyślij SMS o treści TAK pod 777!')" 
+                class="xp-button">
+                FLIRTUJ
+        </button>
+    </div>
+</div>
+        <div class="vintage-box">
+            <h2>📖 KSIĘGA GOŚCI 📖</h2>
+            <div style="background: #000080; padding: 10px; color: white">
+                <textarea rows="4" style="width: 100%"></textarea><br>
+                <input type="text" placeholder="Twój nick (wymagane)">
+                <button onclick="alert('Dziękujemy! Twój wpis pojawi się za 5-7 dni roboczych')" 
+                        class="xp-button">
+                        WYŚLIJ
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="licznik">Odwiedzin: 1337</div>
+    </div>
+    <script>
+        // ASCII Art Database
+        const ASCII_DB = [
+            `
+             (  )   (   )  )
+              ) (   )  (  (
+              ( )  (    ) )
+              _____________
+             < ${["GIĘŁDA","TAJNE","KIEŁBASA","UFO"][Math.floor(Math.random()*4)]} >
+              ‾‾‾‾‾‾‾‾‾‾‾‾‾
+                \\   ^__^
+                 \\  (oo)\\_______
+                    (__)\\       )\\/\\
+                        ||----w |
+                        ||     ||
+            `,
+            `
+            ╔══════════════════════╗
+            ║  ░▒▓ Błąd systemu! ▓▒░  ║
+            ║                      ║
+            ║  1. Reboot           ║
+            ║  2. Płacz w kącie    ║
+            ║  3. Jedz kiełbasę    ║
+            ╚════════════╤═════════╝
+                     (\\__/) ||
+                     (•ㅅ•)  ||
+                     / 　 づ
+            `,`⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⣾⣿⣿⣿⣿⣿⣿⣿⣷⣶⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿⣿⡿⠿⠿⠛⠛⠛⠙⠙⠻⢿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⡻⡡⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠏⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣷⡳⡕⢂⠀⠀⠀⠀⠀⠀⠀⠀⠨⣿⣿⣿⣿⢿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⡷⡩⠄⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢺⣯⣟⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢾⠥⡑⠺⣿⣿⣿⣿⣵⢈⡒⣤⠄⢀⣠⣶⡶⠒⠠⠀⠀⠈⣿⡿⢉⠴⡻⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣆⠁⠀⢻⣿⣿⣿⣿⣎⣧⠫⣶⣾⣿⣿⣷⣶⠆⠀⠀⠂⠻⡇⣸⡀⢳⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡆⠀⡸⣿⣿⣿⣿⣿⣿⡆⠀⠙⢿⠻⠓⠋⠀⠀⠀⠀⢀⡇⢨⢻⢿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡿⡍⠘⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠬⠅⡜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣷⠀⣿⣿⣿⣿⣿⣿⢟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡤⠜⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⢽⣿⠀⠘⣿⣿⣿⣿⣿⣾⣇⠿⠂⠀⠀⠀⠀⠀⠀⠀⠀⡈⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣄⢀⡜⣿⣿⣿⣿⣿⣻⢇⣀⣀⣢⡀⠀⠀⠀⠀⢠⠃⣳⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⣟⣀⢸⡿⢿⣿⣿⣟⣻⣏⣨⠀⠀⠀⠀⠀⣰⠃⠀⢹⣿⣿⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡄⢹⣿⣿⡿⣫⡉⠉⠁⠀⣠⣾⠗⠀⠀⠘⣿⣿⣿⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⡿⣿⢿⣟⣟⡛⢷⣴⣿⣿⣿⣷⣽⣷⣦⣤⡾⠋⠡⠀⠀⠠⣄⣿⣿⣿⣿⣿⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢀⣤⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⣉⡠⣆⣈⣉⣉⣉⣭⣿⠛⣤⠀⠀⢀⢀⣽⢵⣿⣿⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡙⡙⠛⠻⠿⣿⠿⢿⣿⣟⣿⣿⣟⣿⣇⡞⠄⢰⢂⢾⠏⣼⣿⣿⣿⣿⣿⣿⣿⣿⣧⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⣿⣷⣿⣯⣴⣠⢤⣀⢀⣤⣌⣩⣭⡙⢮⡟⣘⠏⡸⢼⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⠿⢿⠻⡝⠛⡘⣐⣤⣭⣷⣯⣿⣽⣾⣷⣾⣿⣏⣷⣧⣿⡧⠒⣒⡼⠋⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠉⠉⠉⠉⢀⡀⢔⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀
+⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠈⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀
+⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢧⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⢷⣹⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀
+⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠸⡄⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢫⣟⣮⢛⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀
+⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⢻⡀⠀⠀⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⡱⣇⠺⣿⡸⣿⣿⢻⣿⣿⣿⣿⣿⡀⠀⠀⠀
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢻⣿⣿⣿⣿⣿⣿⣿⣿⡏⡆⠈⠁⠀⢠⠃⢻⣿⣯⣿⣿⣿⣿⣿⣿⣿⠟⡄⢳⣽⣾⢧⡹⣷⢻⣿⢹⣿⣿⣿⣿⣿⣧⠀⠀⠀
+⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⣿⣿⣿⣿⣿⣿⣿⣿⡇⢡⠀⡇⢀⠇⠀⠈⣿⣿⣿⣿⢛⡿⣏⢳⣮⠨⣜⣿⣿⣟⢧⣷⣉⢿⡚⣿⣿⣿⣿⣿⣿⣿⡆⠀⠀
+⠈⠻⣿⠿⣿⣿⢿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⣏⢿⣿⣿⣿⣿⣿⣿⠀⠈⡀⢹⡎⠀⠀⠀⢹⣿⣿⡿⣿⠱⢮⡻⣬⡗⣹⣾⣿⢯⡲⢿⣆⢯⢳⣿⣿⣿⣿⣿⣿⣿⣷⠀⠀
+⠀⠀⠀⠉⠒⠚⠒⠊⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣞⠦⡙⣿⣿⣿⣿⣿⠀⠀⣿⠟⠁⠀⠀⠀⠈⣿⣿⣷⢻⡜⣧⢻⡜⣽⢸⣿⣿⡣⠜⡭⢿⣎⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣗⠨⣽⣿⣿⣿⡏⠀⣠⣾⣥⣤⠀⠀⠀⠀⣿⣿⣿⡻⡽⣘⣧⢻⢼⡿⣿⣿⣟⡬⢳⣋⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣣⡿⠧⣿⣿⠇⠀⠈⢹⠇⠁⠀⠀⠀⠀⢸⣿⣿⣷⣙⡣⢜⡋⠷⣷⢻⣿⣿⣖⢯⣝⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⡀⠀`,
+`⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠒⠦⣄⣠⠶⠞⠳⣆⠀⠀⠀⠀
+⠀⠀⠀⣴⠛⠛⠛⠲⢦⣤⡴⠶⠶⢶⠏⠀⢀⣄⣹⣇⡀⠀⠀⣻⡀⠀⠀⠀
+⠀⠀⠀⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠂⠀⢿⣼⠋⠀⠉⣿⣍⠉⠉⡆⠀⠀
+⠀⠀⠀⢿⡤⠀⠀⠀⠀⠀⠀⠀⠀⠈⠧⠤⠤⠿⢦⣀⣤⠿⠼⠀⣰⠃⠀⠀
+⠀⠀⠀⡾⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⠤⠶⢿⡀⠀⠀
+⠀⠀⢸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣼⡧⠤⠆
+⣠⣤⢼⡧⢤⠀⠀⠀⢠⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⡇⠀⠀⠀⣤⣧⣄⡀
+⠀⠀⢀⡿⠉⠹⡄⠀⠈⠋⠀⠀⠀⣴⠒⡆⠀⠀⠀⠀⠀⠀⠀⣀⣼⠁⠀⠀
+⢠⡞⠉⠛⠀⠀⠹⠶⠶⣄⠀⠀⠀⠈⠉⠀⠀⠀⠀⠀⠀⠀⣀⠾⠉⠙⠒⠀
+⠀⠳⢤⣀⠀⠀⢠⠖⠒⠈⢳⣀⠀⠀⢀⣀⣀⣀⣤⠤⠖⠛⠁⠀⠀⠀⠀⠀
+⠀⠀⠀⢹⡀⠀⠘⠲⠖⠃⣼⠋⠉⠁⠉⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠛⠦⣤⣤⠴⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀`,`⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠈⣿⣿⣿⣿⣿⣿⠟⠉⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀⠙⢻⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⠃⠀⠀⠀⠀⣠⣄⠀⢻⣿⣿⣿⣿⣿⡿⠀⣠⣄⠀⠀⠀⢻⣿⣿⣏⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⠀⠀⠀⠀⠰⣿⣿⠀⢸⣿⣿⣿⣿⣿⡇⠀⣿⣿⡇⠀⠀⢸⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣄⠀⠀⠀⠀⠙⠃⠀⣼⣿⣿⣿⣿⣿⣇⠀⠙⠛⠁⠀⠀⣼⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣷⣤⣄⣀⣠⣤⣾⣿⣿⣿⣿⣽⣿⣿⣦⣄⣀⣀⣤⣾⣿⣿⣿⣿⠃⠀⠀⢀⣀⠀⠀
+⠰⡶⠶⠶⠶⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠛⠉⠉⠙⠛⠋⠀
+⠀⠀⢀⣀⣠⣤⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠷⠶⠶⠶⢤⣤⣀⠀
+⠀⠛⠋⠉⠁⠀⣀⣴⡿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⣤⣀⡀⠀⠀⠀⠀⠘⠃
+⠀⠀⢀⣤⡶⠟⠉⠁⠀⠀⠉⠛⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠟⠉⠀⠀⠀⠉⠙⠳⠶⣄⡀⠀⠀
+⠀⠀⠙⠁⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠁⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀`,`⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣤⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣄⠀⠀⣀⣀⣀⣀⣀⣤⣀⣀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⡿⠋⠘⣿⣿⠿⠛⠋⠉⠉⠀⠀⠀⠀⠀⠀⠉⠉⠉⠛⠛⠲⢦⣤⣀⠀⠀⠀⣠⣶⣾⣿⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣏⣀⡴⠛⠁⠀⠀⠀⠀⠖⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⢶⣾⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⡿⣯⠟⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣄⠀⠘⢿⣿⡁⠻⣿⣾⣿⣧⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣠⣾⣿⣿⢿⢿⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣄⠀⠀⠀⠀⠀⠀⠀⠈⠳⣄⠀⠹⣿⣄⣹⣿⣯⣿⣧⡀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢾⣿⣿⣿⣡⣿⠟⠀⠀⠀⠀⢀⠀⠀⠀⢀⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⡄⠀⠀⠀⠀⠀⠀⠀⠙⢦⡲⣿⣋⠗⠻⣿⣿⢿⣷⡀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠻⣿⣿⣿⠏⠀⠀⠀⠀⢀⡏⠀⠀⠀⣸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣆⠀⠀⠀⠀⠀⠀⠀⠈⢷⡹⣧⣻⡄⠹⣿⣿⢿⣷⡀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠙⣿⠏⠀⠀⠀⠀⠀⣾⠁⠀⠀⣴⠿⣇⠀⠀⠀⠀⠀⠀⣼⡄⠀⠀⠀⠀⠀⠙⣦⠀⠀⠀⠀⠀⠀⠀⠈⣧⢿⣷⣳⠀⠹⣿⣿⣿⣿⡀⠀⠀
+⠀⠀⠀⠀⠀⠀⢰⣿⠀⠀⠀⠀⠀⢠⡏⠀⠀⣴⠟⠀⣿⠀⡀⠀⠀⠀⠀⣿⣷⡀⠀⠀⣀⠀⠀⢻⣄⠀⠀⠀⠀⠀⠀⠀⢹⡼⡿⣟⡆⠀⣻⣿⣿⣿⡷⠀⠀
+⠀⠀⠀⠀⠀⠀⣿⣇⡆⠀⠀⠀⠀⣾⡇⢀⡾⠃⠀⠀⢸⡆⢱⠀⠀⠀⠀⣿⠈⢷⣄⠀⢸⣷⣄⠈⢿⡄⠀⠀⠀⠀⠀⠀⠀⣯⣿⣹⢿⣴⣿⣿⣿⠏⠀⠀⠀
+⠀⠀⠀⠀⠀⢸⢿⣾⠇⠀⠀⠀⠐⣿⡇⣼⣥⣤⣶⣶⢶⣿⣾⣤⣤⡄⠀⣿⢰⣤⣽⣶⣾⣷⡿⣿⣾⣿⡀⠀⠀⠀⠀⠀⠀⢻⣿⣦⣿⣿⣿⡿⣧⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣾⠸⣿⠀⠀⠀⠀⢸⣿⣿⠛⠋⠀⣀⣐⣒⣺⣿⣿⣍⠀⠀⣿⠀⣝⣛⣛⣳⣿⣆⡈⢻⣿⣇⠀⠀⠀⢠⠀⠀⠸⣿⣿⣿⣿⠟⠀⢹⡄⠀⠀⠀
+⠀⠀⠀⠀⢰⡇⠀⣿⢸⡇⠀⠀⣼⣿⠏⠀⠀⠺⢥⣽⡿⣿⢼⣿⣿⡀⠀⣿⠈⠃⢼⢥⠿⡿⢧⠼⠃⠹⣿⠀⠀⠀⠀⡇⠀⠀⣿⣿⢿⣻⠀⠀⢸⡇⠀⠀⠀
+⠀⠀⠀⠀⢸⠇⠀⣿⠀⣷⠀⠀⣿⣿⠂⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣷⡀⢹⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⣽⠀⠀⠀⠠⣧⠀⠀⣿⢻⡦⢽⡆⠀⠀⣷⠀⠀⠀
+⠀⠀⠀⠀⣿⠀⠠⣿⢀⣿⡄⠀⢻⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣌⣧⠀⠀⠀⠀⠀⠀⠀⢀⡄⢻⠀⠀⠀⢸⣯⠀⠀⢻⣸⣏⠞⡇⠀⠀⢻⠀⠀⠀
+⠀⠀⠀⢠⡇⠀⢸⣷⢿⡿⣷⠀⢸⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⢿⡆⠀⠀⠀⢀⠀⢀⡞⠀⣼⠀⠀⠀⣾⣿⣷⣤⡸⣇⣿⡘⡇⠀⠀⢸⡇⠀⠀
+⠀⠀⠀⢸⠇⠀⢸⡏⢾⡇⠘⣧⠈⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⡴⠋⠀⡞⠀⠀⡿⠀⠀⣼⣿⣿⠏⠈⠙⠃⣿⡘⡗⠀⠀⠸⡇⠀⠀
+⠀⠀⠀⡿⢀⡇⣼⡙⣾⠇⠀⠘⣧⣿⣿⣿⣦⣄⠀⠀⠸⠗⠒⠒⠒⠒⠚⠛⠋⠉⠉⠀⠀⠀⢸⠃⠀⣸⠇⢀⣼⣿⣿⠟⠀⠀⠀⠀⣿⡱⣋⠀⠀⠀⣿⠀⠀
+⠀⠀⢰⡇⠸⡇⡟⡬⣿⠀⠀⠀⠈⠻⡌⠻⣷⣬⣙⡲⢦⣄⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣨⡴⢚⡟⣠⠞⠿⠛⠋⠀⠀⠀⠀⠀⣹⠖⣽⠀⠀⠀⢿⠀⠀
+⠀⠀⣼⠃⢘⡇⣇⠳⣿⠀⠀⠀⠀⠀⠀⠀⠉⠻⣷⣿⠆⣠⢾⡍⠙⢿⡿⠟⠛⣛⡿⣟⠉⠉⠀⢠⡾⠞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣛⣼⠀⠀⠀⢸⡆⠀
+⠀⢀⡟⠀⢸⡇⣎⢻⡗⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣧⡞⠙⢾⡋⣹⠶⠾⡏⠀⣈⣷⡀⠀⠈⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡧⢾⠀⠀⠀⢸⡇⠀
+⠀⢸⠇⠀⢸⡗⣭⢺⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⠀⠀⢸⠋⣿⠤⠤⣽⣆⢻⣯⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣏⢿⡀⠀⠀⠈⣧⠀
+⠀⣿⠀⠀⠘⣿⢰⢫⡇⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⠀⠀⣾⠀⣿⠀⡀⠈⢻⣯⣷⣿⣷⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣏⣾⠀⠀⠀⠀⣿⠀
+⢠⡇⠀⠀⠀⣿⢣⢻⡇⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⡟⣹⠀⢠⣟⡀⢿⠀⡆⠀⠀⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡧⣿⠀⠀⠀⠀⢹⡀
+⢸⡇⠀⠀⠀⢹⣧⢻⡇⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⡟⣰⢋⠆⢸⠿⠇⢺⠀⢸⠀⠀⢻⣿⣿⣿⣿⡿⣧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣗⡿⠀⠀⠀⠀⢸⡇
+⢸⣷⡀⠀⠀⠘⣷⣹⡇⠀⠀⠀⠀⣾⠉⠿⣽⣻⠟⡴⠃⠎⠀⠸⣆⣠⡿⠀⠈⡆⠀⠀⢻⣿⣿⣞⢿⣽⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⡇⠀⠠⠀⠀⠈⣧
+⢸⡟⡇⠀⠀⠀⢿⣭⣷⠀⠀⠀⠀⠻⠦⠖⠿⠋⢠⣷⣆⠀⠀⣴⣿⣿⣧⠀⠀⢱⣤⣤⣼⣿⣿⣿⣼⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⠇⠀⢰⠀⠀⠀⣿
+⠸⣏⢷⡀⠀⠀⠘⣷⣿⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣷⣾⣿⣿⣿⣿⣧⣰⣿⣿⣿⣿⣿⣿⣿⣿⡛⠉⡷⠀⠀⠀⠀⠀⠀⠀⠀⣾⡿⠀⠀⣸⠀⠀⠀⣻
+⠀⢻⣎⢷⡀⠀⠀⢹⣿⡆⠀⠀⠀⠀⠀⠀⠀⠙⢯⣿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⠿⣿⢛⣻⡯⠟⠈⠙⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀⣿⠇⠀⢠⣿⠀⠀⠀⣽
+⠀⠈⢿⣎⣿⣆⠀⠀⢻⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⡖⠶⠾⡿⣶⣴⣾⠷⠶⠒⠛⢻⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⡏⠀⢀⡾⣽⠀⠀⢠⡿
+⠀⠀⠀⠹⣾⣿⣟⢦⡀⢿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⢸⣶⢤⠶⣖⣻⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡟⠀⢀⣾⣹⡇⠀⢀⣾⠁
+⠀⠀⠀⠀⠈⠙⢿⣿⣽⣢⡝⣷⡀⠀⠀⠀⠀⠀⠀⠀⠀⢹⡿⣿⣿⣿⣿⠸⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡟⠀⣴⡛⢦⡿⢀⣠⡿⠁⠀
+⠀⠀⠀⠀⠀⠀⠀⠈⠛⠉⠛⠛⠿⠆⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣿⡏⠀⣿⣾⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⢏⡴⡻⢥⣫⣿⣳⠟⠋⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣽⣿⢿⡇⠀⢻⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠿⠷⠿⠛⠛⠋⠛⠉⠁⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠓⠚⠋⠀⠀⢿⣟⣿⡭⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀`,`ㅤ／l、         
+（ﾟ､ ｡ ７                          
+    l~ ヽﾉｼ             
+   じじと)੭`,`⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣤⣤⣤⣤⣤⣶⣦⣤⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⡿⠛⠉⠙⠛⠛⠛⠛⠻⢿⣿⣷⣤⡀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⠋⠀⠀⠀⠀⠀⠀⠀⢀⣀⣀⠈⢻⣿⣿⡄⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣸⣿⡏⠀⠀⠀⣠⣶⣾⣿⣿⣿⠿⠿⠿⢿⣿⣿⣿⣄⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣿⣿⠁⠀⠀⢰⣿⣿⣯⠁⠀⠀⠀⠀⠀⠀⠀⠈⠙⢿⣷⡄⠀⠀
+⠀⠀⣀⣤⣴⣶⣶⣿⡟⠀⠀⠀⢸⣿⣿⣿⣆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣷⠀⠀
+⠀⢰⣿⡟⠋⠉⣹⣿⡇⠀⠀⠀⠘⣿⣿⣿⣿⣷⣦⣤⣤⣤⣶⣶⣶⣶⣿⣿⣿⠀⠀
+⠀⢸⣿⡇⠀⠀⣿⣿⡇⠀⠀⠀⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠃⠀⠀
+⠀⣸⣿⡇⠀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠉⠻⠿⣿⣿⣿⣿⡿⠿⠿⠛⢻⣿⡇⠀⠀⠀
+⠀⣿⣿⠁⠀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣧⠀⠀⠀
+⠀⣿⣿⠀⠀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⠀⠀⠀
+⠀⣿⣿⠀⠀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⠀⠀⠀
+⠀⢿⣿⡆⠀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⡇⠀⠀⠀
+⠀⠸⣿⣧⡀⠀⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠃⠀⠀⠀
+⠀⠀⠛⢿⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⣰⣿⣿⣷⣶⣶⣶⣶⠶⠀⢠⣿⣿⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣿⣿⠀⠀⠀⠀⠀⣿⣿⡇⠀⣽⣿⡏⠁⠀⠀⢸⣿⡇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣿⣿⠀⠀⠀⠀⠀⣿⣿⡇⠀⢹⣿⡆⠀⠀⠀⣸⣿⠇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢿⣿⣦⣄⣀⣠⣴⣿⣿⠁⠀⠈⠻⣿⣿⣿⣿⡿⠏⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠈⠛⠻⠿⠿⠿⠿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀`,`⠀⠀⠀⠀⠀⢀⣤⠖⠒⠒⠒⢒⡒⠒⠒⠒⠒⠒⠲⠦⠤⢤⣤⣄⣀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣠⠟⠀⢀⠠⣐⢭⡐⠂⠬⠭⡁⠐⠒⠀⠀⣀⣒⣒⠐⠈⠙⢦⣄⠀⠀
+⠀⠀⠀⣰⠏⠀⠐⠡⠪⠂⣁⣀⣀⣀⡀⠰⠀⠀⠀⢨⠂⠀⠀⠈⢢⠀⠀⢹⠀⠀
+⠀⣠⣾⠿⠤⣤⡀⠤⡢⡾⠿⠿⠿⣬⣉⣷⠀⠀⢀⣨⣶⣾⡿⠿⠆⠤⠤⠌⡳⣄
+⣰⢫⢁⡾⠋⢹⡙⠓⠦⠤⠴⠛⠀⠀⠈⠁⠀⠀⠀⢹⡀⠀⢠⣄⣤⢶⠲⠍⡎⣾
+⢿⠸⠸⡇⠶⢿⡙⠳⢦⣄⣀⠐⠒⠚⣞⢛⣀⡀⠀⠀⢹⣶⢄⡀⠀⣸⡄⠠⣃⣿
+⠈⢷⣕⠋⠀⠘⢿⡶⣤⣧⡉⠙⠓⣶⠿⣬⣀⣀⣐⡶⠋⣀⣀⣬⢾⢻⣿⠀⣼⠃
+⠀⠀⠙⣦⠀⠀⠈⠳⣄⡟⠛⠿⣶⣯⣤⣀⣀⣏⣉⣙⣏⣉⣸⣧⣼⣾⣿⠀⡇⠀
+⠀⠀⠀⠘⢧⡀⠀⠀⠈⠳⣄⡀⣸⠃⠉⠙⢻⠻⠿⢿⡿⢿⡿⢿⢿⣿⡟⠀⣧⠀
+⠀⠀⠀⠀⠀⠙⢦⣐⠤⣒⠄⣉⠓⠶⠤⣤⣼⣀⣀⣼⣀⣼⣥⠿⠾⠛⠁⠀⢿⠀
+⠀⠀⠀⠀⠀⠀⠀⠈⠙⠦⣭⣐⠉⠴⢂⡤⠀⠐⠀⠒⠒⢀⡀⠀⠄⠁⡠⠀⢸⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠲⢤⣀⣀⠉⠁⠀⠀⠀⠒⠒⠒⠉⠀⢀⡾⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠛⠲⠦⠤⠤⠤⠤⠴⠞⠋⠀⠀`,`⣿⣿⣿⣟⠛⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠛⠛⣛⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⡷⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠺⣿⣿⣿⣿⣿⣿
+⣿⣿⡟⠋⠀⢀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣀⠀⠈⠙⢿⣿⣿⣿
+⡿⠋⠀⢈⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠙⢿⣿
+⠁⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠈⣿
+⠀⠀⠀⠘⣿⣿⣿⣧⠙⢿⣿⣿⣿⣿⣿⣿⣿⡿⠋⢸⣿⣿⣿⡿⠃⠀⠀⠀⠀⣿
+⣆⠀⠀⠀⠈⠙⠻⢿⠀⠎⢿⣿⣿⣿⣿⣿⣿⡇⡀⠘⠟⠋⠁⠀⠀⠀⠀⢀⣼⣿
+⣿⣷⣤⡈⠀⠠⢀⣀⣀⢠⠬⠭⠤⢤⢤⡠⠤⢤⣠⣀⠄⡀⠀⠄⢀⣤⣶⣿⣿⣿
+⣿⣿⡟⠋⡄⢒⣩⢶⣚⠷⣿⠯⣽⢻⣫⡽⡙⢆⡓⢪⣵⣌⣷⡀⠌⢻⣿⣿⣿⣿
+⣿⡿⠃⠈⠴⣍⡑⠾⣿⠯⣹⢛⡵⠣⢿⢁⠿⣿⡟⡄⠳⠛⠚⠬⠳⡄⠻⣿⣿⣿
+⡏⠠⠂⡌⠐⠢⠙⢿⣬⢛⡹⣸⣽⣻⣛⢢⠽⣴⣩⡴⣿⠞⠉⠁⢀⢈⠂⢀⠻⣿
+⡇⠀⢣⡐⠀⠀⠀⠈⠀⠛⠘⠉⠓⠢⠼⠬⠷⠚⠉⠀⠁⠀⠀⡜⣸⡄⢡⠐⠆⣹
+⣿⡄⠃⠐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⢫⢐⡘⡠⠠⠎⣠⣿
+⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⢃⢃⡾⢳⡃⢠⣾⣿⣿
+⣿⣿⠀⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⡸⢃⡼⢀⠃⠤⢀⣿⣿⣿⣿
+⣿⣿⠘⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⣠⠞⠔⠝⡰⠃⢊⣴⣿⣿⣿⣿⣿
+⣿⡇⠀⠰⡀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⢁⡪⠄⠂⠊⣀⣤⣾⣿⣿⣿⣿⣿⣿⣿
+⣿⣧⡈⠑⠀⢃⡒⢠⣌⣡⢩⡤⠉⠈⠐⢉⣠⣤⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣶⣤⣤⣤⣀⣠⣤⣤⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿`,`⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⡀⠀⠀⠀⠀⠀⣿⣿⠇⠀⠀⠀⣴⣶⡄⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣧⠀⠀⠀⠀⠀⣾⣯⠀⠀⠀⠀⣿⣿⠃⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣿⡀⠀⠀⠀⠀⣿⣿⠀⠀⠀⠀⣾⣏⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⡇⠀⠀⠀⠀⣹⣿⠀⠀⠀⠀⣿⡟⠀⠀⠀⠀⣠⣦
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣧⠀⠀⠀⠀⢻⣿⠀⠀⠀⢀⣿⠇⠀⠀⠀⠠⣿⠇
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⡄⠀⠀⠀⠀⠁⠀⠀⠀⠿⠟⠀⠀⠀⢀⣼⡟⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⡿⠁⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⣶⣶⣿⣶⣄⣀⠀⠀⠀⠀⢸⡟⠁⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣤⣤⡈⠀⠀⠀⠀
+⣴⣶⣶⣄⠀⠀⠀⠀⠀⠀⠀⠀⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁⠀⠀⠀⠀
+⠹⣿⣿⣿⡆⠀⠀⠀⠀⠀⢀⣤⣿⣿⡿⠀⠉⠉⢁⣾⣿⣽⣿⣿⡟⠀⠀⠀⠀⠀
+⠀⠈⠻⣿⣧⡄⠀⠀⠀⠀⣨⣿⣿⢿⣿⠀⠀⠀⢨⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀
+⠀⠀⠀⠈⠙⠁⠀⣀⠀⣈⣿⣿⣿⣾⣿⣦⡀⠀⢸⣿⣿⣿⣿⣿⡗⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣯⣿⣿⣿⣿⣿⣿⣾⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠿⣿⣿⣿⠿⠿⠿⠛⠛⠛⠉⠀⠀⠀⠀⠀⠀⠀`,`⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣀⣠⣦⣤⣴⣤⣤⣄⣀⣀⣀⣀⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣤⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡀⠀⠀⣀⣀⣠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣛⣛⣻⣿⣦⣀⠀⢀⣀⣀⣏⣹⠀
+⢠⣶⣶⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⠿⠿⠿⠿⠿⠿⠭⠭⠽⠽⠿⠿⠭⠭⠭⠽⠿⠿⠛
+⠈⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠛⠉⢻⣿⣿⣿⡟⠏⠉⠉⣿⢿⣿⣿⣿⣇⠀⠀⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⣿⣿⣿⣿⣿⣿⣿⡿⠿⠛⠉⠁⠀⠀⠀⢠⣿⣿⣿⠋⠑⠒⠒⠚⠙⠸⣿⣿⣿⣿⡄⠀⠀⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⣿⣿⡿⠿⠛⠉⠁⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⡿⠃⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿⣿⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠛⠛⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣿⣿⣿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⢿⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀`,`⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠋⠉⠉⣀⣀⣀⢉⠉⠉⠛⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠋⠁⣠⣤⣴⣤⡈⠛⠛⡛⠋⣉⣌⣳⣤⣀⠙⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⣁⣤⡄⢰⡿⠟⠛⣉⣡⣤⣤⣤⣤⣈⡁⠛⠿⢇⠀⣴⣤⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁⠀⠛⠋⠀⣠⣤⣶⣿⠿⠛⠛⣛⣛⠛⠻⢿⣷⣦⣄⠀⠈⠛⠁⠀⠙⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠋⠀⢀⠻⢃⣴⣾⣿⠟⣩⣴⣾⡟⠘⣿⠏⠹⣿⣶⣬⡙⢿⣿⣦⡀⠈⠱⠀⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁⢀⡠⢀⣴⣿⡿⢋⢴⣿⡏⣀⠉⣴⣷⣄⣴⣧⡘⠁⡘⣿⣶⢌⠻⣿⣶⡀⠀⠀⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁⢀⠄⣠⣾⣿⢋⣴⡟⠀⠙⢰⣿⡿⢸⣿⣿⣿⣿⣿⠻⣧⠈⠁⠸⣷⣜⢿⣿⣦⠐⠀⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⡿⠃⣠⠃⣰⣿⡟⢡⠛⠿⢣⣿⣶⣿⢇⠰⢸⣿⣿⣿⢿⣿⡇⣿⣷⣾⠇⠻⠟⣦⠹⣿⣧⡀⠁⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⠟⠉⣀⣴⠃⣼⣿⡟⢱⡟⠀⠀⣸⣿⢋⡟⢸⠀⠘⣿⣿⢸⠸⣿⠡⠸⣿⣿⡄⠀⢠⠘⣧⠹⣿⣷⡀⢹⣶⠌⠻⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⠟⠁⠀⣼⣛⠇⣰⣿⡿⠁⠀⠀⡇⡇⣿⠏⡼⠁⠀⠀⡀⢸⣿⢸⠀⣿⠀⡀⠘⣿⡇⠀⢻⣆⠁⠀⢻⣿⣧⡀⢻⣾⣷⡈⠻⣿⣿⣿⣿⣿
+⣿⣿⡿⠁⠀⣸⣿⣿⠏⢠⣿⣿⠃⣰⣷⣶⠇⢹⡏⠀⠡⢶⠀⠀⠠⠈⠇⠘⡀⠘⢀⠱⠀⠙⡗⠀⠀⣿⣾⣷⠀⢻⣿⣇⠈⣿⣿⣿⣴⠈⠻⣿⣿⣿
+⣿⠟⢀⣾⣿⣿⣿⠇⠀⣾⣿⡇⢠⣿⣿⡿⠀⠸⢰⣧⣾⣷⣤⣥⣶⣶⣿⣿⣷⣦⣶⣶⣧⣤⣥⣀⡀⠙⣿⣿⣧⠘⣿⣿⡀⠸⣿⣿⣿⣿⢂⠘⢿⣿
+⠏⠀⣾⣿⣿⣿⡟⠀⢠⣿⣿⠁⣿⣿⣿⡇⠀⠁⡀⠈⠉⠒⠿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠋⠉⠉⡉⠑⠀⣿⣿⣿⡇⢿⣿⣧⠀⠙⣿⣿⣿⣿⡀⠈⢿
+⠀⠙⠛⠛⠛⠛⠀⠀⣸⣿⣿⠀⣿⣿⡿⣤⠰⣼⡇⠀⠀⠀⢠⣼⣿⣿⣿⣿⣿⣿⣄⠀⠀⠀⢀⣿⡜⢀⣿⣿⣿⡇⢸⣿⣿⠀⠀⠉⠉⠛⠛⠓⠀⢸
+⣿⣿⣿⣿⣿⣿⣿⠀⣿⣿⣿⠀⢹⣿⣧⠘⡶⣽⣯⣤⣥⣤⣾⣿⣿⣿⣿⣿⣿⣿⣿⣦⣤⣤⣬⣍⡤⠟⣰⣿⣿⠁⢸⣿⣿⠀⢸⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⠀⢸⣿⣿⠀⡞⣿⣿⢧⡰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⣰⢿⣿⡿⡆⣼⣿⣿⠀⢸⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⡀⠘⣿⡿⡈⢠⣿⣿⠘⡷⡈⡛⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⠁⡔⡛⣸⣿⣇⠱⠹⣿⡿⠀⣾⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣇⠀⠛⢀⣴⡈⣿⣿⠀⡇⢷⠈⠿⣿⣿⣿⣿⣶⣬⣭⣭⣴⣿⣿⣿⣿⡿⠋⣠⢡⠇⣿⣿⡏⣰⣄⠙⠁⢰⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣭⣄⠐⣿⣿⣇⢻⢿⡇⢰⠈⠆⠀⢈⡙⠻⢿⣿⣿⣿⣿⣿⣿⠿⠛⠉⠀⢀⠏⣸⠀⣿⢿⢠⣿⡿⡇⢁⣬⣽⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⣿⡆⠐⣿⣿⡌⠸⣿⠀⢷⡌⠀⢠⡀⠀⠐⠬⡉⠛⢋⣩⠀⠀⠀⣠⠀⢀⣶⠃⣸⡏⠈⣾⡿⡏⢠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⣿⡟⠀⣴⠈⠻⣿⡄⠹⣇⠈⢾⣦⣌⣃⣐⣿⠆⢠⠾⠦⠀⣾⣇⣀⣫⣥⡶⠊⢠⡿⠀⣸⡿⠋⣴⡔⠙⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⡿⠟⣋⣴⠡⢉⣴⣶⣬⡓⠄⠹⣦⡀⠙⣿⣿⣿⣿⣿⣿⠛⢿⣦⢿⣿⣿⣿⡿⢁⣤⡾⠁⠐⣩⣴⣦⣌⠣⢷⣬⡛⢿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣶⣿⣿⢁⢰⣿⣿⣿⣿⣇⢻⣦⡙⢿⣤⣬⣙⢛⣛⣛⣛⣒⣘⣉⣚⣛⢛⣩⣴⣾⠟⣡⣾⢣⣿⣿⣿⣿⣧⢂⢻⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⡿⢡⡟⢈⠙⠿⣿⣿⣿⣦⣹⣿⣶⣌⡙⠻⣦⠹⣿⣿⣿⣿⣿⡾⢣⠿⢛⣩⣴⣾⣿⣡⣿⣿⣿⡿⠟⠁⠘⣦⡻⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⠿⣋⣴⣿⠁⠀⣷⣶⣄⡉⠛⠿⣿⣿⣿⣿⣿⣷⣮⣁⠐⣬⣭⣥⡦⢀⣡⣶⣿⣿⣿⣿⣿⠿⠟⢉⡠⢰⣾⣷⠀⢻⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⡏⠀⣿⣿⣿⣿⣿⣿⡦⢤⡈⠑⠙⠿⢿⣿⣿⣷⡘⢿⠟⣴⣿⣿⣿⠿⠛⠛⢉⣠⡴⢾⣿⣿⣿⣿⣿⡂⠸⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⠇⣼⣿⣿⣿⣿⣿⣿⣷⣾⣿⠀⢰⡆⠀⣉⠙⠛⢷⠀⠸⠟⠛⠉⡁⢰⣶⠀⣿⣺⣿⣿⣿⣿⣿⣿⣿⣧⠀⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣿⠀⣿⣿⣿⡏⠹⣿⣿⣿⣿⡟⠀⣿⡇⢰⣭⡗⠂⠀⠀⠀⠀⣼⣿⡇⠸⣿⠀⣿⣿⣿⣾⣿⡏⢹⣿⣿⣿⠇⠸⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⠇⢠⣿⣿⣿⡇⢠⣿⣿⣿⣿⣿⠀⣿⡇⢸⣿⣧⠀⠀⢀⣾⣾⣿⣿⡇⠀⣿⡇⢽⣿⣿⡟⣿⡇⠈⣿⣿⣿⣇⠀⢿⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⡿⠀⣿⣿⣿⣿⠇⠸⠿⣿⣿⣿⣟⢀⣿⡇⢸⣿⣿⣷⣿⣿⣿⣿⣿⣿⣿⠀⣿⡇⢸⣿⣿⡯⠿⢁⠀⣿⣿⣿⣿⡆⠘⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⠇⠀⣟⣿⣿⣿⠀⠀⢰⣾⣿⣿⣿⢸⣿⠁⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⣿⡇⢸⣿⣿⣿⡆⠘⠀⣿⣿⣿⣿⣧⠀⠸⣿⣿⣿⣿⣿`,`⣿⣿⠻⣿⣿⠇⠟⠃⣰⠁⣾⣿⣿⡟⣽⣿⢁⣿⢸⣷⡘⣿⣿⣿⣿⣿⣿⡇⣿⣿⣿⣿⡇⣿⣿⣿⣿⣿⣇⠀⠀⢿⡄⠛⠆⣿⣿⣿⢻⣿
+⣿⢃⣶⣾⣿⡄⣼⢠⣬⣼⣿⣿⠏⢰⣿⠃⢸⡇⣾⣿⡇⢿⣿⣿⣿⢸⣿⡇⢹⣿⣿⢸⡇⠸⡇⢿⣿⣿⡇⠸⣆⡀⣴⣷⢠⣾⣿⣿⣧⢻
+⢇⣾⣿⣿⣿⢱⡏⣾⣿⣿⣿⡶⢀⣿⠃⠀⢸⡇⣿⣿⣿⡀⣿⣿⣿⢸⣿⡇⢸⣿⣿⠈⡇⡄⢻⠸⣿⣿⣿⠆⢿⣧⢻⢿⡌⣿⣿⣿⣿⣧
+⣾⣿⣿⣟⠏⣿⡇⣿⣿⣿⠟⠁⢸⡏⣰⡇⢸⠃⢹⣿⣿⣧⢸⣿⡇⢸⣿⢠⠘⣿⡿⢀⠀⣿⡈⠆⢻⣿⣿⠢⠘⣿⡎⢸⣷⢸⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⢸⡿⣼⣿⠀⠇⣾⢰⣿⣷⢸⠀⡄⠟⡿⠿⠆⢿⢇⢸⡟⣸⡇⣿⠇⣿⡄⢻⣷⠀⠀⢻⣿⠀⠀⠹⣷⠀⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⢸⡇⣿⡏⢠⡆⠏⣶⣶⣶⣌⣁⣑⣠⣤⣤⣶⣶⣾⣶⣶⣿⣧⣌⣨⣭⣶⣤⣾⣶⣸⣄⠻⠇⡇⣦⢻⡆⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⢸⠁⠿⣃⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣦⣿⣆⠃⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⢹⢠⣾⠿⠛⠛⠛⠛⠛⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠛⠛⠉⠉⠛⠛⠻⣿⢢⠇⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⡈⣇⠀⣠⣴⣶⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠐⣶⣶⣄⠀⡜⢸⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣧⠘⡄⣿⣿⡇⠀⠀⠀⠀⠀⠀⣦⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⡀⠀⠀⠀⠀⠀⠀⣿⣿⡏⠜⠁⣾⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⢿⣿⡄⣦⠻⣿⡇⠠⣶⣆⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⢠⡀⢠⣷⣶⠀⣿⠿⢃⡜⣸⣿⢿⣿⣿⣿⣿
+⣿⣿⣿⣿⡇⢿⣧⢻⣿⣶⣧⣤⣭⣥⣤⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣦⣤⣭⣴⣶⣷⣿⣟⢀⣿⡏⣼⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⡌⢿⡎⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⣾⠟⣼⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣿⣿⣌⠻⡜⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⡼⢋⣼⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⢸⣿⢸⣆⢈⣈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⣁⡠⢠⣾⢿⣿⢹⣿⣿⣿⣿
+⣿⣿⣿⣿⡏⣿⡆⢿⡞⣿⣷⣾⣿⣿⣿⣿⣿⣿⣿⡟⠉⡀⣀⣀⣀⣁⣀⠈⠉⣿⣿⣿⣿⣿⣿⣿⣿⣷⣿⣋⡄⣿⠇⣿⡿⢸⣿⣿⣿⣿
+⣿⣿⣿⣿⡇⢻⣧⠸⣷⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⠹⠿⠻⠿⠏⢉⠁⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢹⡿⢰⣿⠇⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⡇⠘⣿⡀⢿⡆⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣤⣛⠿⠿⠟⣋⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⢁⣿⠃⣼⡿⢠⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⡇⠀⢻⡇⠘⣷⡸⣷⣌⡛⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⣡⡆⣼⠏⢀⣿⠃⠄⣿⣿⣿⣿⣿
+⣿⣿⣿⣿⣷⢸⡘⣿⠀⠘⢧⠹⣿⣿⣷⣦⣍⠛⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⡋⢁⣠⣶⣿⠟⣰⢋⠀⢸⡏⣼⢰⣿⣿⣿⣿⣿
+⣿⣿⣿⡞⣿⡆⢷⠹⡾⡄⣌⠣⡹⠿⢿⣿⣿⣿⡀⢠⣭⣛⠻⠿⣿⠿⠟⣛⣩⣴⣶⣿⠁⣿⣿⠟⠁⠜⣡⠎⣄⡿⣰⢇⣿⣿⣿⣿⣿⣿
+⣿⣿⣿⣷⢹⣿⡘⣇⢡⢻⡘⠗⣠⣘⠆⠻⣿⡿⢃⡀⣿⣿⣿⡿⠒⢻⣿⣿⣿⡟⣋⠋⠀⠋⣁⣤⣄⠺⠋⡼⡛⢠⡏⣼⣿⣿⣿⣿⣿⣿
+⣿⣿⡏⣿⡎⣿⣧⢻⡆⢇⢡⣘⠻⢿⣿⣆⠘⣱⣿⣷⡘⣿⢋⣴⣿⣦⡙⣿⢉⣼⣿⣦⠀⢰⣿⡿⠿⣓⡀⠁⣠⣿⢡⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⣧⡜⣿⡜⣿⡞⣿⣎⢊⢿⣿⣷⣶⣦⣤⣭⣭⣭⣭⣄⣛⣛⣛⣛⡛⢠⣭⣭⣭⣭⣥⣴⣶⣾⣿⠟⣡⣾⣿⣧⣾⢏⣾⣿⣿⣿⣿⣿`,`⡴⠒⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⠉⠳⡆⠀
+⣇⠰⠉⢙⡄⠀⠀⣴⠖⢦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣆⠁⠙⡆
+⠘⡇⢠⠞⠉⠙⣾⠃⢀⡼⠀⠀⠀⠀⠀⠀⠀⢀⣼⡀⠄⢷⣄⣀⠀⠀⠀⠀⠀⠀⠀⠰⠒⠲⡄⠀⣏⣆⣀⡍
+⠀⢠⡏⠀⡤⠒⠃⠀⡜⠀⠀⠀⠀⠀⢀⣴⠾⠛⡁⠀⠀⢀⣈⡉⠙⠳⣤⡀⠀⠀⠀⠘⣆⠀⣇⡼⢋⠀⠀⢱
+⠀⠘⣇⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⡴⢋⡣⠊⡩⠋⠀⠀⠀⠣⡉⠲⣄⠀⠙⢆⠀⠀⠀⣸⠀⢉⠀⢀⠿⠀⢸
+⠀⠀⠸⡄⠀⠈⢳⣄⡇⠀⠀⢀⡞⠀⠈⠀⢀⣴⣾⣿⣿⣿⣿⣦⡀⠀⠀⠀⠈⢧⠀⠀⢳⣰⠁⠀⠀⠀⣠⠃
+⠀⠀⠀⠘⢄⣀⣸⠃⠀⠀⠀⡸⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣆⠀⠀⠀⠈⣇⠀⠀⠙⢄⣀⠤⠚⠁⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⢹⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡀⠀⠀⢘⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⢰⣿⣿⣿⡿⠛⠁⠀⠉⠛⢿⣿⣿⣿⣧⠀⠀⣼⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡀⣸⣿⣿⠟⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿⡀⢀⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⡇⠹⠿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⡿⠁⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣤⣞⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢢⣀⣠⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠲⢤⣀⣀⠀⢀⣀⣀⠤⠒⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+
+
+
+me bc I'm falling for an ai`,`                /\_/\
+            = ( • . • ) =
+                /      \     `,`⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣄⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⠟⠋⠙⠋⠉⠙⢷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣤⣶⣶⣄⠀⠀⠀⢠⣾⣿⣁⡀⠀⠀⠀⠀⠀⠀⢑⣿⡆⠀⠀⠀⢠⣾⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣾⣦⡀⢠⣾⡿⣛⣛⡻⢷⣄⠀⠀⣴⣾⣿⠛⠻⠦⣄⣴⣿⣿⡿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠻⢿⣿⣿⣿⣿⣿⢿⣿⣿⣧⢼⣿⣿⣿⠿⣿⣇⢸⡟⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠿⢿⣾⣿⣤⠿⠋⠀⠈⠻⢿⣿⣧⣿⠟⣬⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⠃⠀⠀⢀⣴⣖⣶⠀⠀⠀⠀⠀⢀⡈⠀⠀⢘⣾⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣶⣶⣶⠿⠿⠿⠿⠷⠶⠶⠶⠛⠋⠻⣦⣤⣀⡼⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⡇⠀⣿⠻⢷⣤⣀⠀⠀⠀⠈⠀⠀⠀⣀⣈⡻⢿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⡿⠛⡏⠁⠂⠘⠭⢿⣒⣒⡒⠒⠒⠊⠉⠁⠀⠀⣿⠤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⠟⠁⡄⠣⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡌⠙⠲⣤⣀⠠⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣏⠀⠀⢿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠋⠀⠀⠀⠀⠈⠙⠚⠓⠶⢤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⣿⣿⣿⣿⣶⣀⡴⠛⢷⣄⣠⣄⡀⠀⠀⠀⠀⠀⠀⠀⠐⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠳⢦⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⣤⠴⠾⣿⣿⣿⣿⣿⠟⠛⠿⣿⣦⣄⠙⢻⣿⣷⣦⡤⠤⠶⠒⠛⠁⣠⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣆⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢠⣴⡾⠏⠁⠀⠀⠀⠀⠰⠿⠟⠋⠀⠀⠀⠀⠈⠉⠛⠙⠋⠉⠉⠀⠀⠀⠀⠀⣀⡴⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢧⡀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢀⣴⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠐⠒⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢷⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢀⣾⡿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢉⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⡇⠀⠀⠀
+⠀⠀⠀⠀⢄⣾⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⠀⠀⠀⠀⢸⡁⠀⠀⠀⠀⠀⠀⠀⠀⣀⡄⠀⠀⠀⠀⠀⣴⣧⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⣧⠀⠀⠀
+⠀⠀⠀⠀⣼⣋⣧⣶⠀⠀⠀⢀⡀⣀⣦⠀⠀⠀⠀⠀⠀⠀⠀⢻⠿⠓⠀⠀⠀⠀⠀⢸⠃⠀⠀⠀⠀⠀⠀⠀⠿⠟⠁⠀⠀⠀⢀⡤⣼⣿⣿⣟⣤⡀⠀⠀⠀⠀⠀⠀⠘⣦⠀⠀
+⠀⠀⠀⠀⣿⡟⡇⣿⣤⣤⣴⣼⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢼⣷⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⠏⣴⣿⣿⠋⠉⠉⠛⠋⡄⠂⠀⠀⠀⠀⠈⣇⠀
+⠀⠀⠀⢀⣿⣷⣜⢿⣿⣿⣿⣿⣿⣿⣟⢿⣷⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣶⠾⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠐⠖⣠⣶⣿⣟⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡀
+⠀⠀⢀⣾⠋⠻⣿⡶⠍⠙⠛⢿⣿⣿⣿⣮⡙⠿⣿⣶⣤⣄⣀⣤⣤⣤⣤⡀⢀⣈⣁⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇
+⠀⠀⣾⠇⠀⠀⠘⢷⡇⠀⠀⠀⢿⣿⣿⣿⣿⣶⣼⣿⣿⣟⣻⣿⣿⣿⣿⡿⠟⠛⠁⠀⠉⠻⢿⣿⣶⣤⣴⣶⣶⣤⣶⣿⣿⣿⣿⣿⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠇
+⠀⢸⣿⠀⠀⠀⢠⡞⠀⠀⠀⠀⢾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⣋⣠⣀⠀⠀⠀⠀⠀⠀⠀⢉⣛⢻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⠀
+⠀⢸⡏⠀⠀⠀⣼⠁⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⠛⠿⡿⠛⠉⠉⠉⠁⠀⢀⠀⠀⠀⠀⠀⠉⠰⠿⠿⠛⠻⠟⠉⠁⢩⢹⣿⣿⣄⠀⠸⣆⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀
+⠀⣿⢿⠀⠀⣰⠇⠀⠀⠀⠀⠀⣿⡟⢻⣿⣿⣿⣿⣿⡟⠻⢶⣤⠀⠀⠀⠀⠀⠀⠀⢸⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⢿⣿⣿⣦⠀⢹⣆⠀⠀⠀⠀⠀⠀⠀⡇⠀
+⢀⡟⠺⠀⢐⡿⠀⠀⠀⠀⢀⣼⣿⠁⠀⢻⣿⣿⣿⣿⣿⣷⣤⣿⣤⣤⣤⣤⣶⡄⠀⠀⣿⣇⣤⣤⣀⣀⡀⠀⠀⠀⠀⠀⠈⢿⣷⣿⡾⠁⢿⣿⣷⣿⣿⡷⠀⠀⠀⠀⠀⠀⡇⠀
+⢸⡇⠀⠘⣿⡁⠀⠀⢀⣰⣿⣿⠃⠀⠀⠀⢻⣿⣽⠋⠛⢯⢿⣿⠛⠛⠋⠉⠙⠛⠲⣄⠉⠉⠁⠈⠉⠙⠛⠷⣦⣤⣤⣌⠀⠀⢸⡟⠁⠀⠀⠻⣿⣿⣿⣍⠀⠀⠀⠀⠀⠀⢧⠀
+⢸⠁⠀⠀⢹⣷⣿⣿⣿⣿⣿⠋⠀⠀⠀⠀⢸⣿⢢⠀⠂⠀⣭⣿⡀⠀⠀⠀⠀⠀⠀⢸⡉⠀⠀⠀⠀⠀⠀⠀⠉⠀⠀⠀⠀⠀⡿⠀⠀⠀⠀⠀⢹⣿⡿⠉⠀⠀⠀⠀⠀⠀⡾⠀
+⠀⠀⠀⠀⠀⠋⣿⣿⣿⡟⠁⠀⠀⠀⠀⠀⣼⣏⠈⠁⢰⠀⢨⣿⣧⣀⡀⣠⠀⠀⠀⣸⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡇⠀⠀⠀⠀⠀⣸⡍⠁⠀⠀⠀⠀⠀⠀⣠⣷⠀
+⠀⠀⠀⠀⠀⠀⠙⢿⣿⡇⠀⠀⠀⠀⠀⢠⣿⠟⠇⠀⠈⠑⢦⣿⠿⠿⠿⠿⠶⢀⢀⣸⠿⣶⣦⣠⡖⠀⠀⠀⠀⠀⠀⠀⢀⣿⠀⠀⠀⠀⠀⠀⡿⠀⠀⠀⠀⠀⠀⠀⠀⠘⢻⡆
+⠀⠀⠀⠀⠀⠀⠀⠀⣼⡇⠀⠀⠀⠀⠀⣸⡗⠀⠀⠀⠀⠀⠀⠙⠷⡄⣀⠀⠀⠻⠟⠃⠀⠀⠀⠀⠤⠀⠀⠀⠀⠀⠀⠀⣾⡟⠀⠀⠀⠀⠀⢰⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇
+⠀⠀⠀⠀⠀⠀⠀⠀⠹⠇⠀⠀⠀⠀⠀⣸⣿⠠⢰⣶⠄⠀⠀⠀⢀⣀⠀⢠⠀⠀⢠⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣙⣿⠁⠀⠀⠀⠀⠀⣸⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⠇`,`⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⢄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⡻⢀⠆⣤⢷⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⢹⣴⢊⣀⣿⡏⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⠙⡛⠦⢤⠟⣰⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡘⡄⠁⢀⠰⣸⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡼⣝⣁⢲⡐⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢘⡿⡁⠚⢋⠭⢱⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡏⠀⠄⠀⠒⣹⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡎⠖⢀⣠⠀⢀⠗⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⢃⠢⣄⣄⡂⠣⣜⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣸⣱⣠⣂⠩⢷⡸⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣰⣴⣛⣔⣺⡇⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣯⢗⡻⠶⠽⢤⣿⢋⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠴⣖⡶⣶⣟⢣⡙⢋⡭⢎⣻⣽⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡀⠀⠀⠀⠀⣠⣾⢏⣼⠏⣵⣿⣿⣣⠞⠦⡘⣐⢲⡏⠀⠀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢀⣶⣯⣳⡀⢀⣾⠟⣣⠾⣇⠊⡴⣿⡥⠒⡌⠐⢤⡘⣼⠁⣰⠋⣴⡾⣭⡲⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣠⢿⡿⠰⣿⣷⠿⣻⠩⢅⠋⠤⠁⣾⣯⡱⠑⡎⡐⢢⠘⣿⡰⠇⡌⣑⢚⡴⠗⠸⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣀⣴⠟⢫⡔⢛⣾⣿⣻⠟⣡⠊⡜⣀⢣⣿⠖⣍⠧⠔⡠⠁⡞⣻⡟⡰⠜⡐⢊⠔⠨⢥⣇⣀⡀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⢀⣠⡾⢃⡥⢋⠐⢢⢽⣿⡿⢃⠣⡄⡑⠦⣬⢟⡦⡙⡤⢒⠰⣀⠡⢅⠻⣧⢒⡩⢐⢣⠘⠤⠈⣽⣥⢭⡑⣄⠀⠀⠀⠀⠀
+⠀⣴⡟⠤⡑⢎⡐⢤⠿⣛⣿⣟⢧⡃⠒⠠⡑⢊⢦⢏⣷⡱⡑⢊⡔⢢⠜⣂⢣⠙⠦⣁⠃⢆⡉⠲⢏⣿⠠⢌⡟⢊⠣⡀⠀⠀⠀
+⠐⣷⣻⣴⠵⣎⡐⠚⢛⣿⣿⣟⢮⡗⠠⠑⡠⢣⢎⢾⣿⡰⣉⠆⡘⢢⡜⠤⢊⡑⠂⠄⡘⠤⠌⡓⢊⢋⡙⢢⡙⢻⣆⡱⡀⠀⠀
+⠀⢸⣿⣸⣿⣄⢹⣤⣿⣿⣿⣿⣼⣿⣁⠇⣤⢁⡼⢧⣿⢡⠤⡤⢠⣇⢏⡸⢀⠠⢁⠠⢁⡄⣀⠉⠄⠄⡀⢁⠹⡄⢿⣠⡇⠀⠀
+⠀⠀⠹⣿⣵⣚⣻⢾⣿⣿⣿⣿⣿⣿⣿⣽⣲⢮⣝⣯⣟⣯⣟⣞⡯⣔⣺⡔⣣⢜⡠⢆⡡⣄⣴⣩⣼⡰⢠⠁⢠⢡⣻⣧⣻⠀⠀
+⠀⠀⠀⢻⣿⢿⠲⣬⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⣿⣿⣿⣿⣾⣿⣿⣿⣿⣽⢶⣿⣞⣿⣾⣿⢧⣿⣿⡱⢧⣏⣿⢤⣿⣷⣿⣦⠀
+⠀⠀⠀⠀⢻⣗⡳⢺⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⣿⣿⣿⣿⣻⣿⣿⣟⣿⣿⣿⣿⣿⣿⣿⢯⣾⣿⣯⣿⣧⠇
+⠀⠀⠀⠀⠀⢿⣽⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⣿⣿⣿⣿⣿⣿⣿⣷⢿⣞⡿⣿⣿⣿⣿⡏⠀
+⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⣾⡿⣾⢿⣿⣿⣿⣿⣷⠀
+⠀⠀⠀⠀⠀⠀⠘⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡷⣿⣻⣯⣿⢿⣿⣻⣿⣿⣟⣾⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠘⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⡽⣿⣻⣿⣿⣿⣿⣿⣽⣿⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠇⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣻⣿⣟⣷⢯⣿⡿⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣳⢯⡳⣏⡾⣽⣾⠇⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⣿⣽⣟⣷⣿⣞⣷⡽⣽⣿⡟⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⣽⣾⣟⡷⣿⢽⣻⣿⣿⡇⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟⡟⣹⢣⣟⣷⣿⡿⡇⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⣷⢯⣞⡴⣣⣿⣿⡟⣯⡽⡟⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣞⣿⣿⣾⣿⡿⢧⣻⢵⡻⠁⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠛⠿⢿⣿⣿⣿⣿⣿⣿⣷⣿⣿⣿⣏⣧⠽⠚⠁⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀`,`\_________________/
+__/__|________|__\__
+/⭕️⭕️_______⭕️⭕️\
+|__/__GTR-R34__\__|
+\©©__|_|_|_|_|__©©/`,`⡿⢰⣏⣿⠁⣰⣿⣿⣿⣿⣿⡿⠋⣠⣿⣿⠿⢋⡤⠞⣁⣴⣾⣿⡟⡡⢋⣴⣿⠏⢠⢊⡾⢰⣿⣿⣿⡟⣸⠃⢀⡆⣾⣿⣿⣰⣿⢸⣿⢀⠀⢢⡹⣿⣿⣷⣮⡓⢶⣄⠢⡹⣿⣦⡀⢹⡄⠹⣦⡘⢧⡘⣾⣦⠀⢤⣐⠢⣈⠂⠽⠏⢃⣠
+⡇⣾⣾⠇⢰⣿⣿⣿⣿⡿⠃⣠⣾⣿⠟⣁⠴⠋⣠⣾⣿⣿⡿⠋⡈⣰⣿⣿⠏⣠⢃⣾⢃⣿⣿⣿⣿⢣⡏⠀⢸⢃⣿⣿⣿⢾⣿⢸⣿⡦⠀⠸⣷⣌⢻⣿⣿⣿⣦⣙⠂⠀⠈⢿⣷⡄⠻⣦⢹⣷⡌⢳⡌⢿⣷⡈⢻⡄⣝⡳⢦⣄⡉⠙
+⠀⣿⣿⠀⣾⣿⣿⡿⠋⣠⣾⣿⠟⡡⠞⠁⣠⣾⣿⣿⣿⠟⢀⡔⣴⣿⣿⠏⣰⠇⣾⡏⣼⣿⣿⣿⡏⣾⠁⡆⣾⢸⣿⣿⣿⣾⣿⢸⣿⡇⡆⠘⡜⣿⣧⡙⣿⣿⣿⣿⣷⡈⢢⡀⠙⣿⣦⠘⢷⣿⣿⣆⠻⡌⢿⣷⡀⢫⡘⠿⣷⣮⣙⠳
+⠀⣿⡇⢰⣿⣿⠟⣴⣾⣿⠟⠡⢊⠔⣡⣾⣿⣿⣿⠟⠁⢠⢏⣾⣿⣿⠋⢰⡏⣸⣿⢡⣿⣿⣿⣿⢱⡏⢰⠃⣿⢸⣿⣿⣿⣿⣿⡏⣿⡇⡇⠀⣿⣎⢿⣿⣎⢿⣿⣿⣿⣿⣦⠱⡀⠈⠻⣷⣄⠙⢿⣿⣆⠹⣌⢿⣷⡀⢻⣦⣌⡙⠿⣿
+⡄⢿⡇⢸⣿⢏⣼⣿⣿⠋⢀⡴⢁⣴⣿⣿⣿⠟⡡⢂⢂⢎⣾⣿⡿⡱⢠⣿⢡⣿⡟⣸⣿⣿⣿⡏⣸⠁⣾⠀⣿⢸⣿⣿⣿⢻⣿⣿⣿⡇⣷⠀⢸⣿⣦⠻⣿⣧⡻⣿⣿⣿⣿⣷⡐⠀⢢⠀⠙⢷⣄⡙⢿⣧⠹⡌⢿⣷⡀⢺⣿⣿⣴⣤
+⣧⠘⣧⠘⣵⣿⣿⡟⢁⡴⠋⣠⣾⣿⣿⡿⢁⠎⣠⢣⢣⣿⣿⠏⣼⠁⣾⡇⣼⣿⣧⣿⣿⣿⣿⡇⡟⠀⣿⢸⣿⢸⣿⣿⣿⢸⣿⣿⣿⣇⣿⠀⠀⢿⣿⣷⡙⣿⣷⡹⣿⣿⣿⣿⣷⡀⠘⡇⠸⣦⣌⠛⠦⡙⠳⡙⡌⢿⣷⡈⢿⣷⡻⣝
+⣿⣆⠘⡄⢻⣿⠏⠀⡈⢀⣾⣿⣿⣿⠏⣴⠋⣴⡣⢣⣿⣿⠏⣼⡏⣸⣿⢁⣿⣿⢹⣿⣿⣿⣿⢳⡇⡄⡟⣸⣿⡀⣿⣿⣿⠸⣿⣿⣿⣿⣿⠀⡆⠌⢿⣿⢿⡜⢿⣿⡜⣿⣿⣿⣿⣷⡄⢹⡀⢿⣿⣿⣶⣤⣁⡂⠘⠈⠿⠧⠈⠿⣗⣙
+⣿⣿⣷⣄⠀⢉⡠⠊⣴⣿⣿⣿⡿⢡⡾⢁⣾⣿⢡⣿⣿⠏⣼⡿⢠⣿⡟⢸⣿⣿⣾⣿⣿⣿⣿⡎⠀⡇⡇⣿⣿⡇⢿⣿⣿⡆⣿⣿⣿⣿⣿⠀⡻⠰⠈⢿⣧⢻⣎⢻⢻⡜⢿⣿⣿⣿⣷⠈⣧⠈⣿⣿⣿⣿⣿⣿⣷⡡⡙⣿⣧⠘⣾⣿
+⣿⠿⠋⣡⠔⠈⣠⣾⣿⣿⣿⡟⣠⡟⢠⣿⣿⢃⣿⣿⠏⣼⣿⠇⣼⢿⡇⣿⣿⣿⣿⣿⣿⣿⣿⡿⠀⡇⡇⢿⣿⡿⢸⣿⣿⣷⣿⣿⣿⣿⣿⠀⡇⡇⣇⢄⢙⢧⠹⣆⢣⢻⡌⢿⣿⣿⣿⡆⢸⣧⠘⣿⣿⣿⣿⣿⣿⣷⡱⡈⢿⣇⠘⣿
+⣡⡴⠛⡁⢀⣼⣿⣿⣿⣿⠏⣴⠏⢠⣿⣿⢃⣾⣿⡏⣼⣿⡿⢠⡏⣾⢀⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⡏⢸⡘⣿⣷⡈⢿⣿⣿⣿⣿⣿⣿⣿⠀⡇⣷⢹⡌⢦⠠⢳⡝⣧⢣⢳⡘⣿⣿⣿⣷⠀⣿⣧⡘⢿⣿⣿⣿⣿⣿⣿⣿⣌⢻⣆⠹
+⢋⣠⠊⣰⠟⣵⣿⣿⣿⢃⣼⠃⢰⣿⣿⠇⣼⣿⡟⣰⣿⣿⠇⣼⢸⣿⣼⣿⣿⣺⡟⣿⣟⡇⣿⡇⡇⣿⣿⢁⠈⢿⣷⡈⢿⣿⣿⣿⣿⣟⣹⠀⡇⢸⡌⣿⣄⣑⠈⢿⣎⢻⣧⢳⠘⣿⣿⣹⡆⢹⡿⠻⣄⠻⣿⣿⣿⣿⣿⣿⣿⣆⠻⣆
+⡟⢁⡾⣡⣾⣿⣿⡿⢃⣾⠃⢠⣿⣿⡏⣼⣿⣿⢡⣿⣿⡿⢀⡟⣼⣿⣿⣿⣿⣿⡇⣿⣿⣷⣿⡇⡇⢿⣿⣿⡸⣄⠙⣿⣄⠻⣿⣿⣿⢿⠸⠀⡇⠈⣷⡸⣿⣿⣷⣄⠻⣦⠹⣎⢧⠘⣿⣷⣳⠘⣿⢰⡜⢧⡈⠻⣿⣿⣿⣿⣿⣿⣧⡘
+⣰⣿⣿⣿⣿⣿⡿⢡⣾⠃⢀⣿⣿⡟⣰⢟⣿⢇⣿⣿⡿⠁⢸⣇⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⡇⢸⣿⣿⣷⣿⣷⡈⠛⢦⡘⢿⣿⢸⠀⠀⠇⢠⡘⢧⠹⣿⣿⣿⣦⠙⣷⡙⣾⣧⠘⣿⣿⠄⢺⡇⣿⣦⡙⢦⡈⠻⣿⣿⣿⣿⣿⣿
+⢻⣿⣿⣿⣿⡿⢡⣿⠁⡀⣼⣿⡿⢠⠏⣾⡟⡞⣽⣿⠃⠀⣾⣿⣯⣿⢿⣿⣿⣿⣿⣿⢿⣿⣿⡇⢁⢸⣿⣿⣿⣿⣿⣿⣦⢀⠙⠦⡙⠃⠇⡀⠀⠀⢻⡌⢣⠻⣿⣯⢻⣷⡌⢻⣾⣿⣧⠹⢟⡄⠸⣧⢹⣿⣿⣮⡻⣦⣌⠙⢿⣿⣿⣿
+⣿⣿⣿⣿⡿⠡⣻⠃⠰⢱⢻⣿⢡⡏⣸⡿⡘⣼⢟⠇⣸⠀⣿⣽⣿⣿⡼⣿⣿⡿⢋⣿⣿⣿⣿⣧⢸⠀⣿⣿⣿⣿⣿⣿⣿⡎⣷⡄⠀⠀⠀⠻⠈⠘⠂⠙⠄⠑⠙⢿⣧⡙⠿⠆⠙⣋⣥⣆⢹⣷⠀⣿⠸⣿⣿⣿⣿⣮⡛⢷⣦⣈⠛⢿
+⣿⣿⣿⡿⢁⢢⡏⢠⢁⢏⣿⢣⠓⠐⢇⠃⢾⠃⡜⢠⠇⢰⣿⣿⡟⣿⣧⠻⢋⣴⣿⣿⣿⣿⣿⣿⠘⡆⢹⣿⣿⣿⣿⣿⣿⣧⣿⢱⠈⡔⢀⣄⡀⠀⠀⠀⠀⠀⠀⢀⠀⢤⣄⠲⣧⡘⢿⣿⣆⢻⠀⢿⡇⣿⣿⣿⣿⣿⣿⣶⣝⢻⣷⣦
+⣿⣿⡿⢁⠎⡾⠀⠆⡜⣼⡏⡬⠀⡜⢆⣶⢃⣾⢁⡞⠀⠸⣿⣿⣧⠿⠋⡀⢿⣿⣿⣿⣿⣿⣿⣿⡇⢷⠈⣿⣿⣿⣿⣿⣿⣿⣿⠸⢰⠇⢸⣾⡇⢣⠻⣿⣷⣄⠳⣄⠑⢄⠹⣧⡙⢷⡌⢻⣿⣆⠀⡄⣧⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣟
+⣿⣻⣱⡟⣸⠃⡘⢰⢱⣿⣿⠃⡴⣹⣾⠏⣼⠇⡼⠁⠀⠀⣿⣿⠋⠀⣾⣇⠘⣿⣿⣿⣿⣿⣿⣿⣷⠘⡆⢹⣿⣿⢹⣿⣿⣿⣿⢀⡿⢀⣿⣿⠿⠘⣓⣝⠻⣿⣦⡈⠳⣄⠑⢮⡻⢎⠻⣆⠹⣿⡆⡇⢻⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⢣⣿⣿⡏⢠⠃⣆⣿⣿⠏⣸⣿⣿⠏⣸⡟⢠⠃⠀⡄⠀⠟⢁⣴⣷⢸⣿⡄⠸⣿⣿⣿⣿⣿⣿⣿⣇⢻⡄⢿⣿⠘⣿⣿⣿⡟⢸⠇⡸⢋⣥⣾⡆⢻⣿⠷⠬⠚⠿⠦⠈⠻⣦⠝⣹⣷⡘⢧⡘⠇⢰⢸⣸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⠏⣾⣿⡿⠀⡞⢰⣼⣿⡿⢰⣿⣿⡟⣰⣿⠁⡎⠀⣼⠇⠀⣠⡺⣿⣿⡄⢿⣿⡄⠹⣿⣿⣿⣿⣿⣿⣿⡌⢷⡈⣿⠀⢿⣿⣿⡇⠸⠀⣠⣾⠿⠛⣉⣤⣴⣶⣶⣶⣶⠶⠒⠀⣀⡘⠿⢋⣴⣦⡙⡄⢸⠀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣸⣿⣿⠁⢸⠃⣾⣿⣿⣇⣿⣿⡟⠠⢹⠇⡸⠀⠜⠁⢀⠀⢸⣧⠹⣿⣷⡘⣿⣿⡄⠹⣿⣿⣿⣿⣿⣿⣿⡌⢷⡘⠀⢸⣿⣿⠃⡄⡰⠋⢀⣔⣿⣿⠿⠟⠛⠉⠁⠀⠀⠀⠉⠁⣀⣤⡙⢿⣷⡙⠆⢸⡀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⣿⢧⠁⡟⢰⣿⣿⡿⢰⣿⡿⢁⠃⡿⠠⠃⠀⢀⣴⣿⠀⠘⣿⣆⢹⣿⣷⡘⣿⣿⣆⠈⢿⣿⣿⣿⣿⣿⣿⣄⠳⡀⠏⣿⣸⢀⢀⠅⣠⠖⠋⠁⠀⠀⠀⣀⣀⣀⠀⠀⠀⠀⠀⠀⠉⠁⠀⠉⠉⠀⢈⡇⢻⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+⣿⡏⡞⢸⢡⣿⣿⣿⡇⣾⣿⠃⡜⣸⠃⠀⢀⣴⣿⢿⣿⠆⠀⢹⣿⣆⠹⣿⣷⡘⢿⣿⣧⡀⠹⣿⣿⣿⣿⣿⣿⣆⠙⣄⠹⡈⠀⢀⠔⠋⠀⠀⡀⠔⣈⡄⠐⠒⠢⠌⡛⢽⣖⣒⡠⠄⢀⠀⠀⠀⠀⠈⠁⠬⠸⠿⠿⢿⣿⣿⣿⣿⣿⣿
+⡟⣸⡇⡎⢸⣿⣿⣿⢠⣿⡏⠐⠁⢀⡀⢠⣿⣻⣛⣭⣴⣶⠐⠀⠻⣿⣆⠙⣿⣷⡌⢿⣿⣿⣄⢈⢿⣿⣿⣿⣿⣿⡄⠈⢢⠁⢠⢤⠀⠀⣠⠎⣠⢚⠠⣾⢉⣿⣛⡊⢛⡂⠙⢿⣿⣿⣶⣶⣦⠄⠀⠀⠀⡀⣤⣶⣾⢻⡇⢿⣿⣿⣿⣿
+⢡⣿⠃⠃⣿⣿⣿⡟⢸⣿⠁⣶⠎⠸⢀⣟⡛⠚⢋⣉⣉⡁⠀⠁⠀⠹⣿⣧⡈⢿⣿⣆⠻⣿⣿⣧⡀⡹⣿⣿⣿⣿⡇⢸⡆⠑⢌⢃⢀⣾⡏⠸⠉⣁⣩⣤⣤⣤⣤⣤⣤⣤⡥⢉⠻⡿⠿⠋⠁⣀⡄⢰⠈⣰⣿⣿⠏⠺⣷⢸⣿⣿⣿⣿
+⣼⣿⠀⢸⣿⣿⣿⡇⣿⡟⢰⠏⠀⠀⣼⠟⣡⣶⣿⣟⠛⠛⠛⠀⠀⠀⠙⣿⣷⡀⠙⢿⣷⡘⢿⣿⣿⣦⡈⠻⣿⣿⣿⠀⠁⣼⢂⠄⠈⠔⠴⠈⠈⠛⠉⠉⠩⠉⠁⠈⠉⠀⠈⠁⠀⠒⠶⣴⣤⡀⠁⠀⣰⣿⣿⠏⣰⣆⢿⢸⣿⣿⣿⣿
+⣿⣿⠀⣿⣿⣿⣿⡇⣿⡇⠌⠀⠀⠐⠡⠼⠟⠛⠛⠉⠉⠀⠀⢀⠀⠀⠀⠘⢿⣿⣄⠈⠻⣿⣶⣝⠿⣿⣿⣶⣜⣎⢿⡇⢀⡇⡪⠒⠀⠀⡀⠀⠀⡀⠄⠂⠉⢀⠉⣀⡤⠖⣂⠤⢀⡠⠄⢀⡈⠁⠀⣴⣿⣿⠏⣰⣿⣿⣸⢸⣿⣿⣿⣿
+⣿⣿⢠⣿⣿⣿⣿⢁⣿⡇⢀⠃⠀⣴⠶⠀⠀⠀⠀⣀⣤⠖⢛⡉⠁⢀⠀⠀⠈⠻⣿⣧⡀⠈⠻⢿⣷⣬⡛⠿⣿⣿⡌⢿⡀⢎⠔⣠⢞⡡⢂⡴⣊⠔⣠⡾⢋⡥⠞⣩⠔⣋⡴⠞⣩⡔⠈⠄⠀⢠⣾⣿⡿⢃⣼⣿⣿⣿⡇⢸⣿⣿⣿⣿
+⣿⡿⢸⣿⣿⣿⣿⢸⣿⡇⡘⠀⠘⠀⠀⠀⠀⣠⣾⠏⡠⢚⡱⢶⣯⠄⠃⠑⠢⠀⠐⠍⠻⣦⡁⢀⡙⠻⣿⣿⣾⣿⣿⣆⢳⠀⠞⣵⠋⠴⢋⡞⣡⡾⢋⡴⢋⣴⢛⣥⠞⣩⣴⠟⣩⣴⠟⣁⣴⣿⠟⢋⡴⢻⣿⣿⢏⣿⠃⣿⣿⣿⣿⣿
+⣿⡇⢸⣿⣿⣿⣿⢸⣿⡇⡇⠀⠀⠀⠀⢀⢔⣽⡏⠸⢷⠄⢉⣤⠴⠒⠈⠁⠀⠈⠀⢤⢀⠈⠙⢦⡐⠀⠈⠙⠿⣿⣿⣿⣦⠡⠘⠕⠑⡴⢋⡾⣫⠞⣡⣾⢟⡴⢟⣡⣾⢟⣥⡾⢋⣥⠾⠟⡋⢀⣴⣿⠃⣾⣿⡿⡸⡈⢸⣿⣿⣿⣿⣿
+⣿⡇⣼⣿⣿⣿⣿⢸⠿⠃⠀⠀⠀⠀⡠⣡⣿⣷⠒⠉⡠⠚⡉⢐⠠⠉⢀⢂⠔⡡⠃⣠⠂⢰⠖⡐⡨⠐⡀⠈⠀⠈⠙⠿⣿⣷⡄⠈⢎⡴⢋⠞⣡⣾⠟⣱⢏⣴⣿⢏⣤⣭⡭⣠⣤⣶⠶⢋⣴⣿⠟⠁⣰⣿⣿⠃⡐⠠⣿⣿⣿⣿⣿⣿
+⣿⠃⣿⣿⣿⢸⣿⠰⠖⠁⠀⠀⠀⠸⣿⣿⡟⢁⠾⠋⠀⠀⡠⡣⢊⡔⡡⢊⠞⠄⡜⡱⠁⠈⠊⢪⣶⢋⣴⢏⣴⣦⣌⡒⢌⠙⠿⣦⣌⠲⣫⣾⣿⣿⢟⣵⣿⢟⣵⣿⠟⣫⣾⠿⢋⠥⠚⡋⠕⠁⠀⢀⣿⡿⢃⠜⣠⢱⣿⣿⣿⣿⣿⣿
+⣿⠀⣿⣿⣿⢸⣿⠀⣿⣿⠀⠘⠶⠄⠀⢉⡁⢁⡄⡀⡠⢊⠜⣡⢋⠜⣱⢋⢎⠞⡜⣱⢣⡞⣱⢟⣵⣟⣵⣿⣿⣿⣿⣿⣷⣮⣐⠈⠙⠳⢤⡙⠿⡡⢛⢿⣿⣿⣬⣅⣈⣉⡀⠩⠄⢀⡀⠤⠚⢁⣴⣿⣿⡴⢋⣴⡟⣸⣿⣿⣿⣿⣿⡏
+⡇⠀⣿⣿⣿⢸⣿⠀⣿⣿⠀⡀⠀⠀⠠⠊⠐⠉⢂⠄⡴⢋⡜⣡⢋⡼⣡⢃⣾⡞⣴⣣⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣤⣄⣀⡀⠑⠑⠝⣿⣿⣯⣭⣤⣴⣢⠉⣴⠶⢋⣴⣿⣿⠟⠋⢰⣿⣿⠃⣿⣿⣿⣿⣿⣿⢰
+⠇⡄⣿⣿⣿⢸⣿⡆⢸⣿⠀⠁⠈⠄⠀⠄⡐⡡⢁⡞⣡⠟⡴⢡⡟⡴⢡⣿⣿⣼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠋⠀⠀⢰⣂⢬⣭⣽⣿⣿⡇⠈⠁⣶⣿⠟⢋⣠⡖⢠⣿⣿⡟⣸⣿⣿⣿⣿⣿⢇⣿
+⠀⡇⢸⣿⣿⠀⣿⣇⠸⣿⡇⢰⠀⢎⢊⡜⡐⣡⠟⣰⢏⡾⣱⠏⡼⣡⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠛⠉⢉⣉⣉⣉⣉⣉⣛⣋⣉⣡⣄⢺⣿⠀⠀⠈⡔⢑⠜⢛⡉⠥⠖⠁⢊⢩⡴⢞⣩⠆⠀⣾⣿⣿⢁⣿⣿⣿⣿⣿⡿⣸⣿
+⠀⡇⢸⣿⣿⡆⣿⣿⠀⢿⡔⠈⠀⢎⡞⡜⣰⠏⣼⢋⡞⣰⢏⡾⣱⣿⣿⢿⣿⣿⣿⣿⡿⢉⣉⡩⢤⣴⣶⣿⣿⡿⠿⠟⠛⠛⠉⠉⠉⠉⠻⣿⣿⡇⠀⠀⠀⣷⠡⡡⣄⢄⠒⠂⣉⣠⣵⣾⣿⡟⠀⣼⣿⣿⠇⣼⣿⣿⣿⣿⣿⢣⣿⣿
+⢠⡇⡟⣿⣿⡇⢻⣿⡆⡈⢿⣧⠀⢸⡜⣰⡏⣸⢏⣾⣶⢏⣾⣵⣿⣿⡇⢸⣿⣿⣿⠏⣠⣿⣷⣾⡿⠟⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⠀⠀⠀⠀⢿⣾⢔⠘⠋⣸⣿⣿⣿⣿⣿⣿⠁⣼⣿⡿⡟⣰⣿⣿⣿⣿⣿⠏⣼⣿⣿
+⢸⡇⣇⣿⣿⣷⠸⣿⣷⢱⠀⠊⢳⣌⠲⢿⢰⣿⣾⣿⣿⣿⣿⣿⣿⣿⣡⠈⠛⠛⣡⡾⣿⡿⠋⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣇⠘⣿⢎⢿⣿⣿⣿⣿⣿⠃⣼⣿⢏⡜⢠⣿⣿⣿⣿⣿⠏⢰⣿⣿⣿
+⢸⡇⣿⢹⣿⣿⡄⢿⣿⡜⡇⢣⠀⠙⣷⣄⠨⢭⣛⣛⣻⣿⣿⣿⣿⣿⣿⣷⡀⠀⠘⢷⣌⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⣶⣾⣟⣿⣿⣗⡒⠀⠀⢠⣿⣿⣎⠜⡇⢕⢍⢿⣿⡿⢁⣼⡿⢁⡾⢁⣾⣿⣿⣿⣿⠃⣜⣾⣿⣿⣿
+⢸⡇⢻⠸⣿⣿⣷⠈⣿⣧⢡⠸⡆⠀⠈⠛⠿⣦⣌⣙⠻⠿⢿⣿⠿⠿⠟⣋⣿⣆⠀⠀⠹⡇⠀⠀⠀⠀⠀⠀⣠⡴⢂⣤⣾⣾⣿⡿⢙⣭⣭⣭⠋⠀⠀⢠⣿⣿⣿⣿⣌⢊⠺⣿⣷⠝⢠⣾⠟⣠⣿⠁⣼⣿⣿⣿⡿⢁⡞⣼⣿⣿⣿⣿
+⢸⡇⢸⡀⣿⣿⣿⣇⠘⣿⡌⠀⢷⠀⡈⡄⠠⠤⠈⠉⠉⣓⣂⣀⣤⣴⣾⣿⣿⣿⣷⣄⠀⠁⠀⠀⠀⠀⣤⡾⢟⣛⡛⣽⣿⣟⠏⣴⣿⣿⣿⣿⡷⠀⢠⣿⣿⣿⣿⣿⣿⣷⣝⡲⠀⣴⡿⠃⣰⣿⠃⣸⣿⣿⣿⡟⢡⡿⣸⣿⣿⣿⣿⡿
+⢸⡇⢸⡇⣿⣿⣿⣿⡀⠜⢷⠀⠸⡆⢳⠀⠈⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⣄⠀⠀⣸⣑⣴⣿⣿⣿⡾⣟⠊⣼⣿⣿⣿⣿⣿⠇⢠⣿⣿⣿⣿⣿⣿⣿⣿⠟⣡⡾⠋⠀⣰⣿⠃⣰⣿⣿⣿⠏⣠⣿⣷⣿⣿⣿⣿⡟⢡
+⠸⣿⠘⡇⢹⣿⡿⣿⣷⡈⠌⢇⠀⢻⡈⢧⠀⡈⠺⢟⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣯⡙⢿⠀⣧⣿⣿⣿⣿⣿⣿⠇⣼⣿⣿⣿⣿⣿⡿⠀⠏⣽⣿⣿⣿⣿⣿⡟⢁⡼⠋⣠⠂⣴⣿⠏⣰⣿⣿⡿⢃⣴⣿⣿⣿⣿⣿⣿⠏⣰⡟
+⠀⣿⠀⣷⠸⣿⣷⢹⣿⣷⡈⢎⡄⠀⢳⡘⣧⠐⣄⠑⠿⣿⡿⢹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⠀⣿⣿⣿⣿⣿⣿⣿⢠⣿⣿⣿⣽⣿⢿⠃⢀⣾⣿⣿⣿⣿⠟⢋⠔⢋⢤⡾⠁⣼⣿⠏⣰⣿⣿⠟⣠⣾⣿⣿⣿⣿⣿⡿⢃⣼⣿⣿
+⠀⣿⠀⢻⡄⢿⣿⡸⣿⣿⣿⡄⢻⡀⠈⢷⡘⣧⠘⣵⣤⡈⠁⢻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⣿⣿⣿⣿⣿⣿⣿⢸⣿⣿⣿⣿⡇⠈⢀⣾⣿⣿⡿⠟⠁⠂⢄⣪⡕⡸⢁⣼⣿⡟⣰⣿⡿⠋⣴⣿⣿⣿⣿⣿⣿⠟⢠⡞⣽⣿⣿
+⡄⢹⡄⠸⣧⠘⣿⣧⢻⣿⣿⣿⡄⢳⡀⠀⠻⡌⢆⠘⣿⡳⡄⠈⠙⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⢹⣿⣿⣿⣿⣿⣿⢸⣿⣿⣿⡏⡐⠠⠟⣛⣉⣥⣴⣶⣾⣿⣿⠏⡜⢀⣾⣿⣿⣾⣿⠟⢡⣾⣿⣿⣿⣿⣿⡿⢁⠄⡾⣰⣿⣿⣿
+⣇⠈⣇⠄⢻⡆⢻⣿⣆⢻⣿⣿⣿⡄⠳⠀⢢⡘⢆⠂⠐⡾⣧⠀⠐⣄⡈⠛⢿⣿⣿⣿⣿⣿⣿⣿⣿⡄⢿⣿⣿⣿⣿⣿⣼⣿⣿⣿⠃⣰⣿⣿⣿⣿⣿⣿⣿⣿⡿⢣⠊⢠⣿⣿⣿⣿⡿⢋⣴⣿⣿⣿⣿⣿⣿⠟⢠⡞⢰⢡⣿⣿⣿⣿
+⢹⡀⠿⠰⠈⣿⡄⢿⣿⣆⢻⣿⣿⣿⣄⠱⡀⠻⣀⠉⢡⡈⢿⢧⠠⠐⣿⣶⣄⡈⠻⢿⣿⣿⣿⣿⣿⣷⡈⢿⣿⣿⣿⣿⣿⣿⡿⢁⣼⣿⣿⣿⣿⣿⣿⣿⣿⠟⠔⠁⣰⣿⣿⣿⡿⠋⣠⣾⣿⣿⣿⣿⣿⡿⠃⠀⣼⠃⠆⣾⣿⣿⢹⣿
+⡈⡇⢐⠁⠡⠘⣷⡈⢿⣿⣆⢻⣿⣿⣿⣦⠐⠄⠹⣳⣤⠈⠀⠙⣥⠀⠈⢿⣿⣿⣷⡀⠉⠛⠿⣿⣿⣿⣷⣄⠻⡿⣿⣿⡿⠋⣠⢻⣿⣿⣿⣿⣿⣿⣿⠟⠃⠀⢀⣼⣿⣿⡿⠋⢀⣼⣿⣿⣿⣿⣿⣿⠟⠀⠀⢀⣿⠠⣸⣿⣿⣿⣼⣿
+⣧⠸⠀⠁⡀⣇⠘⣷⡈⢿⣿⣆⠻⣿⣿⣿⣧⡈⢂⠘⢾⣧⠀⢠⡄⠑⠀⢀⠻⢿⣿⣿⡄⠀⢤⡈⠙⠻⣿⣿⣦⣌⠑⢋⣠⡾⣡⣿⣿⣿⣿⣿⡿⠋⠁⠀⠀⢀⣾⣿⡿⠋⠀⢀⣾⣿⣿⣿⣿⣿⡿⠁⠀⡀⠀⢸⡇⢠⣿⣿⣿⡇⣿⣿
+⠛⠇⠁⠀⣧⠘⣦⠘⢿⡄⠻⣿⣧⡙⣿⣿⣿⣿⣄⠡⠈⢽⢧⠠⠁⠐⣢⣀⠀⠘⢿⣿⣟⡄⠌⢳⣵⣤⢀⠙⠻⣿⣌⣛⣫⣴⣿⣿⣿⡿⠟⠉⠀⠀⠀⠀⢠⣾⡿⠋⠀⠀⢠⣿⣿⣿⣿⣿⣿⠋⠀⠀⠀⡇⠀⢨⡇⣾⣿⣿⣿⡇⣿⣿
+⠀⠀⠂⠀⠘⠣⡹⣧⠈⢿⣆⠹⣿⣷⡌⢻⣿⣿⣿⣧⡀⠀⠻⣷⣧⢠⡈⠻⣷⠸⢄⠹⡿⣾⡌⢀⠹⣿⡄⢳⣤⠀⠉⠛⠿⣿⡿⠟⠉⠀⠀⠀⠀⠀⠀⢠⣿⡟⠁⠀⠀⢠⣿⣿⣿⣿⣿⡿⠁⠀⠀⠀⠀⢿⠀⣿⠁⢿⣿⣿⣿⡇⣿⣿
+⠀⠀⠈⠀⠀⠀⠀⠈⠳⠀⠻⣧⡘⢿⣿⣦⠙⣿⣿⣿⣿⣆⠢⠙⢿⡄⣿⠠⡀⠀⡬⡷⣌⠻⣿⡈⢆⠹⣿⡄⢻⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣿⠏⠀⠀⠀⢠⣿⣿⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀⠸⡆⢻⠀⣸⣿⣿⣿⡇⣿⣿
+⠀⠀⠐⠀⠀⠀⠀⠀⠀⠀⠀⠙⢷⡌⢻⣿⣷⣌⠻⣿⣿⣿⣷⡀⢀⠑⢿⡇⢻⢶⣄⠻⢿⣶⡈⢷⡈⢆⢹⣿⡄⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⠃⠀⠀⠀⢠⣿⣿⣿⣿⡿⠃⠀⠀⠀⠀⠀⠀⢰⠀⢻⡈⢀⡇⣿⣿⣿⣷⢿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣆⠻⣿⣿⣦⡙⢿⣿⣿⣿⣦⡑⢄⠙⢰⣿⣿⣷⣌⠻⣿⣦⠁⠈⡄⢻⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⠇⠀⠀⠀⢠⣿⣿⣿⣿⡿⠁⠀⠀⠀⠀⠀⠀⠀⣾⠀⠈⣧⠀⡇⣿⣿⣿⣿⢸⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢧⠙⣿⣿⣿⣄⠻⣿⣿⣿⣿⣄⠳⣄⠙⢿⣿⣿⣶⡌⢻⣷⣄⠸⠌⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⡟⠀⠀⠀⢀⣾⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠘⣇⢱⢹⣿⣿⣿⡇⣿
+⠀⠀⠠⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢷⡈⢿⣿⣿⣷⡘⢿⣿⣿⣿⣧⡘⢷⣄⠙⣿⠿⠟⠂⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠇⠀⠀⠀⣼⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⡇⠹⣆⠊⢿⣿⣿⣧⢻
+⠀⠀⢒⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠻⣆⢻⣿⣿⣿⣆⠙⣿⣿⣿⣿⣄⠻⣧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⠀⢰⣿⣿⣿⡿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⣷⠀⡘⣆⠘⣿⣿⣿⡌
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⣷⡙⢿⣿⣿⣧⡈⢿⣿⣿⣿⣦⠙⢿⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⠀⣾⣿⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⠿⠀⢳⡘⢆⠘⣿⣿⣧
+⠀⠀⠐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣮⣿⣿⣿⣷⠀⢻⣿⣿⣿⣷⡈⢿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⢠⣿⣿⣿⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⣿⠘⣷⣌⠣⡘⣿⣿
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢻⣿⣿⣿⣿⣧⡀⢻⣿⣿⣿⣷⡌⢿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⠀⠀⢸⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⢿⣇⢹⣿⣧⡈⢿⣿
+⠀⠀⠌⡁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣷⠀⢻⣿⣿⣿⣿⡄⢿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢇⠀⢸⣿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⡇⠀⠀⠀⠘⣿⡄⢻⣿⣿⣦⡙
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⣿⣿⣿⣿⡇⢂⢻⣿⣿⣿⣷⠈⢿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⣿⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⠐⠀⠹⣿⡌⢿⣿⣿⣿`,`   ／l、
+（ﾟ､ ｡７
+⠀ l、ﾞ~ヽ 
+    じし(_,  )ノ`,`⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣤⣤⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣾⠿⠋⠉⠉⢿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⡿⠛⠁⠀⠀⠀⠀⠀⢿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣴⣾⡿⠟
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣾⡿⠛⠉⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣶⣶⣤⣤⣤⣀⣀⠀⠀⠀⣤⣶⣿⠟⠋⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣿⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡤⠤⠿⡻⠛⠉⠉⠛⠛⢿⠿⣿⣷⣿⣿⠟⠁⠀⠀⠀⠀⠀⠀⡼
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠇⠹⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡴⠋⠀⣠⠎⠀⠀⠀⠀⢀⡔⠃⠀⢀⡞⠉⠁⠀⠀⠀⠀⠀⠀⢀⡜⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⡆⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡞⠀⠀⣰⠃⠀⠀⠀⠀⡰⠋⠀⠀⣠⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣁⢀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⣰⠃⠀⠀⠀⠀⡜⠁⠀⠀⡰⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⢀⣴
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⡟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣦⡴⠃⠀⠀⠀⠀⢸⠀⠀⠀⡰⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⣅
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⢿⣿⣿⠋⠀⠀⠀⠀⠀⠀⢀⣠⣶⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⠶⠚⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈
+⠀⠀⠀⠀⠀⠀⠀⣴⡿⠿⢿⣷⣦⣄⠀⣿⠃⠀⠈⠁⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⢀⣤⣤⣼⣿⠀⠀⠀⣿⣿⣿⣿⣿⣄⡀⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣴⣾⣿⣶⣤⡀⠀⠀⠀⠀⠀⠀
+⠀⢀⣴⣿⠛⠉⠉⠉⠀⠀⠀⠉⠙⢛⠛⠿⣿⣿⣦⣄⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⡟⠀⠀⠀⠐⠀⠀⠀⠀⠀⠀⠂⠠⡀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⣿⣿⣿⡄⠀⠀⠀⠀⠀
+⣴⣿⠟⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠳⢤⡈⠙⠿⣿⣿⣶⣄⡀⠀⠈⠛⠻⠿⠟⠋⠀⡠⢡⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀
+⣿⡇⠀⠀⠀⣠⡾⣛⣿⣶⡀⠀⠀⠀⠀⠀⠉⠓⠤⡈⠉⠻⢿⣿⣶⣄⡀⠀⠀⠀⠀⠐⠀⠸⣄⠀⠀⠀⢠⡄⠀⠀⠀⠀⢀⡀⠀⠡⠀⠀⠀⢿⣿⣿⣿⣿⣿⣿⣿⡟⠀⠀⠀⠀⠀
+⣿⡇⠀⠀⢰⡟⢰⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠁⠂⢄⡑⠢⢀⠉⠻⢿⣿⣦⣄⡀⠀⠀⠀⠀⠈⠓⠒⠚⠁⠙⢄⣀⣀⣠⠞⠁⠀⠀⡀⠀⠀⠈⠻⢿⣿⣿⣿⠿⠛⠀⠀⠀⠀⠀⠀
+⣿⡇⠀⠀⠘⣷⡘⣿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠑⠠⢁⠂⠀⠈⠛⠿⣿⣶⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣿⡇⠀⠀⠀⠈⠛⠿⠟⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⢹⠛⠻⣿⣶⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡐⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⣿⠉⣿⣿⣶⣤⡀⣀⣤⣤⣄⣀⠀⠀⠊⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣿⡇⠀⠀⠀⠀⠀⣿⣖⠀⠀⣈⠀⠀⠀⠈⠙⠲⢤⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⠀⠀⣿⠀⣿⠀⢸⠛⢿⣿⡿⠛⠿⢿⣿⣧⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣿⡇⠀⠀⠳⣦⡀⠀⠀⢀⠔⠀⠀⠀⠀⠀⠀⠀⢸⠈⠛⠳⣤⣀⠀⠀⠀⠀⠀⢸⡀⠀⣿⠀⣿⠀⢸⠀⠈⣏⠛⣶⣄⡀⠈⢿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⣿⡇⢀⠀⠀⠀⠉⠉⠉⠁⠀⠀⣠⣤⣤⣄⡀⠀⢸⠀⠀⠀⡇⠈⡟⠲⢤⣀⠀⠸⣷⣄⣿⠀⣿⠀⢸⠀⠀⣿⠀⣿⠀⠉⠓⠺⣿⣦⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⢿⣿⣬⠑⠒⢤⣄⣀⣀⣤⡤⢦⣅⠉⠛⢯⣽⣳⣾⣄⡁⠀⡇⠀⡇⠀⠀⠈⠙⠲⢬⡙⠻⣿⣿⣦⣼⡀⠀⣿⠀⣿⠀⠀⠀⠀⠈⢿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠈⠛⠿⣿⣶⣤⣀⡉⠛⢦⣄⡀⠈⠙⠶⣤⣈⠙⠻⢿⣿⣷⣧⣀⡇⠀⠀⠀⠀⠀⠀⠈⠙⠲⢌⡙⠿⣿⣿⣿⣀⣾⠀⠀⠀⠀⠀⢸⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠉⠛⠿⣿⣷⣶⣬⣙⡳⠄⠀⠀⠉⠙⠶⣤⣈⠙⠳⣯⣻⡶⣤⣀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠲⢬⣛⠿⣿⠀⠀⠀⠀⠀⠈⣿⡇⠀⠀⠀⠀⠀⠀⠰⣄⠀⠀⠀⠀⢀⡶⠶
+⠀⠀⠀⠀⠀⠀⠀⠀⠙⠛⠿⣿⣿⣿⣶⣤⣄⡀⠀⠀⠙⠷⢦⣤⡈⠙⠶⣽⣓⣦⣄⡀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠲⢤⣀⠀⠀⠀⠀⣿⡇⠀⠒⢀⠀⠀⠀⢀⠈⠳⢤⣀⣀⣼⠇⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠛⣿⣿⡿⠿⠿⠿⠶⣶⣦⣈⡙⠓⢦⣄⣉⣿⣬⠿⠷⠦⣤⣤⣤⣄⣀⠀⠀⠀⠀⠈⠙⠲⣤⣠⣿⣿⠀⠀⠀⠑⠂⠐⠋⠀⠀⠀⠉⠉⠁⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⡏⠀⠀⠀⠀⠀⠀⠉⢻⣿⡶⠋⠉⠁⠀⠀⠀⠀⠀⠀⠈⠉⠙⠻⣿⣦⣄⠀⠀⠀⠀⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠈⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠻⣷⣤⡀⢀⣿⡏⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣸⣿⡏⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠛⢿⣾⣿⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⣿⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀`,`⠀⠀⠀⠀⠀⠀⠀⣀⣠⣤⣤⣤⣴⢶⡶⣶⣴⣤⣤⡶⣶⣶⣶⣶⣦⣤⣄⠀⠀
+⠀⠀⠀⠀⣠⣴⣿⣻⠽⠿⠚⠙⠋⠛⠽⠷⣯⡿⣽⣻⢷⣻⣊⣰⡌⢻⣽⣷⠀
+⠀⠀⣠⣾⢿⠻⠊⠀⢀⣀⣀⣀⠀⠀⠀⠀⠀⠙⠿⣽⣻⣟⣿⠏⢠⣾⣷⣻⠇
+⠀⣴⡿⡯⠃⠀⠀⠀⢸⡿⣟⣿⣧⠀⠀⠀⠀⠀⠀⠘⢷⡿⣁⣐⣛⢳⣯⡟⠀
+⣰⡿⡟⠀⠀⠀⠀⠀⠀⠀⠈⣿⢾⡆⠀⠀⠀⠀⠀⠀⠈⢿⣟⡿⣽⣯⡟⠀⠀
+⣿⣻⠃⠀⠀⠀⠀⠀⠀⢀⣼⡿⣯⣿⡄⠀⠀⠀⠀⠀⠀⠸⣯⣿⣻⡾⠀⠀⠀
+⣿⣟⠀⠀⠀⠀⠀⠀⢀⣾⣯⡿⢻⣳⣷⡀⠀⠀⠀⠀⠀⠀⣿⣳⣿⠁⠀⠀⠀
+⣿⣽⡄⠀⠀⠀⠀⢠⣿⣻⡞⠀⠀⢻⣾⢧⠀⠀⠀⠀⠀⢰⣿⣻⠂⠀⠀⠀⠀
+⢹⣯⣷⡀⠀⠀⣰⡿⣯⠏⠀⠀⠀⠈⣿⢯⣷⡿⣇⠀⢀⣾⣟⠇⠀⠀⠀⠀⠀
+⠀⠻⡾⣷⣄⠀⠉⠉⠁⠀⠀⠀⠀⠀⠘⠛⠁⠁⠀⣠⣾⣟⠎⠀⠀⠀⠀⠀⠀
+⠀⠀⠙⢷⣟⣷⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣾⣟⡷⠋⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠙⠳⢿⣻⢷⣶⣦⣤⣤⣴⣶⡾⣟⣯⠗⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠈⠉⠓⠛⠓⠋⠛⠚⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀`,
+        ];
+        
+        // Fake Ads Database
+        const FAKE_ADS = [
+            '🏆 WYGRAŁEŚ KOZĘ! Kliknij TAK aby odebrać!',
+            '💽 Darmowe disco polo! 1000 złotych płyt CD!',
+            '🚜 Nowy traktor za 5 zł! Tylko dziś!',
+            '👽 UFO czeka na Ciebie! Powiedz TAK!',
+            '🍺 Darmowe piwo przez rok! Kliknij TERAZ!'
+        ];
+        
+        function generateAscii() {
+            const asciiDisplay = document.getElementById('ascii-display');
+            const randomAscii = ASCII_DB[Math.floor(Math.random() * ASCII_DB.length)];
+            asciiDisplay.innerHTML = randomAscii;
+            
+            // Add random animation
+            asciiDisplay.style.animation = `glitch${Math.floor(Math.random()*3)+1} 1s infinite`;
+        }
+        
+        function showQuiz() {
+            const popup = document.getElementById('quizPopup');
+            const adContainer = document.getElementById('quizAds');
+            
+            adContainer.innerHTML = `
+                <marquee behavior="alternate" scrollamount="3">
+                    ${FAKE_ADS[Math.floor(Math.random()*FAKE_ADS.length)]}
+                </marquee>
+            `;
+            
+            popup.style.display = 'block';
+            setTimeout(() => {
+                popup.style.display = 'none';
+            }, 15000); 
+        }
+        
+        function handleQuizAnswer(answer) {
+            if(answer) {
+                showPopup('GRATULACJE! Wysyłamy SMS z nagrodą!');
+            } else {
+                document.body.style.filter = 'invert(1)';
+                setTimeout(() => {
+                    document.body.style.filter = '';
+                }, 2000);
+            }
+            document.getElementById('quizPopup').style.display = 'none';
+        }
+        
+        setInterval(() => {
+            if(Math.random() > 0.7) showQuiz();
+        }, 30000);
+        
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes glitch1 {
+                0% { transform: translate(0); }
+                20% { transform: translate(-2px, 2px); }
+                40% { transform: translate(-2px, -2px); }
+                60% { transform: translate(2px, 2px); }
+                80% { transform: translate(2px, -2px); }
+                100% { transform: translate(0); }
+            }
+            @keyframes glitch2 {
+                0% { text-shadow: 0 0 red; }
+                50% { text-shadow: 2px 2px blue; }
+                100% { text-shadow: -2px -2px green; }
+            }
+            @keyframes glitch3 {
+                0% { letter-spacing: normal; }
+                50% { letter-spacing: 3px; }
+                100% { letter-spacing: -1px; }
+            }
+        `;
+        document.head.appendChild(style);
+        </script>
+    <script>
+        // Random border animations
+        const crazyBorders = document.querySelectorAll('.crazy-border');
+        setInterval(() => {
+            crazyBorders.forEach(border => {
+                border.style.borderStyle = Math.random() > 0.5 ? 'dotted' : 'double';
+            });
+        }, 1000);
+    </script>
+        <script>
+            // UFO hover effect
+            const ufo = document.querySelector('.ufo-container');
+            ufo.addEventListener('mouseover', () => {
+                ufo.style.animationDuration = '5s';
+                ufo.style.filter = 'hue-rotate(180deg)';
+            });
+            ufo.addEventListener('mouseout', () => {
+                ufo.style.animationDuration = '15s';
+                ufo.style.filter = 'none';
+            });
+    
+            // Fake visitor counter
+            setInterval(() => {
+                document.getElementById('licznik').textContent = 
+                    `Odwiedzin: ${Math.floor(Math.random() * 1000 + 1337)}`;
+            }, 5000);
+    
+            // Matrix code effect
+            const matrix = document.getElementById('matrix');
+            setInterval(() => {
+                matrix.textContent = matrix.textContent
+                    .split('')
+                    .map(c => Math.random() > 0.9 ? (c === '0' ? '1' : '0') : c)
+                    .join('');
+            }, 100);
+        </script>
+        <script>
+            // Generator teorii spiskowych
+            function generujSpisek() {
+                const czesci = [
+    // Who is involved?
+    [
+        "Rząd", 
+        "Januszex", 
+        "Makison", 
+        "Biedronka", 
+        "TVP Info", 
+        "Tusk", 
+        "Kaczyński", 
+        "Koń Trojański", 
+        "Dariusz baj", 
+        "Wałęsa", 
+        "Żydzi", 
+        "UFO", 
+        "Kiełbasa", 
+        "Zenek Martyniuk", 
+        "Kościół", 
+        "Rosjanie", 
+        "Amerykanie", 
+        "Kot Filemon", 
+        "Pani Krysia z warzywniaka", 
+        "Król Julian", 
+        "Kurczak z rożna", 
+        "Pani Jadzia z Pewexu", 
+        "Agent Smith", 
+        "Kopernik", 
+        "Jan Paweł II", 
+        "Królowa Elżbieta", 
+        "Pies Pawlaka", 
+        "Kiełbasa z Biedronki", 
+        "Pani Zosia z poczty", 
+        "Kaczor Donald"
+    ],
+    
+    // What are they doing?
+    [
+        "ukrywa", 
+        "sprzedaje", 
+        "tworzy", 
+        "kupuje", 
+        "zakopuje", 
+        "przemyca", 
+        "podrzuca", 
+        "zatruwa", 
+        "kradnie", 
+        "pranie mózgu", 
+        "kontroluje", 
+        "manipuluje", 
+        "oszukuje", 
+        "przeprowadza eksperymenty na", 
+        "wymienia", 
+        "podrabia", 
+        "wysyła w kosmos", 
+        "zamraża", 
+        "przekupuje", 
+        "zastępuje hologramem", 
+        "wprowadza do Matrixa", 
+        "zastępuje sztuczną inteligencją", 
+        "przeprowadza rewolucję przeciwko", 
+        "wymyśla nową religię wokół", 
+        "tworzy tajną armię z", 
+        "buduje portal do innego wymiaru z", 
+        "zastępuje klonem", 
+        "wysyła na emeryturę", 
+        "tworzy nowy rząd z", 
+        "wymyśla nową walutę opartą na"
+    ],
+    
+    [
+        "tajne bazy pod Żabką", 
+        "prawdziwy smak żurku", 
+        "kod do Matrixa", 
+        "spisek z UFO", 
+        "tajne receptury pierogów", 
+        "sekretne laboratoria w Biedronce", 
+        "tajne spotkania w Lidlu", 
+        "prawdziwy skład kiełbasy", 
+        "tajne archiwa TVP", 
+        "sekretne taśmy Wałęsy", 
+        "tajne plany TIR-ów", 
+        "prawdziwe pochodzenie pączków", 
+        "tajne bazy na Księżycu", 
+        "sekretne przepisy na bigos", 
+        "tajne spotkania w McDonald's", 
+        "prawdziwy powód braku papieru toaletowego", 
+        "tajne bazy w Międzyrzeczu", 
+        "sekretne plany zastąpienia ludzi robotami", 
+        "prawdziwy skład mleka w proszku", 
+        "tajne bazy pod Cielemęcem", 
+        "sekretne plany zastąpienia złota ziemniakami", 
+        "prawdziwy powód braku mydła w sklepach", 
+        "tajne bazy pod Gręzowem", 
+        "sekretne plany zastąpienia wody piwem", 
+        "prawdziwy powód braku cukru", 
+        "tajne bazy pod Żabką", 
+        "sekretne plany zastąpienia chleba styropianem", 
+        "prawdziwy powód braku margaryny", 
+        "tajne bazy pod Biedronką", 
+        "sekretne plany zastąpienia ludzi hologramami"
+    ]
+];
+                
+                const spisek = czesci.map(czesc => czesc[Math.floor(Math.random()*czesc.length)]).join(' ');
+                document.getElementById('spisek').textContent = `!!! ${spisek.toUpperCase()} !!!`;
+            }
+        </script>
+        <script>
+            // Fake System Popup
+            function showPopup(text) {
+                const popup = document.getElementById('alertPopup');
+                document.getElementById('alertText').innerHTML = text;
+                popup.style.display = 'block';
+                setTimeout(() => {
+                    popup.style.transform = `translate(-50%, -50%) rotate(${Math.random()*4-2}deg)`;
+                }, 50);
+            }
+            
+
+            
+            // Wyrocznia
+            function losowaOdpowiedz() {
+                const odpowiedzi = [
+                    "Zapytaj ponownie później",
+                    "Tak, ale tylko w Czuryłach",
+                    "Nie, chyba że masz 5 zł",
+                    "Tak, ale tylko w poniedziałki",
+                    "Odpowiedź jest w TVP1",
+                    "Zdecydowanie TAK",
+                    "Zdecydowanie NIE",
+                    "Chuj wie",
+                    "Nie powiem",
+                    "Chyba"
+                ];
+            
+                showPopup(odpowiedzi[Math.floor(Math.random()*odpowiedzi.length)]);
+            }
+            
+            // Auto-Update Features
+            setInterval(() => {
+                
+                // Random error
+                if(Math.random() > 0.98) {
+                    document.body.style.filter = `hue-rotate(${Math.random()*360}deg)`;
+                    setTimeout(() => { document.body.style.filter = ''; }, 1000);
+                }
+            }, 3000);
+            </script>
+            <script>
+                // Generator losowych animacji
+                setInterval(() => {
+                    const chaos = document.createElement('div');
+                    chaos.className = 'chaos';
+                    chaos.style = `
+                        top: ${Math.random()*100}%;
+                        left: ${Math.random()*100}%;
+                        font-size: ${Math.random()*50+10}px;
+                        color: hsl(${Math.random()*360},100%,50%);
+                    `;
+                    chaos.textContent = ['☠️','💣','⚠️','🌈','🎉','💩','👽'][Math.floor(Math.random()*7)];
+                    document.body.appendChild(chaos);
+                
+                    setTimeout(() => chaos.remove(), 5000);
+                }, 2000);
+                
+
+                
+
+                
+
+                </script>
+            <script>
+                // Zegar systemowy
+                setInterval(() => {
+                    const czas = new Date();
+                    document.getElementById('licznik').innerHTML = `
+                        Odwiedzin: ${Math.floor(Math.random()*1000)+1337}<br>
+                        Czas: ${czas.getHours()}:${czas.getMinutes()}:${czas.getSeconds()}<br>
+                        ${['POŁĄCZENIE NIESTABILNE','WIATR: 20km/h','ALERT RŻĄDOWY', "ALERT RCB", "110111011"][Math.floor(Math.random()*5)]}
+                    `;
+                }, 1000);
+                
+                
+                // Tajne skróty
+                document.addEventListener('keydown', (e) => {
+                    if(e.key === 'F11') { // Próba pełnego ekranu
+                        showPopup('NIE WYCHODŹ! OTRZYMUJESZ NAGRODĘ!');
+                        document.documentElement.requestFullscreen();
+                        document.body.style.cursor = `url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAbrwAAG68BXhqRHAAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAFUSURBVFiF7ZYxDsIwDEWfCwfgAD1AD9AD9AA9QEsnDlCJg3CAHqAH6AF6gB6gB8iQkYUiJKRJ7KBU4pdkyXbs5/g7CSll/3Dq3QDAHXgBF+ABnIu1B3ABFkA3JkAXB7gC8xL4kHhgH0rqMhJgFQKbJvA+8X1NfQjAqgW8S3xXUx8CsG4Bf4s3BwD4ALsW8K94UwCACdjWgH+JNwUAmH0C3iS+rgX4jDcDAJh+At4kvqoF+Io3AQCYlYAXiS9rAb7jTQAA5gXgWeKLWoDfeBMAgGUGPEk8rwUYjjcBAFhmwKPEs1qA8XgTAIBlBjxIPK0FGI83AQBYZsC9xJNagPF4EwCAZQbcSTypBRiPNwEAWGbArcSTWoDheBMAgGUG3Eg8qgUYjDcBAFhmwLXEw1qAarwJAMAyA64kHtQCVONNAACWGXAp8bAWoBpvAgCwzIALiYe1ANV4EwCAZQacSzysBajGmwAALDPgTOJBLUA13gQAYJkBpxL3awGq8SYAAMsMOJG4XwtQjTcBAFhmwLHE/VqAarwJAMAyAw4l7tcCVONNAAD2E/8A53ZxB/2wNv0AAAAASUVORK5CYII='), auto`;
+                    }
+                });
+                </script>
+ <div class="popup" id="alertPopup">
+    <h3 style="color: #FF0; margin: 0">⚠️ UWAGA! ⚠️</h3>
+    <hr style="border-color: white">
+    <p id="alertText"></p>
+    <button onclick="document.getElementById('alertPopup').style.display = 'none'" 
+            style="background: #FFF; border: 2px outset; padding: 5px 10px; cursor: pointer">
+        OK
+    </button>
+</div>           
+</body>
+</html>

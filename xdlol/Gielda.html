@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giełda</title>
+    <style>
+        body {
+            background-color: #1a1a1a;
+            color: #00ff00;
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #000;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 5px solid #00ff00;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+            text-shadow: 2px 2px #ff00ff;
+        }
+        .container {
+            padding: 20px;
+        }
+        .offer {
+            background-color: #333;
+            border: 2px solid #00ff00;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+        .offer h2 {
+            color: #ff00ff;
+            text-shadow: 1px 1px #00ff00;
+        }
+        .offer p {
+            font-size: 1.2em;
+        }
+        .offer img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #00ff00;
+            border-radius: 5px;
+        }
+        footer {
+            background-color: #000;
+            padding: 10px;
+            text-align: center;
+            border-top: 5px solid #00ff00;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+        footer p {
+            margin: 0;
+            font-size: 1em;
+            color: #00ff00;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Giełda</h1>
+    </header>
+    <div class="container">
+        <div class="offer">
+            <h2>Ursus C-360</h2>
+            <img src="https://www.wrp.pl/wp-content/uploads/2021/04/jaworze-2.jpg" alt="Ursus C-360">
+            <p>Cena: 15,000 PLN</p>
+            <p>Rok produkcji: 1975</p>
+            <p>Stan: Dobry</p>
+            <p>Lokalizacja: Międzyrzec Podlaski, Polska</p>
+        </div>
+        <div class="offer">
+            <h2>Fiat 126p Maluch</h2>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTbxxQN-lGoYWJGA9qz_j4i_TpVfjTrH851GA&s" alt="Fiat 126p">
+            <p>Cena: 18,000 PLN</p>
+            <p>Rok produkcji: 2024</p>
+            <p>Stan: Zajebisty</p>
+            <p>Lokalizacja: Cielemęc, Polska</p>
+        </div>
+        <div class="offer">
+            <h2>Kraz 255</h2>
+            <img src="https://www.katalogprezentow.pl/72149/11192.jpg" alt="Kraz">
+            <p>Cena: 38,000 PLN</p>
+            <p>Rok produkcji: 1977</p>
+            <p>Stan: плохой</p>
+            <p>Lokalizacja: Obwód Karpiowski, Rosja</p>
+        </div>
+        <div class="offer">
+            <h2>DUCH W SŁOIKU</h2>
+            <img src="data:image/jpeg;base64,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" alt="DUCH W SŁOIKU">
+            <p>Cena: 1,200 PLN</p>
+            <p>Rok produkcji: 1990</p>
+            <p>Stan: Niewidzialny</p>
+            <p>Lokalizacja: Wrocław, Polska</p>
+        </div>
+        <div class="offer">
+            <h2>UŻYWANY CZOŁG T-34</h2>
+            <img src="https://cobi.pl/storage/image/core_files/2022/6/2/f2dc67e693a38168c2eeae8372e69050/jpg/cobi/product-thumb/2542-front.jpg" alt="UŻYWANY CZOŁG T-34">
+            <p>Cena: 240,150 PLN</p>
+            <p>Rok produkcji: 1944</p>
+            <p>Stan: Używany (działa tylko 1 gąsienica)</p>
+            <p>Lokalizacja: Gdańsk, Polska</p>
+        </div>
+        <div class="offer">
+            <h2>Rower Szosowy</h2>
+            <img src="https://previews.123rf.com/images/bondsza/bondsza1712/bondsza171200004/92435925-stary-zepsuty-i-zardzewia%C5%82y-rower-zwisaj%C4%85cy-z-dachu-sklepu-na-grubym-%C5%82a%C5%84cuchu-i-haczyku.jpg" alt="Rower Szosowy">
+            <p>Cena: 800 PLN</p>
+            <p>Rok produkcji: 2010</p>
+            <p>Stan: Bardzo dobry</p>
+            <p>Lokalizacja: Poznań, Polska</p>
+        </div>
+        <div class="offer">
+            <h2>Kurs INF.02 (chuja sie nauczysz)</h2>
+            <img src="https://static01.helion.com.pl/global/okladki/vbig/inf022.jpg" alt="Kurs INF.02">
+            <p>Cena: 40 PLN</p>
+            <p>Rok produkcji: 2015</p>
+            <p>Stan: Chujowy</p>
+            <p>Lokalizacja: Łódź, Polska</p>
+        </div>
+        <div class="offer">
+            <h2>Kanał YouTube</h2>
+            <img src="https://i.ibb.co/CsTzwZGk/obraz.png" alt="Kanał">
+            <p>Cena: 140 PLN</p>
+            <p>Rok produkcji: 2022</p>
+            <p>Stan: Okej</p>
+            <p>Lokalizacja: Zbuczyn, Polska</p>
+        </div>
+        <div class="offer">
+            <h2>Franek</h2>
+            <img src="https://i.ibb.co/Tyqk8dH/Snapchat-101777022.jpg" alt="Franek">
+            <p>Cena: 10 PLN</p>
+            <p>Rok produkcji: 2007</p>
+            <p>Stan: Używany nie bity</p>
+            <p>Lokalizacja: Czepielin, Polska</p>
+        </div>        <div class="offer">
+            <h2>Rakietnica RPG-7</h2>
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5c7c8a1e-eb87-4ba3-92fb-a3350a4f47a6/d1ii11a-07bc5a61-6d88-4eca-a1a1-01ce4f7a7203.jpg/v1/fill/w_600,h_450,q_75,strp/rpg_7_prop_by_wraith5_d1ii11a-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NDUwIiwicGF0aCI6IlwvZlwvNWM3YzhhMWUtZWI4Ny00YmEzLTkyZmItYTMzNTBhNGY0N2E2XC9kMWlpMTFhLTA3YmM1YTYxLTZkODgtNGVjYS1hMWExLTAxY2U0ZjdhNzIwMy5qcGciLCJ3aWR0aCI6Ijw9NjAwIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.29qWD106X7VX3anNN0g6x0th1lsrmq0HP9VTPSY-At8" alt="Rakietnica">
+            <p>Cena: 9140 PLN</p>
+            <p>Rok produkcji: 2003</p>
+            <p>Stan: Chujowy</p>
+            <p>Lokalizacja: N/A, Afryka</p>
+        </div>        <div class="offer">
+            <h2>Karabin Czterotaktowy Remington Model 700</h2>
+            <img src="https://pbs.twimg.com/media/FkC-BPGUcAE2m2-.jpg:large" alt="Karabin">
+            <p>Cena: 9200 PLN</p>
+            <p>Rok produkcji: 2021</p>
+            <p>Stan: Działa</p>
+            <p>Lokalizacja: Siedlce, Polska</p>
+        </div>        <div class="offer">
+            <h2>JBL Flip 6</h2>
+            <img src="https://cdn.komputerswiat.pl/1/VxOk9lBaHR0cHM6Ly9vY2RuLmV1L3B1bHNjbXMvTURBXy8yOGQ4NmU2NmZmNDRjMDBkOGYzNWRiM2M1YjU5NWQzYy5qcGeSlQMAGc0GYM0DlpMFzQSwzQJ23gACoTAHoTEE" alt="JBL">
+            <p>Cena: 40 PLN</p>
+            <p>Rok produkcji: 2015</p>
+            <p>Stan: Chujowy</p>
+            <p>Lokalizacja: Warszawa, Polska</p>
+        </div>        <div class="offer">
+            <h2>Bomba z Dronem</h2>
+            <img src="https://cdn.mos.cms.futurecdn.net/tUrGZtfcKcyE2C4ptfoKfC.png" alt="Bomba">
+            <p>Cena: 500 PLN</p>
+            <p>Rok produkcji: 2023</p>
+            <p>Stan: Latający</p>
+            <p>Lokalizacja: Al Mazrah, Tadżikistan</p>
+        </div>        <div class="offer">
+            <h2>Zestaw szklanek</h2>
+            <img src="https://www.szklo-krosno.com.pl/userdata/public/gfx/36934/Znicze-szklane-z-wkladem-czerwonebezbarwne-Zniczplast-13-cm--6-8h--25g---20szt.jpg" alt="Szklanki">
+            <p>Cena: 40 PLN</p>
+            <p>Rok produkcji: 2015</p>
+            <p>Stan: Chujowy</p>
+            <p>Lokalizacja: Łódź, Polska</p>
+        </div>        <div class="offer">
+            <h2>Volvo V70 Sedan</h2>
+            <img src="https://www.gtainside.com/downloads/picr/2024-02/1708805579_Sunrise%20front.jpg" alt="Volvo">
+            <p>Cena: 9440 PLN</p>
+            <p>Rok produkcji: 1999</p>
+            <p>Stan: Bity, przebieg 421,133KM</p>
+            <p>Lokalizacja: Łódź, Polska</p>
+        </div>        <div class="offer">
+            <h2>Majonez</h2>
+            <img src="https://i.ibb.co/35TM3Wnx/obraz.png" alt="Majonez">
+            <p>Cena: 10PLN</p>
+            <p>Rok produkcji: 2025</p>
+            <p>Stan: Nowy</p>
+            <p>Lokalizacja: USA, Polska</p>
+        </div>        <div class="offer">
+            <h2>Cygański Kalendarz Adwentowy</h2>
+            <img src="https://i.ibb.co/LDF07F5C/obraz.png" alt="Cygański Kalendarz">
+            <p>Cena: 140 PLN</p>
+            <p>Rok produkcji: 2023</p>
+            <p>Stan: Zapakowany</p>
+            <p>Lokalizacja: Siedlce, Polska</p>
+        </div>        <div class="offer">
+            <h2>Pies Strażniczy</h2>
+            <img src="https://vetmarlborough.co.nz/wp-content/uploads/cat-facts.jpg" alt="Pies">
+            <p>Cena: 550 PLN</p>
+            <p>Rok produkcji: 2018</p>
+            <p>Stan: Groźny</p>
+            <p>Lokalizacja: Choroszcz, Polska</p>
+        </div>        <div class="offer">
+            <h2>Głowica Jądrowa z dostawą pod dom</h2>
+            <img src="https://m.natemat.pl/7a55439d7d3f0b4d6a1ba2c6d80d5062,0,0,0,0.jpg" alt="Głowica">
+            <p>Cena: 2,230,540 PLN</p>
+            <p>Rok produkcji: 1968</p>
+            <p>Stan: Zły</p>
+            <p>Lokalizacja: Gdańsk, Polska</p>
+        </div>        <div class="offer">
+            <h2>Zestaw Mój Pierwszy Pocałunek z Polakiem</h2>
+            <img src="https://i.ibb.co/kfZ02nB/obraz.png" alt="Kosiarka Spalinowa">
+            <p>Cena: 20 PLN</p>
+            <p>Rok produkcji: 2000</p>
+            <p>Stan: Chujowy</p>
+            <p>Lokalizacja: Wadowice, Polska</p>
+        </div>        <div class="offer">
+            <h2>Tuba do peżota</h2>
+            <img src="https://i.ibb.co/QFyhW8xz/obraz.png" alt="Kosiarka Spalinowa">
+            <p>Cena: 940 PLN</p>
+            <p>Rok produkcji: 2023</p>
+            <p>Stan: Wykurwisty</p>
+            <p>Lokalizacja: Siedlce, Polska</p>
+        </div>        <div class="offer">
+            <h2>Sierp i Młot</h2>
+            <img src="https://i.ibb.co/6RKDLFVM/obraz.png" alt="Kosiarka Spalinowa">
+            <p>Cena: 70 PLN</p>
+            <p>Rok produkcji: 1922</p>
+            <p>Stan: Wspólny</p>
+            <p>Lokalizacja: Warszawa, Rosja</p>
+        </div>        <div class="offer">
+            <h2>AUDI A6</h2>
+            <img src="https://i.ibb.co/5hJvBBvH/obraz.png" alt="Kosiarka Spalinowa">
+            <p>Cena: 66,540 PLN</p>
+            <p>Rok produkcji: 2013</p>
+            <p>Stan: Idealny (Progi do spawania)</p>
+            <p>Lokalizacja: Elbląg, Polska</p>
+        </div>        <div class="offer">
+            <h2>Marihunaen</h2>
+            <img src="https://i.ibb.co/dYt5Nd8/obraz.png" alt="Kosiarka Spalinowa">
+            <p>Cena: 50 PLN/g</p>
+            <p>Rok produkcji: Codziennie</p>
+            <p>Stan: Smaczny</p>
+            <p>Lokalizacja: Łódź, Polska</p>
+        </div>
+        <div class="offer">
+            <h2>Czechosłowacja</h2>
+            <img src="https://zbiam.pl/wp-content/uploads/2020/05/foto-02-744x452.jpg" alt="Kosiarka Spalinowa">
+            <p>Cena: 19,99 PLN</p>
+            <p>Rok produkcji: 2024</p>
+            <p>Stan: Zjednoczony</p>
+            <p>Lokalizacja: Czechy, Słowacja</p>
+        </div>        <div class="offer">
+            <h2>Laptop Acer Nitro 5</h2>
+            <img src="https://i.ibb.co/M5xFqBMq/obraz.png" alt="Kosiarka Spalinowa">
+            <p>Cena: 950 PLN</p>
+            <p>Rok produkcji: 2020</p>
+            <p>Stan: Sypie sie</p>
+            <p>Lokalizacja: Cielemęc, Polska</p>
+        </div>        <div class="offer">
+            <h2>Kaftan Przeciwmasturbacyjny</h2>
+            <img src="https://i.ibb.co/hxJ9ZMPz/obraz.png" alt="Kosiarka Spalinowa">
+            <p>Cena: 90 PLN</p>
+            <p>Rok produkcji: 2011</p>
+            <p>Stan: Nie masturbuje sie</p>
+            <p>Lokalizacja: Grubale, Polska</p>
+        </div>
+        <div class="offer">
+            <h2>Deutz Fahr Turbo Benzily (5000KM)</h2>
+            <img src="https://i.ibb.co/8n5nWF14/img-2025-02-22-21-19-30.png" alt="Kosiarka Spalinowa">
+            <p>Cena: 1 EUR</p>
+            <p>Rok produkcji: 2013</p>
+            <p>Stan: Zapierdala</p>
+            <p>Lokalizacja: Hagenstedt, Niemcy</p>
+        </div>         <div class="offer">
+            <h2>Film Kevin Sam W Sosnowcu (Pegi 21)</h2>
+            <img src="https://i.ibb.co/tp2DyP5K/obraz.png" alt="Kosiarka Spalinowa">
+            <p>Cena: 10 PLN</p>
+            <p>Rok produkcji: 2009</p>
+            <p>Stan: Straszny</p>
+            <p>Lokalizacja: Sosnowiec, Polska</p>
+        </div>        <div class="offer">
+            <h2>Żółty Marihunaen</h2>
+            <img src="https://i.ibb.co/ycy961Lv/obraz.png" alt="Kosiarka Spalinowa">
+            <p>Cena: 90 PLN</p>
+            <p>Rok produkcji: Teraz</p>
+            <p>Stan: Żółty</p>
+            <p>Lokalizacja: (Zastrzeżone), Polska</p>
+        </div>        
+        <div class="offer">
+            <h2>Ciągnik Rolniczy Sportowy</h2>
+            <img src="https://www.quirumed.com/media/catalog/product/1/8/183KY784L_Foto_524c3b5a-b4b8-44c4-8157-e4fbe5f80db7.jpg?optimize=high&bg-color=255,255,255&fit=bounds&height=410&width=546&canvas=546:410" alt="Kosiarka Spalinowa">
+            <p>Cena: 5100 PLN</p>
+            <p>Rok produkcji: 2013</p>
+            <p>Stan: Nowy</p>
+            <p>Lokalizacja: Warszawa, Polska</p>
+        <div class="offer">
+            <h2>Motocykl dla kobiet (1000cc)</h2>
+            <img src="https://i.ibb.co/qL3ZJydJ/obraz.png" alt="Kosiarka Spalinowa">
+            <p>Cena: 910 PLN</p>
+            <p>Rok produkcji: 2006</p>
+            <p>Stan: Straszny</p>
+            <p>Lokalizacja: Sosnowiec, Polska</p>
+        </div>
+        <div class="offer">
+            <h2>Sałatka Jażynowa</h2>
+            <img src="https://i.ibb.co/hR4d36Gp/obraz.png" alt="Kosiarka Spalinowa">
+            <p>Cena: 110 PLN/KG</p>
+            <p>Rok produkcji: 2025</p>
+            <p>Stan: Smaczny</p>
+            <p>Lokalizacja: Czuryły, Polska</p>
+        </div>
+        <div class="offer">
+            <h2>Woda w Proszku</h2>
+            <img src="https://i.ibb.co/NdvFK09V/obraz.png" alt="Kosiarka Spalinowa">
+            <p>Cena: 15 PLN</p>
+            <p>Rok produkcji: 2015</p>
+            <p>Stan: Suchy</p>
+            <p>Lokalizacja: Gręzów, Polska</p>
+        </div>
+        
+        <div class="offer">
+            <h2>Koparka</h2>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8hd0c1YYhfif61Y4LYI6IwRTunfKZ_Ai0zw&s" alt="Kosiarka Spalinowa">
+            <p>Cena: 120,110 PLN</p>
+            <p>Rok produkcji: 2005</p>
+            <p>Stan: Brudny</p>
+            <p>Lokalizacja: Zbuczyn, Polska</p>
+        </div>
+        <div class="offer">
+            <h2>Tarcze Hamulcowe Ceramiczne Brembo</h2>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzz7CfDyZwCj_KMfRyCn9wx-jlBDjwqYwcSw&s" alt="Kosiarka Spalinowa">
+            <p>Cena: 110 PLN</p>
+            <p>Rok produkcji: 2009</p>
+            <p>Stan: Ceramiczny</p>
+            <p>Lokalizacja: USA, Polska</p>
+        </div>
+        <div class="offer">
+            <h2>Toyota Yaris Rally W16</h2>
+            <img src="https://spojler.pl/zdjecie,4,0119a41bc3810322e188e95e4573ff49" alt="Kosiarka Spalinowa">
+            <p>Cena: 1,910 PLN</p>
+            <p>Rok produkcji: 2000</p>
+            <p>Stan: Jeździ (chyba)</p>
+            <p>Lokalizacja: Cielemęc, Polska</p>
+        </div>
+        <div class="offer">
+            <h2>Hełm z Powstania Listopadowego</h2>
+            <img src="https://img-new.cgtrader.com/items/4750045/542814ed1f/large/killa-helmet-3d-model-542814ed1f.jpg" alt="Kosiarka Spalinowa">
+            <p>Cena: 310 PLN</p>
+            <p>Rok produkcji: 1989</p>
+            <p>Stan: Opancerzenie klasy ESAPI level IV</p>
+            <p>Lokalizacja: Sosnowiec, Polska</p>
+        </div>
+        <div class="offer">
+            <h2>Skibidi Toilet</h2>
+            <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/ef56987a-aa87-45d5-86db-5fd3c1766850/dvgh6x-08e014a5-fe76-44e9-acdb-8253a2cd1768.jpg/v1/fill/w_435,h_615,q_75,strp/1_dirty_toilet_by_woodmillmiles_dvgh6x-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NjE1IiwicGF0aCI6IlwvZlwvZWY1Njk4N2EtYWE4Ny00NWQ1LTg2ZGItNWZkM2MxNzY2ODUwXC9kdmdoNngtMDhlMDE0YTUtZmU3Ni00NGU5LWFjZGItODI1M2EyY2QxNzY4LmpwZyIsIndpZHRoIjoiPD00MzUifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.gLkMqTxwdt35DCGutkNgOmOqTLLil3CCFjYqHh5sH44" alt="Kosiarka Spalinowa">
+            <p>Cena: 100 PLN</p>
+            <p>Rok produkcji: 2024</p>
+            <p>Stan: Skibidi Skibidi</p>
+            <p>Lokalizacja: Choroszcz, Polska</p>
+        </div>
+        <div class="offer">
+            <h2>Wysokiej jakości alkohol</h2>
+            <img src="https://i.ibb.co/k2FghvKL/lk.png" alt="Kosiarka Spalinowa">
+            <p>Cena: ZA DARMO PLN</p>
+            <p>Rok produkcji: 2009</p>
+            <p>Stan: Słaby (Jakieś 10%)</p>
+            <p>Lokalizacja: Cielemęc, Polska</p>
+        </div>
+        <div class="offer">
+            <h2>Dokumenty Rządowe</h2>
+            <img src="https://i.ytimg.com/vi/iCfHxLOQ5-0/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLA-RfgHaY2oI8ShGdHJxhnneiT38A" alt="Kosiarka Spalinowa">
+            <p>Cena: 15 PLN</p>
+            <p>Rok produkcji: 2024</p>
+            <p>Stan: Ważny</p>
+            <p>Lokalizacja: Parlament, Polska</p>
+        </div>
+        <div class="offer">
+            <h2>Grubale</h2>
+            <img src="https://i.ibb.co/NgFm2HKV/obraz.png" alt="Kosiarka Spalinowa">
+            <p>Cena: Co łaska</p>
+            <p>Rok produkcji: Kiedyś tam</p>
+            <p>Stan: Używany</p>
+            <p>Lokalizacja: Grubale, Polska</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 Giełda - Losowe Oferty. Wszystkie prawa zastrzeżone.</p>
+    </footer>
+</body>
+</html>
