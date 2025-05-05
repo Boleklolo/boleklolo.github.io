@@ -398,7 +398,7 @@ footer {
 .project-item {
   position: relative;
   overflow: hidden;
-  z-index: 1; /* Ensure the project item is above other content */
+  z-index: 1; 
 }
 
 .overlay {
@@ -417,7 +417,7 @@ footer {
   opacity: 0;
   transition: opacity var(--transition-speed) ease;
   text-align: center;
-  z-index: 2; /* Ensure the overlay is above the project item */
+  z-index: 2;
 }
 
 .project-item:hover .overlay,
@@ -438,10 +438,243 @@ footer {
   border: none;
   cursor: pointer;
   box-shadow: 0 0 8px rgba(0, 123, 255, 0);
-  z-index: 3; /* Ensure the button is above the overlay */
+  z-index: 3; 
 }
 
 .btn:hover {
   background-color: #0056b3;
   box-shadow: 0 0 16px rgba(0, 123, 255, 0.6);
+}
+
+:root {
+  --bg-color: #f8f9fa;
+  --text-dark: #2d3436;
+  --primary: #74b49b;
+  --secondary: #5c8d89;
+  --accent: #f9c74f;
+  --flower-pink: #ff9ff3;
+  --flower-yellow: #feca57;
+  --flower-blue: #48dbfb;
+  --overlay-bg: rgba(255, 255, 255, 0.9);
+  --border-radius: 12px;
+  --transition-speed: 0.4s;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.spring-decorations {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.flower {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+  z-index: -1;
+}
+
+.flower-1 {
+  top: 10%;
+  left: 5%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="%23ff9ff3"/><circle cx="30" cy="30" r="10" fill="%23feca57"/><circle cx="70" cy="30" r="10" fill="%23feca57"/><circle cx="30" cy="70" r="10" fill="%23feca57"/><circle cx="70" cy="70" r="10" fill="%23feca57"/></svg>');
+  animation: float 8s ease-in-out infinite;
+}
+
+.flower-2 {
+  top: 30%;
+  right: 8%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="%2348dbfb"/><circle cx="30" cy="30" r="10" fill="%23feca57"/><circle cx="70" cy="30" r="10" fill="%23feca57"/><circle cx="30" cy="70" r="10" fill="%23feca57"/><circle cx="70" cy="70" r="10" fill="%23feca57"/></svg>');
+  animation: float 10s ease-in-out 2s infinite;
+}
+
+.flower-3 {
+  bottom: 15%;
+  left: 15%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="%23feca57"/><circle cx="30" cy="30" r="10" fill="%23ff9ff3"/><circle cx="70" cy="30" r="10" fill="%23ff9ff3"/><circle cx="30" cy="70" r="10" fill="%23ff9ff3"/><circle cx="70" cy="70" r="10" fill="%23ff9ff3"/></svg>');
+  animation: float 12s ease-in-out 1s infinite;
+}
+
+.flower-4 {
+  top: 20%;
+  left: 30%;
+  transform: rotate(45deg);
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="%2374b49b"/><circle cx="30" cy="30" r="10" fill="%23feca57"/><circle cx="70" cy="30" r="10" fill="%23feca57"/><circle cx="30" cy="70" r="10" fill="%23feca57"/><circle cx="70" cy="70" r="10" fill="%23feca57"/></svg>');
+  animation: float 9s ease-in-out 3s infinite;
+}
+
+.flower-5 {
+  bottom: 25%;
+  right: 20%;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="%23f368e0"/><circle cx="30" cy="30" r="10" fill="%23feca57"/><circle cx="70" cy="30" r="10" fill="%23feca57"/><circle cx="30" cy="70" r="10" fill="%23feca57"/><circle cx="70" cy="70" r="10" fill="%23feca57"/></svg>');
+  animation: float 11s ease-in-out 4s infinite;
+}
+
+.butterfly {
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,20 C60,40 80,40 80,50 C80,60 60,60 50,80 C40,60 20,60 20,50 C20,40 40,40 50,20" fill="%23f9c74f"/><path d="M50,30 C55,40 65,40 70,50 C65,60 55,60 50,70 C45,60 35,60 30,50 C35,40 45,40 50,30" fill="%23f368e0"/></svg>');
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.8;
+  z-index: -1;
+}
+
+.butterfly-1 {
+  top: 15%;
+  right: 10%;
+}
+
+.butterfly-2 {
+  bottom: 20%;
+  left: 10%;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes butterflyFly {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  25% { transform: translate(var(--x-range), var(--y-range)) rotate(10deg); }
+  50% { transform: translate(calc(var(--x-range) * 0.5), calc(var(--y-range) * 1.5)) rotate(-5deg); }
+  75% { transform: translate(calc(var(--x-range) * -0.5), var(--y-range)) rotate(5deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+.seasonal-greeting {
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  color: var(--secondary);
+  font-size: 1.2rem;
+  margin-top: -1.5rem;
+  margin-bottom: 2rem;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.spring-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: var(--flower-pink);
+  color: white;
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: bold;
+  z-index: 2;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+#Boleklogo {
+  font-size: clamp(4rem, 10vw, 6rem);
+  font-family: 'Poppins', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: linear-gradient(45deg, #74b49b, #5c8d89, #f9c74f);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 12px 12px 24px rgba(0,0,0,0.1);
+  animation: gradientShift 8s ease infinite;
+  background-size: 200% 200%;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-links a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+  color: var(--primary);
+}
+
+.social-links .fa-github:hover { color: #6cc644; }
+.social-links .fa-discord:hover { color: #1da1f2; }
+
+#copy-notification {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  z-index: 1000;
+  font-family: sans-serif;
+}
+
+#copy-notification.show {
+  opacity: 1;
+}
+
+a.copy-discord {
+  cursor: pointer;
+}
+
+#copy-notification {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 6px;
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-in-out;
+  z-index: 9999;
+}
+
+#copy-notification.show {
+  opacity: 1;
 }

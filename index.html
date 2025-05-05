@@ -3,13 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boleklolo - Portfolio & Projects</title>
-    <meta name="description" content="Portfolio of Boleklolo - Interactive projects, 3D art, and web development experiments">
+    <title>Boleklolo.github.io</title>
+    <meta name="description" content="Boleklolo.github.io - A website you never search willingly.">
     <meta name="keywords" content="Web Development, 3D Modeling, Game Mods, Creative Coding">
     <meta name="author" content="Boleklolo">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@100..900&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="sheet.css">
-    <link rel="icon" href="images/boleklolo.png">
+    <link rel="icon" href="Images/Boleklolo.png">
+    <meta property="og:title" content="Boleklolo.github.io">
+    <meta property="og:description" content="Interactive projects, 3D art, and web development experiments">
+    <meta property="og:image" content="https://yourdomain.com/Images/Boleklolo.png">
+    <meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body>
@@ -139,49 +144,79 @@
             </figure>
         </section>
     </main>
-    <script>
-        window.addEventListener('load', () => {
-            document.querySelector('.loader').style.display = 'none';
-        });
 
-        const projects = document.querySelectorAll('.project-item');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('in-view');
-                }
-            });
-        }, { threshold: 0.1 });
-        projects.forEach(project => observer.observe(project));
+<footer>
+    <div class="social-links">
+        <a href="https://github.com/Boleklolo" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+        </a>
+        <a class="copy-discord" aria-label="Discord">
+            <i class="fab fa-discord"></i>
+        </a>
+    </div>
+    <p>Made with ❤️ by Boleklolo</p>
+    <p>© 2025 All rights reserved</p>
+</footer>
+<div id="copy-notification">Discord nickname copied to clipboard</div>
 
-        const canvas = document.getElementById('fractal');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        let time = 0;
-        function drawFractal() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            ctx.fillStyle = '#1d1d1d';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            for (let i = 0; i < 100; i++) {
-                const x = Math.sin(i + time) * 200 + canvas.width / 2;
-                const y = Math.cos(i * 0.5 + time) * 200 + canvas.height / 2;
-                ctx.beginPath();
-                ctx.arc(x, y, 2, 0, Math.PI * 2);
-                ctx.fillStyle = `hsl(${i * 3.6}, 100%, 50%)`;
-                ctx.fill();
-            }
-
-            time += 0.01;
-            requestAnimationFrame(drawFractal);
-        }
-        drawFractal();
-    </script>
-    <footer>
-        <p>Made with ❤️ by Boleklolo</p>
-        <p>© 2025 All rights reserved</p>
-    </footer>
 </body>
+<script>
+    window.addEventListener('load', () => {
+        document.querySelector('.loader').style.display = 'none';
+    });
+
+    const projects = document.querySelectorAll('.project-item');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+            }
+        });
+    }, { threshold: 0.1 });
+    projects.forEach(project => observer.observe(project));
+
+    const canvas = document.getElementById('fractal');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let time = 0;
+    function drawFractal() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#1d1d1d';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        for (let i = 0; i < 100; i++) {
+            const x = Math.sin(i + time) * 200 + canvas.width / 2;
+            const y = Math.cos(i * 0.5 + time) * 200 + canvas.height / 2;
+            ctx.beginPath();
+            ctx.arc(x, y, 2, 0, Math.PI * 2);
+            ctx.fillStyle = `hsl(${i * 3.6}, 100%, 50%)`;
+            ctx.fill();
+        }
+
+        time += 0.01;
+        requestAnimationFrame(drawFractal);
+    }
+    drawFractal();
+
+    document.addEventListener('DOMContentLoaded', () => {
+const discordBtn = document.querySelector('.copy-discord');
+const notification = document.getElementById('copy-notification');
+
+discordBtn.addEventListener('click', function (e) {
+    e.preventDefault(); // prevent default anchor behavior
+
+    const nickname = 'boleklolo';
+    navigator.clipboard.writeText(nickname).then(() => {
+        notification.classList.add('show');
+        setTimeout(() => {
+            notification.classList.remove('show');
+        }, 2000);
+    }).catch(err => {
+        console.error('Clipboard copy failed:', err);
+    });
+});
+});
+</script>
 </html>
