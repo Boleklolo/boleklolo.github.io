@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siedleckie WPlace</title>
+    <meta name="author" content="Boleklolo">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@100..900&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="sheet.css">
+    <link rel="icon" href="Images/Boleklolo.png">
+    <meta name="twitter:card" content="summary_large_image">
+</head>
+
+<style>
+    .quote-section-alt{
+        color:aqua;
+        font-weight: 500;
+    }
+
+</style>
+
+
+<body>
+    <div class="loader"></div>
+    <header id="header">
+        <h1 id="Boleklogo">Siedleckie Wplace</h1>
+    </header>
+
+    <section class="quote-section">
+            <figure>
+                <img src="/Images/GodloSiedlce.png" alt="Godło Siedleckie" loading="lazy">
+            </figure>
+
+    </section>
+<section class="quote-section-alt" style="text-align:center; padding:2rem;">
+    <h2 style="font-family:'Poppins',sans-serif; font-size:2rem; background:linear-gradient(45deg,#7289da,#5865f2); -webkit-background-clip:text; color:transparent;">
+        Zapraszam na wspólny serwer discord bo czemu nie
+    </h2>
+    <p style="font-size:1.2rem; margin-bottom:1rem;">Miejsce które odwiedzisz i zapomnisz do jutra.</p>
+    <a href="https://discord.gg/tVMyH4wzYF" target="_blank" 
+       style="display:inline-flex; align-items:center; gap:0.5rem; padding:0.8rem 1.5rem; background-color:#5865f2; color:white; border-radius:8px; text-decoration:none; font-weight:bold; font-size:1.1rem; box-shadow:0 0 12px rgba(88,101,242,0.6); transition:transform 0.2s;">
+        <i class="fab fa-discord" style="font-size:1.5rem;"></i> Wejdź na serwer
+    </a>
+</section>
+
+    <main id="content">
+        <h2 class="section-heading">Gratuluję znalezienia tej strony, Siedlczaninie
+        </h2>
+        
+        <br>
+                <h2 class="section-heading" style="font-size: 6rem; color: green    ;">Mikołaj Kopernik
+        </h2>
+            <figure>
+                <img src="https://static.wikia.nocookie.net/stronghold/images/0/0a/Richard.PNG/" alt="Kazimierz" loading="lazy">
+            </figure>
+        </section>
+        <canvas id="fractal"></canvas>
+
+    </main>
+
+<footer>
+    <div class="social-links">
+        <a href="https://github.com/Boleklolo" target="_blank" rel="noopener" aria-label="GitHub">
+            <i class="fab fa-github"></i>
+        </a>
+        <a class="copy-discord" aria-label="Discord">
+            <i class="fab fa-discord"></i>
+        </a>
+    </div>
+    <p>Made with ❤️ by Boleklolo</p>
+    <p>© 2025 All rights reserved</p>
+</footer>
+<div id="copy-notification">Discord nickname copied to clipboard</div>
+
+</body>
+<script>
+    window.addEventListener('load', () => {
+        document.querySelector('.loader').style.display = 'none';
+    });
+
+    const projects = document.querySelectorAll('.project-item');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+            }
+        });
+    }, { threshold: 0.1 });
+    projects.forEach(project => observer.observe(project));
+
+    const canvas = document.getElementById('fractal');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let time = 0;
+    function drawFractal() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#1d1d1d';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        for (let i = 0; i < 100; i++) {
+            const x = Math.sin(i + time) * 200 + canvas.width / 2;
+            const y = Math.cos(i * 0.5 + time) * 200 + canvas.height / 2;
+            ctx.beginPath();
+            ctx.arc(x, y, 2, 0, Math.PI * 2);
+            ctx.fillStyle = `hsl(${i * 3.6}, 100%, 50%)`;
+            ctx.fill();
+        }
+
+        time += 0.01;
+        requestAnimationFrame(drawFractal);
+    }
+    drawFractal();
+
+    document.addEventListener('DOMContentLoaded', () => {
+const discordBtn = document.querySelector('.copy-discord');
+const notification = document.getElementById('copy-notification');
+
+discordBtn.addEventListener('click', function (e) {
+    e.preventDefault(); // prevent default anchor behavior
+
+    const nickname = 'boleklolo';
+    navigator.clipboard.writeText(nickname).then(() => {
+        notification.classList.add('show');
+        setTimeout(() => {
+            notification.classList.remove('show');
+        }, 2000);
+    }).catch(err => {
+        console.error('Clipboard copy failed:', err);
+    });
+});
+});
+</script>
+</html>
